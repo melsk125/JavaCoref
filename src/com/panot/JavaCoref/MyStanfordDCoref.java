@@ -78,10 +78,14 @@ public class MyStanfordDCoref {
 		int count = 0;
 
 		while (true) {
-			Document doc = mentionExtractor.nextDoc();
-			if (doc == null) break;
+			Document document = mentionExtractor.nextDoc();
+			if (document == null) break;
 			count += 1;
-			System.err.println("Document no: " + count);
+			System.err.println("Start coref document no: " + count);
+
+			corefSystem.coref(document);
+
+			System.err.println("Finished!");
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
