@@ -34,12 +34,12 @@ public class MyStanfordDCoref {
 	    // If not using gold mention extractor
 	    if (!props.containsKey(MyConstants.USE_GOLD_MENTION_PROP)) {
 	    	// Set mention finder
-	    	System.out.println("Not use gold mention");
+	    	System.err.println("Not use gold mention");
 	    }
 	    else {
-	    	System.out.println("Use gold mention");
+	    	System.err.println("Use gold mention");
 	    }
 
-		System.out.println("Hello, World!");
+		System.err.println("Hello, World!");
 	}
 }
