@@ -1,10 +1,12 @@
 package com.panot.JavaCoref;
 
+import java.io.FileInputStream;
 import java.util.Properties;
 
 import edu.stanford.nlp.dcoref.ACEMentionExtractor;
 import edu.stanford.nlp.dcoref.CoNLLMentionExtractor;
 import edu.stanford.nlp.dcoref.Constants;
+import edu.stanford.nlp.dcoref.CorefMentionFinder;
 import edu.stanford.nlp.dcoref.MentionExtractor;
 import edu.stanford.nlp.dcoref.MUCMentionExtractor;
 import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
@@ -35,11 +37,39 @@ public class MyStanfordDCoref {
 	    if (!props.containsKey(MyConstants.USE_GOLD_MENTION_PROP)) {
 	    	// Set mention finder
 	    	System.err.println("Not use gold mention");
+
+	    	String mentionFinderClass = props.getProperty(Constants.MENTION_FINDER_PROP);
+	    	if (mentionFinderClass != null) {
+	    		String mentionFinderPropFilename = props.getProperty(Constants.MENTION_FINDER_PROPFILE_PROP);
+	    		CorefMentionFinder mentionFinder;
+	    		if (mentionFinderPropFilename != null) {
+	    			Properties mentionFinderProps = new Properties();
+	    			mentionFinderProps.load(new FileInputStream(mentionFinderPropFilename));
+	    			mentionFinder = (CorefMentionFinder) Class.forName(mentionFinderClass).getConstructor(Properties.class).newInstance(mentionFinderProps);
+	    		} else {
+	    			mentionFinder = (CorefMentionFinder) Class.forName(mentionFinderClass).newInstance();
+	    		}
+	    		mentionExtractor.setMentionFinder(mentionFinder);
+	    	}
+	    	if (mentionExtractor.mentionFinder == null) {
+	    		System.err.println("No mention finder specified, but not using gold mentions");
+	    	}
 	    }
 	    else {
 	    	System.err.println("Use gold mention");
 	    }
 
-		System.err.println("Hello, World!");
+		System.err.println("Start runCoref!");
+
+		try {
+			runCoref(corefSystem, mentionExtractor, props);
+		} catch (Exception ex) {
+			System.err.println("[SEVERE] ERROR in running coreference");
+			throw ex;
+		}
+	}
+
+	public static void runCoref(SieveCoreferenceSystem corefSystem, MentionExtractor mentionExtractor, Properties props) {
+		System.err.println("In runCoref!");
 	}
 }
