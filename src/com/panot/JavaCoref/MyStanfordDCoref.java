@@ -11,6 +11,7 @@ import edu.stanford.nlp.dcoref.Document;
 import edu.stanford.nlp.dcoref.MentionExtractor;
 import edu.stanford.nlp.dcoref.MUCMentionExtractor;
 import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
+import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.util.StringUtils;
 
 public class MyStanfordDCoref {
@@ -85,9 +86,25 @@ public class MyStanfordDCoref {
 
 			corefSystem.coref(document);
 
+			System.err.println(documentToStandOff(document));
+
 			System.err.println("Finished!");
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
+	}
+
+	public static String documentToStandOff(Document document) {
+		StringBuilder standoff = new StringBuilder();
+
+		String docId = document.annotation.get(CoreAnnotations.DocIDAnnotation.class);
+
+		if (docId != null) {
+			standoff.append(docId);
+		} else {
+			standoff.append("No docId");
+		}
+
+		return standoff.toString();
 	}
 }
