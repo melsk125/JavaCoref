@@ -7,6 +7,7 @@ import edu.stanford.nlp.dcoref.ACEMentionExtractor;
 import edu.stanford.nlp.dcoref.CoNLLMentionExtractor;
 import edu.stanford.nlp.dcoref.Constants;
 import edu.stanford.nlp.dcoref.CorefMentionFinder;
+import edu.stanford.nlp.dcoref.Document;
 import edu.stanford.nlp.dcoref.MentionExtractor;
 import edu.stanford.nlp.dcoref.MUCMentionExtractor;
 import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
@@ -69,7 +70,20 @@ public class MyStanfordDCoref {
 		}
 	}
 
-	public static void runCoref(SieveCoreferenceSystem corefSystem, MentionExtractor mentionExtractor, Properties props) {
+	public static void runCoref(SieveCoreferenceSystem corefSystem, MentionExtractor mentionExtractor, Properties props) throws Exception {
 		System.err.println("In runCoref!");
+
+		mentionExtractor.resetDocs();
+
+		int count = 0;
+
+		while (true) {
+			Document doc = mentionExtractor.nextDoc();
+			if (doc == null) break;
+			count += 1;
+			System.err.println("Document no: " + count);
+		}
+
+		System.err.println("Resolved all: " + count + " doc(s)");
 	}
 }
