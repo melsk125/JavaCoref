@@ -1,0 +1,4 @@
+annotators = tokenize, ssplit, pos, lemma, ner, parse, dcoref
+
+dcoref.muc = /Users/Panot/Dropbox/research/remote/data/annotate-muc-fixed/muc
+mydcoref.gold.mention
