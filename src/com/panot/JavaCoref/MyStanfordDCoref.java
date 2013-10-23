@@ -21,6 +21,7 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 
+import com.panot.JavaCoref.TextUtils.TextReader;
 import com.panot.JavaCoref.TextUtils.TokenMatcher;
 
 public class MyStanfordDCoref {
@@ -84,6 +85,10 @@ public class MyStanfordDCoref {
 		System.err.println("In runCoref!");
 
 		mentionExtractor.resetDocs();
+
+		if (props.containsKey(MyConstants.RAWTEXT_LIST_PROP)) {
+			// Read files
+		}
 
 		int count = 0;
 
