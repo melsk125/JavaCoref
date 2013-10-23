@@ -21,6 +21,8 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 
+import com.panot.JavaCoref.TextUtils.TokenMatcher;
+
 public class MyStanfordDCoref {
 
 	public static void main(String[] args) throws Exception {
