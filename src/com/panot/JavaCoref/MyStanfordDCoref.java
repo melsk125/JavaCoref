@@ -1,17 +1,24 @@
 package com.panot.JavaCoref;
 
 import java.io.FileInputStream;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import edu.stanford.nlp.dcoref.ACEMentionExtractor;
 import edu.stanford.nlp.dcoref.CoNLLMentionExtractor;
 import edu.stanford.nlp.dcoref.Constants;
+import edu.stanford.nlp.dcoref.CorefChain;
+import edu.stanford.nlp.dcoref.CorefCoreAnnotations;
 import edu.stanford.nlp.dcoref.CorefMentionFinder;
 import edu.stanford.nlp.dcoref.Document;
 import edu.stanford.nlp.dcoref.MentionExtractor;
 import edu.stanford.nlp.dcoref.MUCMentionExtractor;
 import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 
 public class MyStanfordDCoref {
@@ -84,11 +91,16 @@ public class MyStanfordDCoref {
 			count += 1;
 			System.err.println("Start coref document no: " + count);
 
-			corefSystem.coref(document);
+			Map<Integer, CorefChain> result = corefSystem.coref(document);
+
 
 			System.err.println(documentToStandOff(document));
+			System.err.println(addCorefGraphInfo(result));
 
 			System.err.println("Finished!");
+
+			// only first doc for debugging
+			break;
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
@@ -96,15 +108,96 @@ public class MyStanfordDCoref {
 
 	public static String documentToStandOff(Document document) {
 		StringBuilder standoff = new StringBuilder();
+		Annotation annotation = document.annotation;
 
-		String docId = document.annotation.get(CoreAnnotations.DocIDAnnotation.class);
+		String docId = annotation.get(CoreAnnotations.DocIDAnnotation.class);
 
 		if (docId != null) {
 			standoff.append(docId);
 		} else {
 			standoff.append("No docId");
 		}
+		standoff.append("\n");
+		standoff.append("Sentences:\n");
+
+		if (annotation.get(CoreAnnotations.SentencesAnnotation.class) != null) {
+			int sentCount = 1;
+
+			// for each sentence
+			for (CoreMap sentence: annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+
+				// info about sentence
+				standoff.append("Sentence no.: " + sentCount + "\n");
+				Integer lineNumber = sentence.get(CoreAnnotations.LineNumberAnnotation.class);
+				if (lineNumber != null) {
+					standoff.append(" line: " + lineNumber + "\n");
+				}
+
+				// info about each token
+				List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
+				for (int j = 0; j < tokens.size(); j++) {
+					// addWordInfo
+					standoff.append("  token no: " + j+1 + "\n");
+					standoff.append("   " + addWordInfo(tokens.get(j)));
+				}
+
+				sentCount += 1;
+			}
+
+			// info about coref
+			Map<Integer, CorefChain> corefChains = annotation.get(CorefCoreAnnotations.CorefChainAnnotation.class);
+			if (corefChains != null) {
+				// addCorefGraphInfo
+				standoff.append("With coref!\n");
+				standoff.append(" " + addCorefGraphInfo(corefChains));
+			} else {
+				standoff.append("Without coref!\n");
+			}
+		}
 
 		return standoff.toString();
+	}
+
+	public static String addWordInfo(CoreLabel token) {
+		StringBuilder wordinfo  = new StringBuilder();
+
+		wordinfo.append(token.get(CoreAnnotations.TextAnnotation.class) + "\t");
+		if (token.containsKey(CoreAnnotations.CharacterOffsetBeginAnnotation.class) && token.containsKey(CoreAnnotations.CharacterOffsetEndAnnotation.class)) {
+			wordinfo.append(token.get(CoreAnnotations.CharacterOffsetBeginAnnotation.class) + " " + token.get(CoreAnnotations.CharacterOffsetEndAnnotation.class));
+		}
+
+		wordinfo.append("\n");
+
+		return wordinfo.toString();
+	}
+
+	public static String addCorefGraphInfo(Map<Integer, CorefChain> corefChains) {
+		StringBuilder corefGraphInfo = new StringBuilder();
+
+		boolean foundCoref = false;
+		for (CorefChain chain : corefChains.values()) {
+			if (chain.getMentionsInTextualOrder().size() <= 1)
+				continue;
+			foundCoref = true;
+			corefGraphInfo.append("New coref: \n");
+			CorefChain.CorefMention source = chain.getRepresentativeMention();
+			corefGraphInfo.append(addCorefMention(source));
+			for (CorefChain.CorefMention mention : chain.getMentionsInTextualOrder()) {
+				if (mention == source)
+					continue;
+				corefGraphInfo.append(addCorefMention(mention));
+			}
+		}
+
+		return corefGraphInfo.toString();
+	}
+
+	public static String addCorefMention(CorefChain.CorefMention mention) {
+		StringBuilder corefMentionInfo = new StringBuilder();
+
+		corefMentionInfo.append(mention.sentNum);
+		corefMentionInfo.append("[" + mention.startIndex + "," + mention.endIndex + "]\n");
+
+		return corefMentionInfo.toString();
 	}
 }
