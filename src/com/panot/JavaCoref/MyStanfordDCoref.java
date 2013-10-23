@@ -94,15 +94,15 @@ public class MyStanfordDCoref {
 			System.err.println("Start coref document no: " + count);
 
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
-
+			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
 
 			System.err.println(documentToStandOff(document));
-			System.err.println(addCorefGraphInfo(result));
 
 			System.err.println("Finished!");
 
 			// only first doc for debugging
-			break;
+			if (count >= 2)
+				break;
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
