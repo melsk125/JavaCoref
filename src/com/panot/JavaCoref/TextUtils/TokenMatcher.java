@@ -1,4 +1,4 @@
-package com.panot.TextUtils;
+package com.panot.JavaCoref.TextUtils;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class TokenMatcher {
 	  * Set CoreAnnotations.CharacterOffset[Begin|End]Annotation is each token in the Annotation
 	  */
 	public static boolean SetOffset(Annotation annotation, String text) {
-		if (annotation.has(CoreAnnotations.SentencesAnnotation.class) == null) {
+		if (!annotation.has(CoreAnnotations.SentencesAnnotation.class)) {
 			return false;
 		}
 
@@ -26,7 +26,7 @@ public class TokenMatcher {
 
 			for (int j = 0; j < tokens.size(); j++) {
 				CoreMap token = tokens.get(j);
-				String word = token.get(CoreAnnotation.TextAnnotation.class);
+				String word = token.get(CoreAnnotations.TextAnnotation.class);
 
 				int nextIndex = text.indexOf(word, currentIndex);
 				if (nextIndex < currentIndex) {
@@ -36,8 +36,8 @@ public class TokenMatcher {
 				int offsetBegin = nextIndex;
 				int offsetEnd   = nextIndex + word.length();
 
-				token.set(CoreAnnotations.CoreAnnotations.CharacterOffsetBeginAnnotation.class, offsetBegin);
-				token.set(CoreAnnotations.CoreAnnotations.CharacterOffsetEndAnnotation.class  , offsetEnd);
+				token.set(CoreAnnotations.CharacterOffsetBeginAnnotation.class, offsetBegin);
+				token.set(CoreAnnotations.CharacterOffsetEndAnnotation.class  , offsetEnd);
 
 				currentIndex = offsetEnd;
 			}
