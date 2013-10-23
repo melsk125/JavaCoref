@@ -28,14 +28,63 @@ public class TokenMatcher {
 				CoreMap token = tokens.get(j);
 				String word = token.get(CoreAnnotations.TextAnnotation.class);
 
-				int nextIndex = text.indexOf(word, currentIndex);
-				if (nextIndex < currentIndex) {
-					return false;
+				if (token.has(CoreAnnotations.OriginalTextAnnotation.class)) {
+					word = token.get(CoreAnnotations.OriginalTextAnnotation.class);
 				}
 
-				int offsetBegin = nextIndex;
-				int offsetEnd   = nextIndex + word.length();
+				if (word == "-LRB-") {
+					word = "(";
+				} else if (word == "-RRB-") {
+					word = ")";
+				} else if (word == "-LSB-") {
+					word = "[";
+				} else if (word == "-RSB-") {
+					word = "]";
+				}
 
+				int offsetBegin, offsetEnd;
+
+				int nextIndex = text.indexOf(word, currentIndex);
+				if (nextIndex < 0) {
+					// Heuristic solution
+					// If text starts with non-alnum, the whole token should be non-alnum
+					// Else, the whole token should be all alnum
+					//
+					// How to do it? we check one character at a time!
+					
+					// Find beginning of the token
+					
+					System.err.println("index: " + word);
+					int index = currentIndex;
+					System.err.print(text.charAt(index));
+					while (Character.isWhitespace(text.codePointAt(index))) {
+						index ++;
+						System.err.print(text.charAt(index));
+					}
+					nextIndex = index;
+
+					int typeChecker = text.codePointAt(index);
+					if (Character.isLetter(typeChecker) || Character.isDigit(typeChecker)) {
+						while (Character.isLetter(typeChecker) || Character.isDigit(typeChecker)) {
+							index ++;
+							System.err.print(text.charAt(index));
+							typeChecker = text.codePointAt(index);
+						}
+					} else {
+						while (!Character.isLetter(typeChecker) && !Character.isDigit(typeChecker)) {
+							index ++;
+							System.err.print(text.charAt(index));
+							typeChecker = text.codePointAt(index);
+						}
+					}
+					System.err.println();
+
+					offsetBegin = nextIndex;
+					offsetEnd   = index;
+				} else {
+					offsetBegin = nextIndex;
+					offsetEnd   = nextIndex + word.length();
+				}
 				token.set(CoreAnnotations.CharacterOffsetBeginAnnotation.class, offsetBegin);
 				token.set(CoreAnnotations.CharacterOffsetEndAnnotation.class  , offsetEnd);
 

@@ -1,4 +1,9 @@
 annotators = tokenize, ssplit, pos, lemma, ner, parse, dcoref
 
+tokenize.options = invertible
+
 dcoref.muc = /Users/Panot/Dropbox/research/remote/data/annotate-muc-fixed/muc
+
+mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/data/annotate-muc-fixed/rawtext.list
+
 mydcoref.gold.mention

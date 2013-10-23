@@ -3,6 +3,7 @@ package com.panot.JavaCoref;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 import java.util.Properties;
 
 import edu.stanford.nlp.dcoref.ACEMentionExtractor;
@@ -86,8 +87,10 @@ public class MyStanfordDCoref {
 
 		mentionExtractor.resetDocs();
 
+		List<String> rawTexts = null;
+
 		if (props.containsKey(MyConstants.RAWTEXT_LIST_PROP)) {
-			// Read files
+			rawTexts = TextReader.ReadFiles(props.getProperty(MyConstants.RAWTEXT_LIST_PROP));
 		}
 
 		int count = 0;
@@ -95,13 +98,19 @@ public class MyStanfordDCoref {
 		while (true) {
 			Document document = mentionExtractor.nextDoc();
 			if (document == null) break;
+
 			count += 1;
 			System.err.println("Start coref document no: " + count);
 
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
 			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
 
-			System.err.println(documentToStandOff(document));
+			if (props.containsKey(MyConstants.RAWTEXT_LIST_PROP)) {
+				String rawText = rawTexts.get(count - 1);
+				boolean offsetPass = TokenMatcher.SetOffset(document.annotation, rawText);
+
+				System.err.println(documentToStandOff(document, rawText));
+			}
 
 			System.err.println("Finished!");
 
@@ -113,7 +122,48 @@ public class MyStanfordDCoref {
 		System.err.println("Resolved all: " + count + " doc(s)");
 	}
 
-	public static String documentToStandOff(Document document) {
+	public static String documentToStandOff(Document document, String text) {
+		Annotation annotation = document.annotation;
+		Map<Integer, CorefChain> corefChains = annotation.get(CorefCoreAnnotations.CorefChainAnnotation.class);
+
+		int mentionCount = 0;
+
+		List<CoreMap> sentences = annotation.get(CoreAnnotations.SentencesAnnotation.class);
+
+		StringBuilder standoff = new StringBuilder();
+
+		for (CorefChain chain : corefChains.values()) {
+			if (chain.getMentionsInTextualOrder().size() <= 1)
+				continue;
+
+			Vector<Integer> mentionInChain = new Vector<Integer>();
+
+			for (CorefChain.CorefMention mention : chain.getMentionsInTextualOrder()) {
+				CoreMap currentSentence = sentences.get(mention.sentNum - 1);
+				List<CoreLabel> tokens = currentSentence.get(CoreAnnotations.TokensAnnotation.class);
+				int offsetBegin = tokens.get(mention.startIndex - 1).get(CoreAnnotations.CharacterOffsetBeginAnnotation.class);
+				int offsetEnd = tokens.get(mention.endIndex - 2).get(CoreAnnotations.CharacterOffsetEndAnnotation.class);
+
+				mentionCount ++;
+
+				standoff.append("T" + mentionCount + "\t");
+				standoff.append("Mention " + offsetBegin + " " + offsetEnd + "\t");
+				standoff.append(text.substring(offsetBegin, offsetEnd) + "\n");
+
+				mentionInChain.add(mentionCount);
+			}
+
+			standoff.append("*\tCoreference");
+			for (int mentionNum : mentionInChain) {
+				standoff.append(" T" + mentionNum);
+			}
+			standoff.append("\n");
+		}
+
+		return standoff.toString();
+	}
+
+	public static String documentToString(Document document) {
 		StringBuilder standoff = new StringBuilder();
 		Annotation annotation = document.annotation;
 
@@ -144,7 +194,7 @@ public class MyStanfordDCoref {
 				List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
 				for (int j = 0; j < tokens.size(); j++) {
 					// addWordInfo
-					standoff.append("  token no: " + j+1 + "\n");
+					standoff.append("  token no: " + (j+1) + "\n");
 					standoff.append("   " + addWordInfo(tokens.get(j)));
 				}
 
