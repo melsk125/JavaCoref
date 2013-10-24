@@ -40,6 +40,10 @@ public class TokenMatcher {
 					word = "[";
 				} else if (word == "-RSB-") {
 					word = "]";
+				} else if (word == "-LCB-") {
+					word = "{";
+				} else if (word == "-RCB-") {
+					word = "}";
 				}
 
 				int offsetBegin, offsetEnd;

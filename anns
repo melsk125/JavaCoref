@@ -1,0 +1,5325 @@
+Oct 24, 2013 12:12:31 PM edu.stanford.nlp.dcoref.MentionExtractor loadStanfordProcessor
+INFO: Ignoring specified annotators, using annotators=pos, lemma, ner, parse
+Adding annotator pos
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [1.7 sec].
+Adding annotator lemma
+Adding annotator ner
+Loading classifier from edu/stanford/nlp/models/ner/english.all.3class.distsim.crf.ser.gz ... done [5.0 sec].
+Loading classifier from edu/stanford/nlp/models/ner/english.muc.7class.distsim.crf.ser.gz ... done [7.7 sec].
+Loading classifier from edu/stanford/nlp/models/ner/english.conll.4class.distsim.crf.ser.gz ... done [4.3 sec].
+Initializing JollyDayHoliday for sutime
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/defs.sutime.txt
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/english.sutime.txt
+Oct 24, 2013 12:12:51 PM edu.stanford.nlp.ling.tokensregex.CoreMapExpressionExtractor appendRules
+INFO: Ignoring inactive rule: temporal-composite-8:ranges
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/english.holidays.sutime.txt
+Adding annotator parse
+Loading parser from serialized file edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz ... done [1.3 sec].
+Use gold mention
+Start runCoref!
+In runCoref!
+Start coref document no: 1
+T1	Mention 727 768	DUDE (Distributed UDDI Deployment Engine)
+T2	Mention 770 774	DUDE
+T3	Mention 875 879	DUDE
+*	Coreference T1 T2 T3
+T4	Mention 517 545	the advent of grid computing
+T5	Mention 618 621	its
+*	Coreference T4 T5
+T6	Mention 475 510	its widespread deployment and usage
+T7	Mention 618 632	its deployment
+*	Coreference T6 T7
+T8	Mention 426 452	lack of autonomous control
+T9	Mention 475 478	its
+*	Coreference T8 T9
+T10	Mention 657 659	we
+T11	Mention 668 671	our
+T12	Mention 1069 1071	we
+*	Coreference T10 T11 T12
+T13	Mention 668 768	our distributed web-service discovery architecture, called DUDE (Distributed UDDI Deployment Engine)
+T14	Mention 668 718	our distributed web-service discovery architecture
+T15	Mention 1085 1102	DUDE architecture
+*	Coreference T13 T14 T15
+T16	Mention 41 45	UDDI
+T17	Mention 290 294	UDDI
+T18	Mention 304 361	the de facto industry standard for web-services discovery
+T19	Mention 571 575	UDDI
+T20	Mention 745 749	UDDI
+T21	Mention 858 862	UDDI
+T22	Mention 1141 1145	UDDI
+T23	Mention 1172 1176	UDDI
+T24	Mention 1209 1212	its
+T25	Mention 1312 1316	UDDI
+*	Coreference T16 T17 T18 T19 T20 T21 T22 T23 T24 T25
+T26	Mention 888 897	consumers
+T27	Mention 1006 1011	their
+*	Coreference T26 T27
+
+Finished!
+Start coref document no: 2
+T1	Mention 244 276	an associated cost of deployment
+T2	Mention 465 487	the cost of deployment
+*	Coreference T1 T2
+T3	Mention 299 311	this problem
+T4	Mention 445 447	It
+*	Coreference T3 T4
+
+Finished!
+Start coref document no: 3
+index: favor
+ favour 
+index: ''
+ "L
+index: ''
+" t
+T1	Mention 258 260	we
+T2	Mention 424 426	we
+T3	Mention 743 745	we
+T4	Mention 926 928	We
+T5	Mention 1062 1064	we
+T6	Mention 1092 1094	We
+T7	Mention 1177 1180	our
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 695 735	14], which facilitate the audio handling
+T9	Mention 695 698	14]
+*	Coreference T8 T9
+T10	Mention 436 523	an audio service framework designed to provide a Virtual Conferencing Environment (VCE)
+T11	Mention 649 662	The framework
+*	Coreference T10 T11
+T12	Mention 51 85	a Virtual Conferencing Environment
+T13	Mention 519 522	VCE
+*	Coreference T12 T13
+T14	Mention 317 367	the conference application, floor control and load
+T15	Mention 317 343	the conference application
+T16	Mention 345 358	floor control
+*	Coreference T14 T15 T16
+T17	Mention 21 47	a VoIP Conferencing System
+T18	Mention 525 535	The system
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 4
+T1	Mention 877 958	Swarm Worms, whose behavior is predicated on the concept of emergent intelligence
+T2	Mention 877 888	Swarm Worms
+T3	Mention 1284 1295	Swarm Worms
+*	Coreference T1 T2 T3
+T4	Mention 254 297	the main action that the Slammer worm takes
+T5	Mention 301 351	a relatively unsophisticated replication of itself
+T6	Mention 345 351	itself
+T7	Mention 353 355	it
+*	Coreference T4 T5 T6 T7
+T8	Mention 660 663	our
+T9	Mention 670 672	we
+T10	Mention 824 826	we
+T11	Mention 1226 1228	we
+T12	Mention 1390 1392	we
+T13	Mention 1500 1502	We
+*	Coreference T8 T9 T10 T11 T12 T13
+T14	Mention 937 958	emergent intelligence
+T15	Mention 960 981	Emergent Intelligence
+T16	Mention 985 1205	the behavior of systems, very much like biological systems such as ants or bees, where simple local interactions of autonomous members, with simple primitive actions, gives rise to complex and intelligent global behavior
+*	Coreference T14 T15 T16
+T17	Mention 79 157	The Slammer, which is currently the fastest computer worm in recorded history,
+T18	Mention 79 90	The Slammer
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 5
+T1	Mention 92 94	we
+T2	Mention 319 321	We
+T3	Mention 562 564	We
+*	Coreference T1 T2 T3
+T4	Mention 333 356	an alternative approach
+T5	Mention 447 449	It
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 6
+T1	Mention 267 269	we
+T2	Mention 403 405	We
+T3	Mention 558 560	We
+T4	Mention 669 671	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 772 776	e.g.
+T6	Mention 778 790	the Internet
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 7
+T1	Mention 818 908	scalability, efficiency and the application of simple measurement and propagation criteria
+T2	Mention 846 908	the application of simple measurement and propagation criteria
+*	Coreference T1 T2
+T3	Mention 323 335	The solution
+T4	Mention 548 560	the solution
+*	Coreference T3 T4
+T5	Mention 380 529	the mobile object system, which holds containers aggregating metrics for each specific component including host managers, runtimes and mobile objects
+T6	Mention 380 404	the mobile object system
+T7	Mention 678 688	the system
+*	Coreference T5 T6 T7
+
+Finished!
+Start coref document no: 8
+T1	Mention 668 670	we
+T2	Mention 819 822	Our
+T3	Mention 936 938	We
+*	Coreference T1 T2 T3
+T4	Mention 524 542	the slowest server
+T5	Mention 872 890	the slowest server
+*	Coreference T4 T5
+T6	Mention 455 471	a major obstacle
+T7	Mention 473 569	the idle time of faster servers having to wait for the slowest server to deliver the final block
+T8	Mention 577 579	it
+T9	Mention 625 629	time
+T10	Mention 840 853	the idle time
+*	Coreference T6 T7 T8 T9 T10
+
+Finished!
+Start coref document no: 9
+T1	Mention 1035 1039	this
+T2	Mention 1043 1208	the first report of a sub-meter localization error, obtained in an outdoor environment, without equipping the wireless sensor nodes with specialized ranging hardware
+*	Coreference T1 T2
+T3	Mention 253 255	we
+T4	Mention 353 356	Our
+T5	Mention 497 499	We
+T6	Mention 667 669	We
+T7	Mention 698 701	our
+T8	Mention 816 818	we
+T9	Mention 1020 1023	our
+*	Coreference T3 T4 T5 T6 T7 T8 T9
+T10	Mention 306 333	a novel localization system
+T11	Mention 353 363	Our system
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 10
+T1	Mention 235 270	The framework, called PackageBLAST,
+T2	Mention 235 248	The framework
+*	Coreference T1 T2
+T3	Mention 102 104	we
+T4	Mention 364 366	we
+T5	Mention 514 517	Our
+*	Coreference T3 T4 T5
+
+Finished!
+Start coref document no: 11
+T1	Mention 664 694	a restricted persistence model
+T2	Mention 745 755	this model
+*	Coreference T1 T2
+T3	Mention 573 590	a trial structure
+T4	Mention 1467 1486	the trial structure
+*	Coreference T3 T4
+T5	Mention 637 645	the grid
+T6	Mention 1177 1185	the grid
+*	Coreference T5 T6
+T7	Mention 805 819	the RPC module
+T8	Mention 821 831	the module
+*	Coreference T7 T8
+T9	Mention 762 790	the initialization procedure
+T10	Mention 898 926	the initialization procedure
+*	Coreference T9 T10
+T11	Mention 1280 1297	the 1BL1 molecule
+T12	Mention 1305 1317	the molecule
+*	Coreference T11 T12
+T13	Mention 233 235	We
+T14	Mention 318 320	we
+*	Coreference T13 T14
+
+Finished!
+Start coref document no: 12
+T1	Mention 474 476	we
+T2	Mention 543 545	We
+T3	Mention 620 622	we
+T4	Mention 750 752	we
+T5	Mention 835 837	us
+T6	Mention 988 990	We
+T7	Mention 1000 1003	our
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 644 684	the statistics about the application run
+T9	Mention 726 742	these statistics
+*	Coreference T8 T9
+T10	Mention 599 618	the application run
+T11	Mention 665 684	the application run
+*	Coreference T10 T11
+T12	Mention 489 541	an approach that does not require performance models
+T13	Mention 814 827	This approach
+T14	Mention 1000 1012	our approach
+*	Coreference T12 T13 T14
+T15	Mention 30 38	the Grid
+T16	Mention 1050 1058	the Grid
+*	Coreference T15 T16
+T17	Mention 199 214	the application
+T18	Mention 791 806	the application
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 13
+T1	Mention 409 411	we
+T2	Mention 607 609	we
+T3	Mention 918 920	We
+T4	Mention 1671 1673	we
+*	Coreference T1 T2 T3 T4
+T5	Mention 774 916	Bullet, a scalable and distributed algorithm that enables nodes spread across the Internet to self-organize into a high bandwidth overlay mesh
+T6	Mention 774 780	Bullet
+T7	Mention 782 792	a scalable
+T8	Mention 797 916	distributed algorithm that enables nodes spread across the Internet to self-organize into a high bandwidth overlay mesh
+T9	Mention 1719 1725	Bullet
+T10	Mention 1889 1895	Bullet
+T11	Mention 1981 1983	it
+*	Coreference T5 T6 T7 T8 T9 T10 T11
+T12	Mention 206 218	the Internet
+T13	Mention 852 864	the Internet
+T14	Mention 1518 1530	the Internet
+*	Coreference T12 T13 T14
+T15	Mention 397 407	this paper
+T16	Mention 754 764	This paper
+*	Coreference T15 T16
+T17	Mention 370 392	the underlying network
+T18	Mention 1033 1044	the network
+*	Coreference T17 T18
+T19	Mention 962 966	data
+T20	Mention 1123 1131	the data
+T21	Mention 1233 1237	data
+T22	Mention 1934 1938	data
+*	Coreference T19 T20 T21 T22
+
+Finished!
+Start coref document no: 14
+T1	Mention 822 832	a document
+T2	Mention 911 923	the document
+*	Coreference T1 T2
+T3	Mention 974 1049	Apocrita, a revolutionary distributed P2P file sharing system for Intranets
+T4	Mention 974 982	Apocrita
+T5	Mention 984 1049	a revolutionary distributed P2P file sharing system for Intranets
+*	Coreference T3 T4 T5
+T6	Mention 106 143	author documents for various purposes
+T7	Mention 307 322	these documents
+*	Coreference T6 T7
+T8	Mention 50 70	System for Intranets
+T9	Mention 1029 1049	system for Intranets
+*	Coreference T8 T9
+T10	Mention 61 70	Intranets
+T11	Mention 1040 1049	Intranets
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 15
+T1	Mention 839 861	a BuddyCache prototype
+T2	Mention 876 879	its
+T3	Mention 942 966	the BuddyCache prototype
+*	Coreference T1 T2 T3
+T4	Mention 168 226	groups of networked clients collaborating on a common task
+T5	Mention 228 232	They
+*	Coreference T4 T5
+T6	Mention 1106 1148	the storage server, peers using BuddyCache
+T7	Mention 1106 1124	the storage server
+*	Coreference T6 T7
+T8	Mention 0 102	BuddyCache: High-Performance Object Storage for Collaborative Strong-Consistency Applications in a WAN
+T9	Mention 430 440	BuddyCache
+T10	Mention 444 632	a new transactional caching approach that improves the latency of access to shared persistent objects for collaborative strong-consistency applications in high-latency network environments
+T11	Mention 1138 1148	BuddyCache
+*	Coreference T8 T9 T10 T11
+
+Finished!
+Start coref document no: 16
+T1	Mention 290 292	we
+T2	Mention 519 522	our
+T3	Mention 533 535	we
+T4	Mention 593 595	We
+T5	Mention 610 613	our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 301 317	a novel approach
+T7	Mention 519 531	our approach
+T8	Mention 610 622	our approach
+T9	Mention 637 639	it
+*	Coreference T6 T7 T8 T9
+T10	Mention 377 406	Distributed context providers
+T11	Mention 475 479	they
+*	Coreference T10 T11
+T12	Mention 489 497	proceeds
+T13	Mention 703 715	the proceeds
+*	Coreference T12 T13
+T14	Mention 30 59	Providing Context Information
+T15	Mention 239 258	context information
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 17
+T1	Mention 424 429	k,u,m
+T2	Mention 509 525	the H(k,u,m,v,n)
+T3	Mention 515 520	k,u,m
+T4	Mention 572 584	H(k,u,m,v,n)
+T5	Mention 574 579	k,u,m
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 67 82	Sensor Networks
+T7	Mention 489 504	sensor networks
+*	Coreference T6 T7
+T8	Mention 653 695	a new pairwise key establishment algorithm
+T9	Mention 970 987	the new algorithm
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 18
+index: organizations
+ organisations.
+index: minimized
+ minimised 
+T1	Mention 683 685	us
+T2	Mention 773 775	We
+T3	Mention 953 955	We
+T4	Mention 966 969	our
+*	Coreference T1 T2 T3 T4
+T5	Mention 273 352	the event transport network owned by cooperating, but independent organisations
+T6	Mention 387 398	the network
+T7	Mention 760 771	the network
+*	Coreference T5 T6 T7
+
+Finished!
+Start coref document no: 19
+T1	Mention 211 214	PRO
+T2	Mention 438 441	PRO
+*	Coreference T1 T2
+T3	Mention 846 859	each receiver
+T4	Mention 907 910	its
+*	Coreference T3 T4
+T5	Mention 598 602	(ii)
+T6	Mention 708 711	its
+*	Coreference T5 T6
+T7	Mention 274 297	its primary design goal
+T8	Mention 427 436	this goal
+*	Coreference T7 T8
+T9	Mention 165 209	Peer-to-peer Receiverdriven Overlay (or PRO)
+T10	Mention 563 574	the overlay
+*	Coreference T9 T10
+T11	Mention 67 77	This paper
+T12	Mention 274 277	its
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 20
+index: ``
+
+"B
+index: ''
+" p
+T1	Mention 435 450	the packet loss
+T2	Mention 1590 1601	packet loss
+*	Coreference T1 T2
+T3	Mention 654 656	We
+T4	Mention 727 729	we
+T5	Mention 893 895	we
+T6	Mention 1376 1378	we
+T7	Mention 1476 1478	We
+T8	Mention 1603 1605	We
+*	Coreference T3 T4 T5 T6 T7 T8
+
+Finished!
+Start coref document no: 21
+T1	Mention 1138 1140	We
+T2	Mention 1242 1244	we
+T3	Mention 1714 1716	We
+T4	Mention 1913 1915	We
+T5	Mention 1923 1926	our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 549 557	the user
+T7	Mention 686 689	her
+*	Coreference T6 T7
+T8	Mention 533 547	each sub-world
+T9	Mention 668 672	them
+T10	Mention 724 728	them
+*	Coreference T8 T9 T10
+T11	Mention 1571 1712	an efficient spatial index structure that minimizes unexpected object popping and supports highly scalable real-time visibility determination
+T12	Mention 1756 1770	this structure
+T13	Mention 1783 1802	the index structure
+*	Coreference T11 T12 T13
+T14	Mention 169 183	multiple users
+T15	Mention 223 227	They
+T16	Mention 315 324	the users
+T17	Mention 390 394	they
+*	Coreference T14 T15 T16 T17
+T18	Mention 79 130	game-based application systems such as Second Life1
+T19	Mention 334 345	the systems
+*	Coreference T18 T19
+
+Finished!
+Start coref document no: 22
+T1	Mention 476 478	we
+T2	Mention 731 733	we
+T3	Mention 854 857	Our
+*	Coreference T1 T2 T3
+T4	Mention 523 721	the Hybrid Adaptive Resourcemanagement Middleware (HyARM), which provides adaptive resource management using hybrid control techniques for adapting to workload fluctuations and resource availability
+T5	Mention 523 580	the Hybrid Adaptive Resourcemanagement Middleware (HyARM)
+*	Coreference T4 T5
+T6	Mention 56 82	Real-Time Embedded Systems
+T7	Mention 843 852	real-time
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 23
+T1	Mention 114 166	Ensemble Kalman filter data assimilation methodology
+T2	Mention 728 734	Kalman
+*	Coreference T1 T2
+T3	Mention 268 334	an ensemble of geological models and production data of oil fields
+T4	Mention 471 483	the ensemble
+T5	Mention 715 727	the ensemble
+T6	Mention 1103 1115	the ensemble
+*	Coreference T3 T4 T5 T6
+T7	Mention 663 692	the number licenses available
+T8	Mention 825 837	the licenses
+*	Coreference T7 T8
+T9	Mention 776 812	the TIGRE Grid computing environment
+T10	Mention 932 949	TIGRE environment
+*	Coreference T9 T10
+T11	Mention 694 696	We
+T12	Mention 1049 1051	we
+T13	Mention 1074 1077	our
+*	Coreference T11 T12 T13
+T14	Mention 253 266	this approach
+T15	Mention 1183 1222	this approach, observations and lessons
+T16	Mention 1183 1196	this approach
+*	Coreference T14 T15 T16
+
+Finished!
+Start coref document no: 24
+T1	Mention 832 857	the localization accuracy
+T2	Mention 1479 1500	localization accuracy
+*	Coreference T1 T2
+T3	Mention 376 378	we
+T4	Mention 769 771	we
+T5	Mention 859 861	We
+T6	Mention 990 992	we
+T7	Mention 1000 1002	We
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 0 56	MSP: Multi-Sequence Positioning of Wireless Sensor Nodes
+T9	Mention 528 531	MSP
+T10	Mention 757 760	MSP
+T11	Mention 1234 1237	MSP
+*	Coreference T8 T9 T10 T11
+T12	Mention 1200 1215	This evaluation
+T13	Mention 1372 1374	It
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 25
+T1	Mention 352 458	a framework, called StarDust, for wireless sensor network localization based on passive optical components
+T2	Mention 463 485	the StarDust framework
+T3	Mention 1083 1096	our framework
+*	Coreference T1 T2 T3
+T4	Mention 783 785	we
+T5	Mention 841 843	We
+T6	Mention 1021 1023	We
+T7	Mention 1083 1086	our
+*	Coreference T4 T5 T6 T7
+T8	Mention 232 325	the required location accuracy, energy expenditure and the duration of the localization phase
+T9	Mention 232 262	the required location accuracy
+T10	Mention 264 282	energy expenditure
+T11	Mention 287 325	the duration of the localization phase
+T12	Mention 1174 1199	The localization accuracy
+*	Coreference T8 T9 T10 T11 T12
+T13	Mention 62 86	Wireless Sensor Networks
+T14	Mention 118 142	wireless sensor networks
+*	Coreference T13 T14
+T15	Mention 0 86	StarDust: A Flexible Architecture for Passive Localization in Wireless Sensor Networks
+T16	Mention 372 380	StarDust
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 26
+T1	Mention 523 707	TSAR, a fundamentally different storage architecture that envisions separation of data from metadata by employing local archiving at the sensors and distributed indexing at the proxies
+T2	Mention 523 667	TSAR, a fundamentally different storage architecture that envisions separation of data from metadata by employing local archiving at the sensors
+*	Coreference T1 T2
+T3	Mention 211 213	We
+T4	Mention 512 514	We
+T5	Mention 1109 1111	We
+T6	Mention 1214 1217	Our
+T7	Mention 1280 1283	our
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 774 801	distributed index structure
+T9	Mention 803 826	the Interval Skip Graph
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 27
+T1	Mention 104 114	attributes
+T2	Mention 124 140	these attributes
+*	Coreference T1 T2
+T3	Mention 468 470	we
+T4	Mention 570 573	Our
+T5	Mention 756 759	Our
+T6	Mention 957 959	we
+*	Coreference T3 T4 T5 T6
+T7	Mention 312 315	50�
+T8	Mention 923 924	�
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 28
+T1	Mention 539 541	We
+T2	Mention 740 743	our
+T3	Mention 775 777	We
+*	Coreference T1 T2 T3
+T4	Mention 620 727	to evaluate and compare five existing protocols: direct-delivery, epidemic, random, PRoPHET, and Link-State
+T5	Mention 717 727	Link-State
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 29
+T1	Mention 147 188	a search and rescue system called CenWits
+T2	Mention 785 795	the system
+*	Coreference T1 T2
+T3	Mention 401 425	A key feature of CenWits
+T4	Mention 434 436	it
+T5	Mention 498 501	its
+T6	Mention 513 515	It
+T7	Mention 612 614	It
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 81 91	This paper
+T9	Mention 1000 1009	The paper
+T10	Mention 1085 1087	it
+*	Coreference T8 T9 T10
+T11	Mention 0 7	CenWits
+T12	Mention 181 188	CenWits
+T13	Mention 190 197	CenWits
+T14	Mention 309 311	It
+T15	Mention 418 425	CenWits
+T16	Mention 943 950	CenWits
+*	Coreference T11 T12 T13 T14 T15 T16
+
+Finished!
+Start coref document no: 30
+T1	Mention 907 909	we
+T2	Mention 980 982	we
+T3	Mention 1274 1276	we
+T4	Mention 1426 1428	We
+T5	Mention 1567 1569	We
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 399 408	that time
+T7	Mention 1135 1139	time
+*	Coreference T6 T7
+T8	Mention 299 309	The object
+T9	Mention 650 660	the object
+*	Coreference T8 T9
+T10	Mention 270 280	the sender
+T11	Mention 463 473	the sender
+T12	Mention 756 766	the sender
+*	Coreference T10 T11 T12
+T13	Mention 1518 1565	BZFlag, a popular distributed multi-player game
+T14	Mention 1526 1565	a popular distributed multi-player game
+*	Coreference T13 T14
+T15	Mention 228 297	the receiver due to network delay between the sender and the receiver
+T16	Mention 285 297	the receiver
+T17	Mention 323 335	the receiver
+*	Coreference T15 T16 T17
+T18	Mention 189 297	inaccuracy in rendering the objects at the receiver due to network delay between the sender and the receiver
+T19	Mention 475 490	This inaccuracy
+T20	Mention 513 515	it
+T21	Mention 549 553	that
+T22	Mention 792 806	the inaccuracy
+T23	Mention 958 973	this inaccuracy
+*	Coreference T18 T19 T20 T21 T22 T23
+T24	Mention 67 178	a distributed multi-player game that uses dead-reckoning vectors to exchange movement information among players
+T25	Mention 1162 1170	the game
+*	Coreference T24 T25
+T26	Mention 1640 1689	players in spite of widely varying network delays
+T27	Mention 1749 1753	they
+*	Coreference T26 T27
+T28	Mention 991 1003	an algorithm
+T29	Mention 1141 1155	This algorithm
+*	Coreference T28 T29
+
+Finished!
+Start coref document no: 31
+T1	Mention 97 116	Dead-Reckoning (DR)
+T2	Mention 120 215	an effective method to maintain consistency for Continuous Distributed Multiplayer Games (CDMG)
+*	Coreference T1 T2
+T3	Mention 463 497	the help of global synchronization
+T4	Mention 538 540	it
+*	Coreference T3 T4
+T5	Mention 397 401	this
+T6	Mention 413 416	its
+*	Coreference T5 T6
+T7	Mention 230 267	filter most unnecessary state updates
+T8	Mention 309 311	it
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 32
+T1	Mention 263 265	We
+T2	Mention 346 348	we
+T3	Mention 535 537	We
+T4	Mention 796 798	we
+*	Coreference T1 T2 T3 T4
+T5	Mention 818 870	an Approach for Peer-to-Peer Offloading the INTernet
+T6	Mention 997 1004	APPOINT
+*	Coreference T5 T6
+T7	Mention 873 877	This
+T8	Mention 881 992	a centralized peer-to-peer approach that helps Internet users transfer large volumes of online data efficiently
+*	Coreference T7 T8
+T9	Mention 426 436	the server
+T10	Mention 1062 1074	the server's
+*	Coreference T9 T10
+T11	Mention 359 387	a client-server architecture
+T12	Mention 1024 1054	the client-server architecture
+*	Coreference T11 T12
+T13	Mention 153 165	the Internet
+T14	Mention 858 870	the INTernet
+*	Coreference T13 T14
+
+Finished!
+Start coref document no: 33
+T1	Mention 469 474	users
+T2	Mention 514 518	them
+*	Coreference T1 T2
+T3	Mention 532 615	the actual context-aware application, which provides services for group interaction
+T4	Mention 532 568	the actual context-aware application
+*	Coreference T3 T4
+T5	Mention 63 65	we
+T6	Mention 311 313	We
+T7	Mention 347 350	our
+*	Coreference T5 T6 T7
+T8	Mention 347 386	our system, which consists of two parts
+T9	Mention 347 357	our system
+*	Coreference T8 T9
+T10	Mention 327 615	the architecture of our system, which consists of two parts: a subsystem for location sensing that acquires information about the location of users as well as spatial proximities between them, and one for the actual context-aware application, which provides services for group interaction
+T11	Mention 388 518	a subsystem for location sensing that acquires information about the location of users as well as spatial proximities between them
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 34
+T1	Mention 60 64	Grid
+T2	Mention 68 223	an emerging infrastructure used to share resources among virtual organizations in a seamless manner and to provide breakthrough computing power at low cost
+*	Coreference T1 T2
+T3	Mention 244 334	dozens of academic and commercial products that allow execution of isolated tasks on grids
+T4	Mention 622 627	Their
+*	Coreference T3 T4
+
+Finished!
+Start coref document no: 35
+T1	Mention 397 407	Each agent
+T2	Mention 463 466	his
+T3	Mention 494 497	his
+*	Coreference T1 T2 T3
+T4	Mention 526 534	an agent
+T5	Mention 561 564	his
+T6	Mention 649 651	he
+*	Coreference T4 T5 T6
+T7	Mention 511 534	The utility of an agent
+T8	Mention 538 656	the difference between his benefit from successful task completion and the sum of the costs over the resources he uses
+*	Coreference T7 T8
+T9	Mention 949 962	each resource
+T10	Mention 1005 1018	this resource
+*	Coreference T9 T10
+T11	Mention 1033 1035	we
+T12	Mention 1144 1147	our
+*	Coreference T11 T12
+T13	Mention 121 283	load-dependent failures (CGLFs), which generalizes the well-known class of congestion games, by incorporating the issue of resource failures into congestion games
+T14	Mention 121 152	load-dependent failures (CGLFs)
+T15	Mention 146 151	CGLFs
+T16	Mention 244 261	resource failures
+T17	Mention 658 663	CGLFs
+T18	Mention 729 737	failures
+T19	Mention 873 896	load-dependent failures
+T20	Mention 1042 1047	CGLFs
+*	Coreference T13 T14 T15 T16 T17 T18 T19 T20
+T21	Mention 47 66	Identical Resources
+T22	Mention 325 334	resources
+T23	Mention 635 648	the resources
+T24	Mention 1237 1256	identical resources
+*	Coreference T21 T22 T23 T24
+T25	Mention 1126 1130	Nash
+T26	Mention 1201 1205	Nash
+*	Coreference T25 T26
+
+Finished!
+Start coref document no: 36
+T1	Mention 419 426	a SDIMS
+T2	Mention 691 1136	a SDIMS that (1) leverages Distributed Hash Tables (DHT) to create scalable aggregation trees, (2) provides flexibility through a simple API that lets applications control propagation of reads and writes, (3) provides administrative isolation through simple extensions to current DHT algorithms, and (4) achieves robustness to node and network reconfigurations through lazy reaggregation, on-demand reaggregation, and tunable spatial replication
+T3	Mention 691 784	a SDIMS that (1) leverages Distributed Hash Tables (DHT) to create scalable aggregation trees
+T4	Mention 786 894	(2) provides flexibility through a simple API that lets applications control propagation of reads and writes
+T5	Mention 896 985	(3) provides administrative isolation through simple extensions to current DHT algorithms
+T6	Mention 991 1136	(4) achieves robustness to node and network reconfigurations through lazy reaggregation, on-demand reaggregation, and tunable spatial replication
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 53 55	We
+T8	Mention 657 659	We
+T9	Mention 1201 1203	we
+T10	Mention 1217 1220	our
+*	Coreference T7 T8 T9 T10
+T11	Mention 87 291	Information Management System (SDIMS) that aggregates information about large-scale networked systems and that can serve as a basic building block for a broad range of large-scale distributed applications
+T12	Mention 1217 1227	our system
+T13	Mention 1231 1291	an order of magnitude more scalable than existing approaches
+*	Coreference T11 T12 T13
+
+Finished!
+Start coref document no: 37
+T1	Mention 813 823	this paper
+T2	Mention 1025 1028	its
+*	Coreference T1 T2
+T3	Mention 868 906	the Spectrum content management system
+T4	Mention 1228 1238	the system
+T5	Mention 1371 1381	the system
+*	Coreference T3 T4 T5
+T6	Mention 165 292	an environment where huge amounts of continuous media content is routinely stored and exchanged between network enabled devices
+T7	Mention 959 975	this environment
+*	Coreference T6 T7
+T8	Mention 595 808	content that is logically viewed as part of the same collection to in fact be distributed across a network, making the task of content management all but impossible to deal with without a content management system
+T9	Mention 1437 1453	the same content
+*	Coreference T8 T9
+T10	Mention 430 449	TV or radio content
+T11	Mention 482 494	this content
+*	Coreference T10 T11
+T12	Mention 1288 1333	Content that no longer has a retention policy
+T13	Mention 1345 1347	it
+*	Coreference T12 T13
+T14	Mention 1094 1121	A unique aspect of Spectrum
+T15	Mention 1130 1132	it
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 38
+T1	Mention 769 783	the game space
+T2	Mention 784 788	that
+*	Coreference T1 T2
+T3	Mention 250 280	The proposed game architecture
+T4	Mention 386 391	which
+T5	Mention 690 692	it
+*	Coreference T3 T4 T5
+T6	Mention 623 783	the proposed architecture support clients that are in proximity to it in the physical network and maintain information about selected portions of the game space
+T7	Mention 810 839	the clients that they support
+T8	Mention 827 831	they
+T9	Mention 1358 1362	they
+*	Coreference T6 T7 T8 T9
+T10	Mention 334 385	game proxies (referred to as communication proxies)
+T11	Mention 549 560	the proxies
+T12	Mention 1329 1354	the communication proxies
+*	Coreference T10 T11 T12
+T13	Mention 67 69	We
+T14	Mention 866 868	we
+T15	Mention 1074 1076	We
+T16	Mention 1259 1261	we
+*	Coreference T13 T14 T15 T16
+T17	Mention 293 391	distributed game clients that connect to game proxies (referred to as communication proxies) which
+T18	Mention 427 438	the clients
+*	Coreference T17 T18
+T19	Mention 144 248	this architecture that can lead to better game playing experience in Massively Multi-player Online games
+T20	Mention 847 864	this architecture
+*	Coreference T19 T20
+T21	Mention 0 20	Authority Assignment
+T22	Mention 116 136	authority assignment
+*	Coreference T21 T22
+
+Finished!
+Start coref document no: 39
+T1	Mention 428 430	we
+T2	Mention 560 562	we
+T3	Mention 725 727	we
+T4	Mention 852 855	Our
+T5	Mention 905 907	we
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 333 346	the network's
+T7	Mention 440 453	the network's
+*	Coreference T6 T7
+T8	Mention 69 94	Today's Internet industry
+T9	Mention 187 190	its
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 40
+T1	Mention 87 96	The paper
+T2	Mention 837 846	The paper
+*	Coreference T1 T2
+T3	Mention 551 592	The heterogeneous sensor fusion algorithm
+T4	Mention 636 638	it
+*	Coreference T3 T4
+T5	Mention 777 835	the trajectory, the range, the caliber and the weapon type
+T6	Mention 777 791	the trajectory
+T7	Mention 793 802	the range
+T8	Mention 820 835	the weapon type
+*	Coreference T5 T6 T7 T8
+
+Finished!
+Start coref document no: 41
+index: maximized
+ maximised.
+T1	Mention 858 860	we
+T2	Mention 1047 1049	We
+T3	Mention 1158 1160	we
+T4	Mention 1171 1174	our
+*	Coreference T1 T2 T3 T4
+T5	Mention 330 371	one area that has not fully been explored
+T6	Mention 375 507	the scheduling of a workflow's web service requests to actual service provisioning in a multi-tiered, multi-organisation environment
+T7	Mention 1113 1128	this scheduling
+*	Coreference T5 T6 T7
+T8	Mention 509 519	This issue
+T9	Mention 800 803	its
+*	Coreference T8 T9
+T10	Mention 567 603	business processes within a workflow
+T11	Mention 653 677	these business processes
+*	Coreference T10 T11
+T12	Mention 393 426	a workflow's web service requests
+T13	Mention 705 721	service requests
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 42
+T1	Mention 68 105	The Ringling School of Art and Design
+T2	Mention 228 247	the Ringling School
+*	Coreference T1 T2
+T3	Mention 396 404	Mac OS X
+T4	Mention 408 471	the best operating system to train future artists and designers
+*	Coreference T3 T4
+T5	Mention 857 870	the computers
+T6	Mention 927 940	the computers
+*	Coreference T5 T6
+T7	Mention 1056 1179	Xgrid, a suite of Mac OS X applications recently developed by Apple for parallel and distributed high-performance computing
+T8	Mention 1056 1061	Xgrid
+T9	Mention 1063 1179	a suite of Mac OS X applications recently developed by Apple for parallel and distributed high-performance computing
+T10	Mention 1408 1413	Xgrid
+*	Coreference T7 T8 T9 T10
+T11	Mention 377 379	We
+T12	Mention 483 485	we
+T13	Mention 810 813	our
+T14	Mention 1041 1043	we
+T15	Mention 1323 1325	we
+T16	Mention 1367 1369	we
+T17	Mention 1383 1386	our
+T18	Mention 1431 1434	our
+T19	Mention 1450 1453	our
+T20	Mention 1462 1464	we
+T21	Mention 1710 1712	we
+*	Coreference T11 T12 T13 T14 T15 T16 T17 T18 T19 T20 T21
+T22	Mention 190 226	computer ratio of better than 2-to-1
+T23	Mention 286 289	its
+*	Coreference T22 T23
+T24	Mention 1220 1231	IT managers
+T25	Mention 1272 1276	they
+*	Coreference T24 T25
+T26	Mention 964 1039	order to harness the lost processing time for tasks such as video rendering
+T27	Mention 1220 1222	IT
+*	Coreference T26 T27
+
+Finished!
+Start coref document no: 43
+T1	Mention 228 379	data carriers, termed zebroids, where a mobile device carries a data item on behalf of a server to a client thereby minimizing its availability latency
+T2	Mention 228 241	data carriers
+*	Coreference T1 T2
+T3	Mention 714 749	Significant improvements in latency
+T4	Mention 815 833	These improvements
+*	Coreference T3 T4
+T5	Mention 200 203	Our
+T6	Mention 396 398	we
+T7	Mention 649 651	we
+*	Coreference T5 T6 T7
+T8	Mention 355 379	its availability latency
+T9	Mention 425 445	availability latency
+*	Coreference T8 T9
+T10	Mention 266 281	a mobile device
+T11	Mention 355 358	its
+*	Coreference T10 T11
+T12	Mention 1008 1050	the zebroids shows competitive performance
+T13	Mention 1125 1133	zebroids
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 44
+T1	Mention 836 850	Windows Mobile
+T2	Mention 865 868	its
+*	Coreference T1 T2
+T3	Mention 245 247	We
+T4	Mention 806 808	We
+T5	Mention 909 912	Our
+*	Coreference T3 T4 T5
+T6	Mention 263 396	pTHINC, a PDA thinclient solution that leverages more powerful servers to run full-function web browsers and other application logic,
+T7	Mention 271 395	a PDA thinclient solution that leverages more powerful servers to run full-function web browsers and other application logic
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 45
+T1	Mention 105 159	ι, a novel index for evaluation of point-distribution
+T2	Mention 109 159	a novel index for evaluation of point-distribution
+*	Coreference T1 T2
+T3	Mention 94 96	We
+T4	Mention 280 282	We
+T5	Mention 377 379	We
+T6	Mention 576 578	we
+T7	Mention 669 671	We
+T8	Mention 922 924	we
+*	Coreference T3 T4 T5 T6 T7 T8
+T9	Mention 2 26	Point-Distribution Index
+T10	Mention 31 34	Its
+*	Coreference T9 T10
+T11	Mention 589 622	a general sensor-grouping problem
+T12	Mention 748 760	this problem
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 46
+T1	Mention 332 410	the problem of sharing RF spectrum data among a collection of wireless devices
+T2	Mention 485 487	it
+T3	Mention 512 524	this problem
+*	Coreference T1 T2 T3
+T4	Mention 320 322	We
+T5	Mention 571 573	We
+T6	Mention 910 912	We
+T7	Mention 985 988	our
+*	Coreference T4 T5 T6 T7
+T8	Mention 582 659	GUESS, a novel incremental gossiping approach to coordinated spectral sensing
+T9	Mention 582 587	GUESS
+T10	Mention 589 659	a novel incremental gossiping approach to coordinated spectral sensing
+T11	Mention 661 663	It
+*	Coreference T8 T9 T10 T11
+
+Finished!
+Start coref document no: 47
+T1	Mention 818 820	we
+T2	Mention 829 832	our
+T3	Mention 1020 1022	We
+*	Coreference T1 T2 T3
+T4	Mention 886 1018	EMMA (Epidemic Messaging Middleware for ad-hoc networks), an adaptation of Java Message Service (JMS) for mobile ad-hoc environments
+T5	Mention 886 942	EMMA (Epidemic Messaging Middleware for ad-hoc networks)
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 48
+T1	Mention 248 264	this integration
+T2	Mention 299 315	this integration
+*	Coreference T1 T2
+T3	Mention 15 21	a DIDS
+T4	Mention 105 111	a DIDS
+*	Coreference T3 T4
+
+Finished!
+Start coref document no: 49
+T1	Mention 900 932	IT Infrastructure Library (ITIL)
+T2	Mention 927 931	ITIL
+*	Coreference T1 T2
+T3	Mention 522 524	We
+T4	Mention 855 857	we
+T5	Mention 1079 1081	we
+T6	Mention 1090 1093	our
+*	Coreference T3 T4 T5 T6
+T7	Mention 755 829	an appropriate modeling of the correlation workflow and of the information
+T8	Mention 900 902	IT
+*	Coreference T7 T8
+T9	Mention 1281 1306	Munich Network Management
+T10	Mention 1308 1311	MNM
+*	Coreference T9 T10
+T11	Mention 184 192	the area
+T12	Mention 1027 1036	this area
+*	Coreference T11 T12
+T13	Mention 215 240	Today's event correlation
+T14	Mention 634 651	event correlation
+*	Coreference T13 T14
+T15	Mention 27 87	Improved Fault Management Service-Oriented Event Correlation
+T16	Mention 1151 1189	the service-oriented event correlation
+*	Coreference T15 T16
+T17	Mention 1374 1393	An example scenario
+T18	Mention 1395 1461	the Web Hosting Service of the Leibniz Supercomputing Center (LRZ)
+*	Coreference T17 T18
+T19	Mention 1191 1318	The MNM Service Model, which is a generic model for IT service management proposed by the Munich Network Management (MNM) Team,
+T20	Mention 1191 1212	The MNM Service Model
+T21	Mention 1243 1245	IT
+*	Coreference T19 T20 T21
+
+Finished!
+Start coref document no: 50
+T1	Mention 239 364	An important causality-related distributed computing problem, that we call the Immediate Predecessors Tracking (IPT) problem,
+T2	Mention 731 746	the IPT problem
+*	Coreference T1 T2
+T3	Mention 351 354	IPT
+T4	Mention 562 565	IPT
+T5	Mention 569 708	the on-the-fly computation of the transitive reduction (i.e., Hasse diagram) of the causality relation defined by a distributed computation
+T6	Mention 735 738	IPT
+*	Coreference T3 T4 T5 T6
+T7	Mention 394 413	each relevant event
+T8	Mention 509 512	its
+*	Coreference T7 T8
+T9	Mention 509 556	its immediate predecessors in the partial order
+T10	Mention 857 883	its immediate predecessors
+*	Coreference T9 T10
+T11	Mention 710 720	This paper
+T12	Mention 748 750	it
+*	Coreference T11 T12
+T13	Mention 760 883	a family of protocols that provides each relevant event with a timestamp that exactly identifies its immediate predecessors
+T14	Mention 885 895	The family
+T15	Mention 1071 1082	this family
+*	Coreference T13 T14 T15
+T16	Mention 796 815	each relevant event
+T17	Mention 857 860	its
+*	Coreference T16 T17
+T18	Mention 910 1054	a general condition that allows application messages to piggyback control information whose size can be smaller than n (the number of processes)
+T19	Mention 1150 1171	the general condition
+*	Coreference T18 T19
+T20	Mention 60 85	A distributed computation
+T21	Mention 221 236	the computation
+*	Coreference T20 T21
+
+Finished!
+Start coref document no: 51
+T1	Mention 115 154	a myriad of smart sensors and actuators
+T2	Mention 185 190	their
+*	Coreference T1 T2
+T3	Mention 464 479	the environment
+T4	Mention 1904 1919	the environment
+*	Coreference T3 T4
+T5	Mention 1439 1463	a component-based system
+T6	Mention 1578 1588	the system
+*	Coreference T5 T6
+T7	Mention 1364 1373	The paper
+T8	Mention 1590 1592	It
+*	Coreference T7 T8
+T9	Mention 80 113	a future networked physical world
+T10	Mention 240 242	it
+*	Coreference T9 T10
+T11	Mention 48 76	Cooperating Smart Components
+T12	Mention 633 643	components
+*	Coreference T11 T12
+T13	Mention 1779 1800	a generic event layer
+T14	Mention 1802 1825	The generic event layer
+*	Coreference T13 T14
+T15	Mention 908 1002	components which comprise mechanical components, hardware and software and a network interface
+T16	Mention 1009 1025	these components
+*	Coreference T15 T16
+T17	Mention 983 1002	a network interface
+T18	Mention 1256 1277	the network interface
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 52
+
+Finished!
+Start coref document no: 53
+T1	Mention 899 913	its complexity
+T2	Mention 930 933	its
+*	Coreference T1 T2
+T3	Mention 810 837	a new theoretical framework
+T4	Mention 899 902	its
+*	Coreference T3 T4
+T5	Mention 384 407	The theory of causality
+T6	Mention 417 455	the foundation of all prior OT systems
+*	Coreference T5 T6
+T7	Mention 583 662	this problem, resulting in increasingly intricate and complicated OT algorithms
+T8	Mention 583 595	this problem
+*	Coreference T7 T8
+T9	Mention 1049 1085	the COT (Context-based OT) algorithm
+T10	Mention 1087 1104	The COT algorithm
+T11	Mention 1308 1325	The COT algorithm
+T12	Mention 1479 1496	the COT algorithm
+T13	Mention 1540 1542	it
+*	Coreference T9 T10 T11 T12 T13
+T14	Mention 749 751	we
+T15	Mention 970 972	we
+T16	Mention 1459 1461	We
+*	Coreference T14 T15 T16
+T17	Mention 314 322	existing
+T18	Mention 352 382	the quality of those solutions
+*	Coreference T17 T18
+T19	Mention 230 263	The theoretical foundation for OT
+T20	Mention 290 293	its
+*	Coreference T19 T20
+T21	Mention 1232 1306	Reversibility Property, Convergence Property 2, Inverse Properties 2 and 3
+T22	Mention 1232 1278	Reversibility Property, Convergence Property 2
+*	Coreference T21 T22
+T23	Mention 1277 1278	2
+T24	Mention 1299 1300	2
+*	Coreference T23 T24
+
+Finished!
+Start coref document no: 54
+T1	Mention 239 369	a middleware layer called Ganesh that reduces the volume of data transmitted without semantic interpretation of queries or results
+T2	Mention 371 373	It
+*	Coreference T1 T2
+T3	Mention 762 765	two
+T4	Mention 854 856	it
+*	Coreference T3 T4
+T5	Mention 265 369	Ganesh that reduces the volume of data transmitted without semantic interpretation of queries or results
+T6	Mention 610 616	Ganesh
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 55
+T1	Mention 207 380	an adaptive duty cycling algorithm that allows energy harvesting sensor nodes to autonomously adjust their duty cycle according to the energy availability in the environment
+T2	Mention 382 395	The algorithm
+T3	Mention 1125 1138	our algorithm
+*	Coreference T1 T2 T3
+T4	Mention 196 198	we
+T5	Mention 748 750	We
+T6	Mention 869 871	We
+T7	Mention 1012 1015	Our
+T8	Mention 1112 1114	we
+T9	Mention 1125 1128	our
+*	Coreference T4 T5 T6 T7 T8 T9
+T10	Mention 75 90	the environment
+T11	Mention 365 380	the environment
+T12	Mention 537 552	the environment
+*	Coreference T10 T11 T12
+T13	Mention 717 746	the energy source at run-time
+T14	Mention 993 1010	the energy source
+*	Coreference T13 T14
+T15	Mention 471 552	energy consumption should not be more than the energy provided by the environment
+T16	Mention 554 679	(b) maximizing the system performance based on an application utility model subject to the above energy-neutrality constraint
+T17	Mention 569 679	the system performance based on an application utility model subject to the above energy-neutrality constraint
+T18	Mention 685 746	(c) adapting to the dynamics of the energy source at run-time
+*	Coreference T15 T16 T17 T18
+
+Finished!
+Start coref document no: 56
+T1	Mention 238 248	this issue
+T2	Mention 367 369	It
+*	Coreference T1 T2
+T3	Mention 485 494	Each user
+T4	Mention 555 558	his
+*	Coreference T3 T4
+T5	Mention 227 229	We
+T6	Mention 603 605	we
+T7	Mention 614 617	our
+*	Coreference T5 T6 T7
+T8	Mention 597 601	this
+T9	Mention 672 674	it
+*	Coreference T8 T9
+T10	Mention 28 56	a Pervasive Document Editing
+T11	Mention 317 345	a pervasive document editing
+*	Coreference T10 T11
+T12	Mention 0 76	Concept and Architecture of a Pervasive Document Editing and Managing System
+T13	Mention 285 365	the concept and architecture of a pervasive document editing and managing system
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 57
+T1	Mention 395 471	the price of anarchy, which is the relative cost of the lack of coordination
+T2	Mention 473 493	The price of anarchy
+T3	Mention 571 573	it
+*	Coreference T1 T2 T3
+T4	Mention 66 68	We
+T5	Mention 171 173	We
+T6	Mention 223 226	our
+T7	Mention 324 326	We
+*	Coreference T4 T5 T6 T7
+
+Finished!
+Start coref document no: 58
+T1	Mention 304 396	Mirage, a microeconomic resource allocation system based on a repeated combinatorial auction
+T2	Mention 304 310	Mirage
+T3	Mention 312 396	a microeconomic resource allocation system based on a repeated combinatorial auction
+T4	Mention 398 404	Mirage
+T5	Mention 818 830	the system's
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 264 266	we
+T7	Mention 275 278	our
+T8	Mention 495 497	we
+T9	Mention 661 663	we
+T10	Mention 792 794	we
+*	Coreference T6 T7 T8 T9 T10
+
+Finished!
+Start coref document no: 59
+T1	Mention 715 753	Automatic, dynamic resource management
+T2	Mention 715 724	Automatic
+*	Coreference T1 T2
+T3	Mention 264 302	decentralized adaptive services (EDAS)
+T4	Mention 297 301	EDAS
+*	Coreference T3 T4
+T5	Mention 244 302	The environment for decentralized adaptive services (EDAS)
+T6	Mention 423 425	It
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 60
+T1	Mention 299 359	a novel method for clustering documents using regularization
+T2	Mention 421 431	our method
+*	Coreference T1 T2
+T3	Mention 288 290	we
+T4	Mention 421 424	our
+T5	Mention 604 606	we
+T6	Mention 612 615	our
+T7	Mention 682 684	We
+T8	Mention 877 880	our
+*	Coreference T3 T4 T5 T6 T7 T8
+
+Finished!
+Start coref document no: 61
+T1	Mention 832 858	the measured (or, labeled)
+T2	Mention 1354 1362	the most
+*	Coreference T1 T2
+T3	Mention 45 63	Relevance feedback
+T4	Mention 148 150	It
+*	Coreference T3 T4
+T5	Mention 631 664	a novel active learning algorithm
+T6	Mention 745 758	Our algorithm
+*	Coreference T5 T6
+T7	Mention 515 552	i.e., improve the classifier the most
+T8	Mention 557 561	they
+T9	Mention 1033 1038	their
+*	Coreference T7 T8 T9
+T10	Mention 620 622	we
+T11	Mention 745 748	Our
+T12	Mention 961 963	we
+T13	Mention 1212 1214	We
+T14	Mention 1302 1305	our
+T15	Mention 1351 1353	us
+*	Coreference T10 T11 T12 T13 T14 T15
+T16	Mention 930 945	the image space
+T17	Mention 1155 1170	the image space
+*	Coreference T16 T17
+T18	Mention 287 353	a classifier to distinguish between relevant and irrelevant images
+T19	Mention 529 543	the classifier
+*	Coreference T18 T19
+T20	Mention 160 170	the user's
+T21	Mention 245 255	The user's
+*	Coreference T20 T21
+T22	Mention 1028 1064	then their measurements (or, labels)
+T23	Mention 1057 1063	labels
+*	Coreference T22 T23
+T24	Mention 895 945	the local geometrical structure of the image space
+T25	Mention 1126 1170	the geometrical structure of the image space
+*	Coreference T24 T25
+
+Finished!
+Start coref document no: 62
+index: analyzing
+ analysing 
+index: analyze
+ analyse 
+T1	Mention 217 219	we
+T2	Mention 355 357	We
+T3	Mention 737 739	we
+T4	Mention 818 820	we
+*	Coreference T1 T2 T3 T4
+T5	Mention 887 991	a scheme that increases the number of document cache hits with only a marginal affect on snippet quality
+T6	Mention 993 1004	This scheme
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 63
+T1	Mention 377 379	we
+T2	Mention 544 547	our
+*	Coreference T1 T2
+T3	Mention 163 168	users
+T4	Mention 336 341	their
+T5	Mention 757 763	users'
+*	Coreference T3 T4 T5
+T6	Mention 17 24	Caption
+T7	Mention 716 727	the caption
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 64
+T1	Mention 75 77	We
+T2	Mention 582 584	We
+*	Coreference T1 T2
+
+Finished!
+Start coref document no: 65
+T1	Mention 54 56	we
+T2	Mention 141 143	We
+T3	Mention 317 319	we
+T4	Mention 359 361	we
+T5	Mention 458 460	We
+T6	Mention 558 560	We
+T7	Mention 681 683	we
+T8	Mention 775 778	our
+T9	Mention 854 857	Our
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8 T9
+T10	Mention 283 294	a query log
+T11	Mention 711 724	the query log
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 66
+T1	Mention 74 96	The Web search engines
+T2	Mention 270 284	search engines
+*	Coreference T1 T2
+T3	Mention 614 632	the result quality
+T4	Mention 946 960	result quality
+T5	Mention 1042 1045	its
+*	Coreference T3 T4 T5
+T6	Mention 637 647	a document
+T7	Mention 719 721	it
+*	Coreference T6 T7
+T8	Mention 517 519	we
+T9	Mention 571 573	we
+T10	Mention 901 903	we
+T11	Mention 914 916	we
+T12	Mention 1055 1058	Our
+T13	Mention 1297 1299	we
+T14	Mention 1370 1372	We
+T15	Mention 1439 1441	we
+T16	Mention 1466 1469	our
+*	Coreference T8 T9 T10 T11 T12 T13 T14 T15 T16
+T17	Mention 291 433	their index to keep documents that are likely to be returned as top results, and use this pruned index to compute the first batches of results
+T18	Mention 503 512	the index
+T19	Mention 554 570	the pruned index
+T20	Mention 701 717	the pruned index
+T21	Mention 770 786	the pruned index
+T22	Mention 1140 1156	the pruned index
+T23	Mention 1335 1351	the pruned index
+*	Coreference T17 T18 T19 T20 T21 T22 T23
+T24	Mention 186 213	users eager for information
+T25	Mention 291 296	their
+*	Coreference T24 T25
+T26	Mention 1055 1071	Our contribution
+T27	Mention 1075 1368	a number of modifications in the pruning techniques for creating the pruned index and a new result computation algorithm that guarantees that the top-matching pages are always placed at the top search results, even though we are computing the first batch from the pruned index most of the time
+*	Coreference T26 T27
+
+Finished!
+Start coref document no: 67
+T1	Mention 914 959	the multi-document segmentation and alignment
+T2	Mention 1470 1501	the multi-document segmentation
+*	Coreference T1 T2
+T3	Mention 687 699	Our approach
+T4	Mention 742 744	It
+T5	Mention 845 847	It
+*	Coreference T3 T4 T5
+T6	Mention 378 380	we
+T7	Mention 687 690	Our
+T8	Mention 961 964	Our
+T9	Mention 1149 1152	Our
+T10	Mention 1184 1187	our
+*	Coreference T6 T7 T8 T9 T10
+
+Finished!
+Start coref document no: 68
+T1	Mention 550 564	this paper, we
+T2	Mention 550 560	this paper
+*	Coreference T1 T2
+T3	Mention 903 904	3
+T4	Mention 1154 1156	3]
+*	Coreference T3 T4
+T5	Mention 51 53	We
+T6	Mention 562 564	we
+T7	Mention 1082 1084	We
+T8	Mention 1107 1110	our
+*	Coreference T5 T6 T7 T8
+T9	Mention 446 458	each element
+T10	Mention 462 545	the document frequency - inverse document frequency (DFIDF) score at one time point
+*	Coreference T9 T10
+T11	Mention 748 756	Gaussian
+T12	Mention 792 800	Gaussian
+T13	Mention 884 892	Gaussian
+*	Coreference T11 T12 T13
+T14	Mention 714 715	)
+T15	Mention 1173 1177	they
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 69
+T1	Mention 151 153	we
+T2	Mention 328 330	We
+T3	Mention 589 592	Our
+T4	Mention 825 827	we
+*	Coreference T1 T2 T3 T4
+
+Finished!
+Start coref document no: 70
+T1	Mention 443 455	the NED task
+T2	Mention 589 597	NED task
+T3	Mention 1076 1084	NED task
+*	Coreference T1 T2 T3
+T4	Mention 404 406	we
+T5	Mention 692 694	we
+T6	Mention 799 801	we
+*	Coreference T4 T5 T6
+T7	Mention 599 602	two
+T8	Mention 943 946	two
+*	Coreference T7 T8
+T9	Mention 943 973	two Linguistic Data Consortium
+T10	Mention 975 978	LDC
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 71
+T1	Mention 58 60	We
+T2	Mention 297 299	We
+T3	Mention 347 349	we
+T4	Mention 478 480	we
+T5	Mention 696 699	our
+T6	Mention 791 793	We
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 338 345	a query
+T8	Mention 360 363	its
+T9	Mention 421 430	the query
+*	Coreference T7 T8 T9
+T10	Mention 69 212	a methodology for building a practical robust query classification system that can identify thousands of query classes with reasonable accuracy
+T11	Mention 696 711	our methodology
+*	Coreference T10 T11
+T12	Mention 25 57	Rare Queries Using Web Knowledge
+T13	Mention 500 512	rare queries
+T14	Mention 878 890	rare queries
+*	Coreference T12 T13 T14
+
+Finished!
+Start coref document no: 72
+T1	Mention 583 612	users we classify as advanced
+T2	Mention 623 628	their
+T3	Mention 739 753	advanced users
+T4	Mention 781 786	their
+T5	Mention 805 810	their
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 317 319	we
+T7	Mention 589 591	we
+T8	Mention 700 703	Our
+*	Coreference T6 T7 T8
+
+Finished!
+Start coref document no: 73
+T1	Mention 440 531	effective algorithms for constructing refined query language models from user term feedback
+T2	Mention 533 547	Our algorithms
+*	Coreference T1 T2
+T3	Mention 75 77	we
+T4	Mention 338 340	We
+T5	Mention 533 536	Our
+*	Coreference T3 T4 T5
+T6	Mention 200 284	judges the relevance of individual terms without interaction with feedback documents
+T7	Mention 701 705	They
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 74
+T1	Mention 447 449	we
+T2	Mention 582 584	We
+T3	Mention 594 597	our
+T4	Mention 736 738	we
+T5	Mention 744 747	our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 57 101	Machine learning is commonly used to improve
+T7	Mention 270 273	its
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 75
+T1	Mention 977 987	The result
+T2	Mention 991 1099	a meta-feedback algorithm that is both more robust and more precise than the original strong baseline method
+*	Coreference T1 T2
+T3	Mention 419 421	we
+T4	Mention 599 601	We
+T5	Mention 736 738	We
+*	Coreference T3 T4 T5
+T6	Mention 677 734	a slightly modified query sampled from the original query
+T7	Mention 866 875	the query
+*	Coreference T6 T7
+T8	Mention 322 417	the baseline feedback method as a black box, and the output feedback model as a random variable
+T9	Mention 322 365	the baseline feedback method as a black box
+T10	Mention 371 417	the output feedback model as a random variable
+T11	Mention 460 478	the feedback model
+*	Coreference T8 T9 T10 T11
+
+Finished!
+Start coref document no: 76
+T1	Mention 446 448	we
+T2	Mention 884 887	Our
+*	Coreference T1 T2
+T3	Mention 46 56	User query
+T4	Mention 111 113	it
+T5	Mention 121 133	the only one
+*	Coreference T3 T4 T5
+T6	Mention 285 295	the user's
+T7	Mention 421 429	the user
+*	Coreference T6 T7
+T8	Mention 703 787	the query, which is particularly useful for the selection of relevant term relations
+T9	Mention 703 712	the query
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 77
+T1	Mention 458 505	The technique, called latent concept expansion,
+T2	Mention 458 471	The technique
+T3	Mention 788 801	our technique
+T4	Mention 1034 1047	our technique
+*	Coreference T1 T2 T3 T4
+T5	Mention 346 348	we
+T6	Mention 776 778	We
+T7	Mention 788 791	our
+T8	Mention 892 895	Our
+T9	Mention 1013 1015	We
+T10	Mention 1034 1037	our
+*	Coreference T5 T6 T7 T8 T9 T10
+T11	Mention 401 456	the Markov random field model for information retrieval
+T12	Mention 626 635	the model
+T13	Mention 715 719	that
+T14	Mention 892 901	Our model
+*	Coreference T11 T12 T13 T14
+T15	Mention 31 37	Markov
+T16	Mention 405 411	Markov
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 78
+T1	Mention 445 450	their
+T2	Mention 544 548	they
+T3	Mention 887 891	them
+T4	Mention 966 971	their
+*	Coreference T1 T2 T3 T4
+T5	Mention 331 333	we
+T6	Mention 423 425	We
+T7	Mention 596 598	We
+T8	Mention 783 785	We
+*	Coreference T5 T6 T7 T8
+T9	Mention 401 408	Poisson
+T10	Mention 613 620	Poisson
+T11	Mention 1009 1016	Poisson
+*	Coreference T9 T10 T11
+T12	Mention 46 67	Information Retrieval
+T13	Mention 124 145	information retrieval
+*	Coreference T12 T13
+T14	Mention 11 67	Poisson Query Generation Model for Information Retrieval
+T15	Mention 609 626	the Poisson model
+T16	Mention 1005 1022	the Poisson model
+*	Coreference T14 T15 T16
+
+Finished!
+Start coref document no: 79
+T1	Mention 591 593	We
+T2	Mention 615 618	our
+*	Coreference T1 T2
+T3	Mention 40 71	Definitional Question Answering
+T4	Mention 147 165	Question Answering
+*	Coreference T3 T4
+T5	Mention 24 29	Their
+T6	Mention 282 286	they
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 80
+T1	Mention 836 838	we
+T2	Mention 989 992	Our
+T3	Mention 1188 1190	We
+*	Coreference T1 T2 T3
+T4	Mention 708 719	Ranking SVM
+T5	Mention 1415 1426	Ranking SVM
+*	Coreference T4 T5
+T6	Mention 0 55	AdaRank: A Boosting Algorithm for Information Retrieval
+T7	Mention 1019 1026	AdaRank
+T8	Mention 1226 1233	AdaRank
+T9	Mention 1351 1358	AdaRank
+*	Coreference T6 T7 T8 T9
+T10	Mention 1409 1441	BM25, Ranking SVM, and RankBoost
+T11	Mention 1432 1441	RankBoost
+*	Coreference T10 T11
+T12	Mention 1053 1108	weak rankers' on the basis of re-weighted training data
+T13	Mention 1139 1155	the weak rankers
+*	Coreference T12 T13
+T14	Mention 989 1049	Our algorithm, referred to as AdaRank, repeatedly constructs
+T15	Mention 989 1002	Our algorithm
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 81
+T1	Mention 39 43	Spam
+T2	Mention 47 157	a key problem in electronic communication, including large-scale email systems and the growing number of blogs
+T3	Mention 1146 1156	email spam
+*	Coreference T1 T2 T3
+T4	Mention 219 230	this threat
+T5	Mention 234 237	its
+*	Coreference T4 T5
+T6	Mention 287 311	industrial practitioners
+T7	Mention 647 660	practitioners
+*	Coreference T6 T7
+T8	Mention 779 781	we
+T9	Mention 829 831	we
+T10	Mention 973 975	we
+T11	Mention 1103 1106	Our
+*	Coreference T8 T9 T10 T11
+T12	Mention 8 19	Online SVMs
+T13	Mention 411 415	SVMs
+T14	Mention 842 853	online SVMs
+*	Coreference T12 T13 T14
+
+Finished!
+Start coref document no: 82
+T1	Mention 614 638	the underlying Web graph
+T2	Mention 1392 1405	the Web graph
+*	Coreference T1 T2
+T3	Mention 1021 1023	γ
+T4	Mention 1027 1183	an interesting factor that can control the balance between the ability of preserving the original Web and the ability of reducing the effect of manipulation
+T5	Mention 1027 1128	an interesting factor that can control the balance between the ability of preserving the original Web
+*	Coreference T3 T4 T5
+T6	Mention 353 488	the heat diffusion phenomena, which can be connected to Web ranking because the activities flow on the Web can be imagined as heat flow
+T7	Mention 353 381	the heat diffusion phenomena
+*	Coreference T6 T7
+T8	Mention 452 459	the Web
+T9	Mention 1373 1380	the Web
+*	Coreference T8 T9
+T10	Mention 251 268	the Web structure
+T11	Mention 966 983	the web structure
+*	Coreference T10 T11
+T12	Mention 281 321	a ranking algorithm called DiffusionRank
+T13	Mention 1487 1514	the DiffusionRank algorithm
+*	Coreference T12 T13
+T14	Mention 270 272	we
+T15	Mention 654 656	we
+*	Coreference T14 T15
+T16	Mention 0 53	DiffusionRank: A Possible Penicillin for Web Spamming
+T17	Mention 308 321	DiffusionRank
+T18	Mention 323 336	DiffusionRank
+T19	Mention 667 680	DiffusionRank
+T20	Mention 882 895	DiffusionRank
+T21	Mention 1228 1241	DiffusionRank
+T22	Mention 1307 1320	DiffusionRank
+*	Coreference T16 T17 T18 T19 T20 T21 T22
+T23	Mention 796 797	1
+T24	Mention 1225 1226	1
+*	Coreference T23 T24
+T25	Mention 803 804	0
+T26	Mention 879 880	0
+*	Coreference T25 T26
+
+Finished!
+Start coref document no: 83
+T1	Mention 830 875	a diary study of information re-finding tasks
+T2	Mention 877 886	The study
+*	Coreference T1 T2
+T3	Mention 409 464	the difficulties involved in performing PIM evaluations
+T4	Mention 466 482	The difficulties
+T5	Mention 780 798	these difficulties
+*	Coreference T3 T4 T5
+T6	Mention 158 164	people
+T7	Mention 615 621	people
+*	Coreference T6 T7
+T8	Mention 280 285	users
+T9	Mention 927 932	users
+*	Coreference T8 T9
+T10	Mention 721 723	we
+T11	Mention 819 821	we
+T12	Mention 1054 1056	we
+T13	Mention 1110 1113	our
+*	Coreference T10 T11 T12 T13
+T14	Mention 63 100	Personal Information Management (PIM)
+T15	Mention 104 202	a rapidly growing area of research concerned with how people store, manage and re-find information
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 84
+T1	Mention 296 298	we
+T2	Mention 380 382	we
+T3	Mention 661 663	we
+*	Coreference T1 T2 T3
+T4	Mention 284 294	this paper
+T5	Mention 306 308	it
+*	Coreference T4 T5
+T6	Mention 151 156	users
+T7	Mention 172 177	their
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 85
+T1	Mention 267 269	We
+T2	Mention 776 778	We
+T3	Mention 979 981	we
+*	Coreference T1 T2 T3
+T4	Mention 281 454	their effectiveness using three common performance measures: the mean reciprocal rank, the mean average precision, and the normalized discounted cumulative gain measurements
+T5	Mention 342 394	the mean reciprocal rank, the mean average precision
+T6	Mention 342 366	the mean reciprocal rank
+T7	Mention 368 394	the mean average precision
+T8	Mention 400 454	the normalized discounted cumulative gain measurements
+*	Coreference T4 T5 T6 T7 T8
+T9	Mention 108 167	HITS in comparison with other link-based ranking algorithms
+T10	Mention 790 794	HITS
+*	Coreference T9 T10
+T11	Mention 59 167	a large-scale evaluation of the effectiveness of HITS in comparison with other link-based ranking algorithms
+T12	Mention 456 470	The evaluation
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 86
+index: analyzing
+ analysing 
+T1	Mention 81 188	a novel method of analysing data gathered from TREC or similar information retrieval evaluation experiments
+T2	Mention 472 483	this method
+*	Coreference T1 T2
+T3	Mention 70 72	We
+T4	Mention 190 192	We
+T5	Mention 251 253	we
+T6	Mention 326 328	We
+T7	Mention 463 465	We
+T8	Mention 534 536	we
+*	Coreference T3 T4 T5 T6 T7 T8
+T9	Mention 868 872	this
+T10	Mention 886 894	the case
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 87
+T1	Mention 800 810	the others
+T2	Mention 890 894	them
+*	Coreference T1 T2
+T3	Mention 504 522	the link structure
+T4	Mention 667 685	the link structure
+T5	Mention 827 845	the link structure
+*	Coreference T3 T4 T5
+T6	Mention 689 712	the content information
+T7	Mention 771 794	the content information
+*	Coreference T6 T7
+T8	Mention 714 726	some of them
+T9	Mention 1295 1299	them
+*	Coreference T8 T9
+T10	Mention 662 712	both the link structure or the content information
+T11	Mention 961 964	its
+*	Coreference T10 T11
+T12	Mention 10 26	Content and Link
+T13	Mention 488 499	the content
+T14	Mention 1041 1052	the content
+*	Coreference T12 T13 T14
+
+Finished!
+Start coref document no: 88
+T1	Mention 398 421	the inverted file index
+T2	Mention 430 432	it
+*	Coreference T1 T2
+T3	Mention 687 712	two principled techniques
+T4	Mention 758 774	These techniques
+*	Coreference T3 T4
+T5	Mention 634 672	the performance of time-travel queries
+T6	Mention 741 756	its performance
+T7	Mention 741 744	its
+*	Coreference T5 T6 T7
+T8	Mention 687 690	two
+T9	Mention 936 939	two
+*	Coreference T8 T9
+T10	Mention 295 297	we
+T11	Mention 460 462	We
+T12	Mention 674 676	we
+T13	Mention 866 869	our
+T14	Mention 1005 1008	our
+*	Coreference T10 T11 T12 T13 T14
+T15	Mention 866 878	our approach
+T16	Mention 1022 1024	it
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 89
+T1	Mention 395 397	we
+T2	Mention 452 454	We
+T3	Mention 578 581	Our
+T4	Mention 663 666	our
+T5	Mention 715 717	we
+T6	Mention 970 973	our
+T7	Mention 1112 1115	our
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 678 713	the two types of queries separately
+T9	Mention 775 799	the two types of queries
+*	Coreference T8 T9
+T10	Mention 491 494	two
+T11	Mention 682 685	two
+T12	Mention 779 782	two
+*	Coreference T10 T11 T12
+T13	Mention 383 393	this paper
+T14	Mention 1112 1121	our paper
+*	Coreference T13 T14
+T15	Mention 233 251	serious challenges
+T16	Mention 434 450	these challenges
+*	Coreference T15 T16
+T17	Mention 0 28	Query Performance Prediction
+T18	Mention 464 486	performance prediction
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 90
+index: organizations
+ organisations 
+T1	Mention 606 620	a new test set
+T2	Mention 666 679	this test set
+T3	Mention 822 838	the new test set
+T4	Mention 928 944	the new test set
+T5	Mention 1050 1062	the test set
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 121 139	the W3C collection
+T7	Mention 1156 1174	the W3C collection
+*	Coreference T6 T7
+T8	Mention 550 553	our
+T9	Mention 579 581	we
+T10	Mention 681 683	we
+*	Coreference T8 T9 T10
+T11	Mention 367 370	two
+T12	Mention 692 695	two
+*	Coreference T11 T12
+T13	Mention 194 233	other knowledge-intensive organisations
+T14	Mention 350 481	We first present two main expertise retrieval tasks, along with a set of baseline approaches based on generative language modeling,
+T15	Mention 350 401	We first present two main expertise retrieval tasks
+*	Coreference T13 T14 T15
+T16	Mention 0 53	Broad Expertise Retrieval in Sparse Data Environments
+T17	Mention 54 73	Expertise retrieval
+*	Coreference T16 T17
+
+Finished!
+Start coref document no: 91
+T1	Mention 643 684	the page content, rather than generic ads
+T2	Mention 643 659	the page content
+*	Coreference T1 T2
+T3	Mention 1101 1128	a purely syntactic approach
+T4	Mention 1206 1219	this approach
+*	Coreference T3 T4
+T5	Mention 831 846	the advertisers
+T6	Mention 866 871	their
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 92
+T1	Mention 568 572	this
+T2	Mention 616 618	it
+T3	Mention 778 780	it
+*	Coreference T1 T2 T3
+T4	Mention 470 480	each query
+T5	Mention 735 744	the query
+*	Coreference T4 T5
+T6	Mention 969 990	The proposed approach
+T7	Mention 1013 1015	it
+T8	Mention 1114 1116	it
+T9	Mention 1170 1172	it
+*	Coreference T6 T7 T8 T9
+T10	Mention 76 167	The effectiveness of information retrieval (IR) systems is influenced by the degree of term
+T11	Mention 645 676	the effectiveness of IR systems
+*	Coreference T10 T11
+T12	Mention 47 75	Query-Document Term Mismatch
+T13	Mention 378 391	term mismatch
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 93
+T1	Mention 551 554	Our
+T2	Mention 816 818	we
+T3	Mention 915 917	We
+T4	Mention 1082 1084	we
+T5	Mention 1299 1301	We
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 386 422	the ranking of queries by difficulty
+T7	Mention 428 479	the ranking of individual retrievals by performance
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 94
+index: `
+'t
+T1	Mention 447 450	Our
+T2	Mention 623 626	our
+T3	Mention 640 642	we
+T4	Mention 922 924	We
+T5	Mention 1058 1061	Our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 95 109	a new approach
+T7	Mention 447 459	Our approach
+T8	Mention 1114 1130	the new approach
+*	Coreference T6 T7 T8
+T9	Mention 75 85	This paper
+T10	Mention 234 236	It
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 95
+T1	Mention 272 274	we
+T2	Mention 509 511	we
+T3	Mention 748 750	We
+*	Coreference T1 T2 T3
+T4	Mention 284 490	the rank aggregation problem, also called data fusion problem, where rankings of documents, searched into the same collection and provided by multiple methods, are combined in order to produce a new ranking
+T5	Mention 284 312	the rank aggregation problem
+T6	Mention 331 443	fusion problem, where rankings of documents, searched into the same collection and provided by multiple methods,
+T7	Mention 331 345	fusion problem
+*	Coreference T4 T5 T6 T7
+T8	Mention 47 68	Information Retrieval
+T9	Mention 81 102	Information Retrieval
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 96
+T1	Mention 264 280	word transcripts
+T2	Mention 282 297	the transcripts
+T3	Mention 724 740	word transcripts
+T4	Mention 871 887	word transcripts
+T5	Mention 991 1006	The transcripts
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 742 744	We
+T7	Mention 1146 1149	our
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 97
+T1	Mention 429 431	we
+T2	Mention 536 539	our
+T3	Mention 621 623	we
+T4	Mention 678 680	We
+T5	Mention 990 993	our
+T6	Mention 1269 1272	our
+T7	Mention 1292 1295	our
+T8	Mention 1387 1389	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8
+T9	Mention 574 579	First
+T10	Mention 709 712	its
+*	Coreference T9 T10
+T11	Mention 536 548	our approach
+T12	Mention 990 1002	our approach
+*	Coreference T11 T12
+T13	Mention 497 500	two
+T14	Mention 509 512	Two
+*	Coreference T13 T14
+T15	Mention 152 171	the their root form
+T16	Mention 252 254	it
+T17	Mention 333 335	it
+*	Coreference T15 T16 T17
+
+Finished!
+Start coref document no: 98
+T1	Mention 232 248	a certain domain
+T2	Mention 301 304	its
+*	Coreference T1 T2
+T3	Mention 0 88	Knowledge-intensive Conceptual Retrieval and Passage Extraction of Biomedical Literature
+T4	Mention 647 664	passage retrieval
+*	Coreference T3 T4
+
+Finished!
+Start coref document no: 99
+T1	Mention 209 211	We
+T2	Mention 410 412	we
+*	Coreference T1 T2
+T3	Mention 52 88	the Probability of Being Informative
+T4	Mention 270 285	the probability
+*	Coreference T3 T4
+T5	Mention 24 37	Poisson-based
+T6	Mention 425 438	Poisson-based
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 100
+T1	Mention 529 542	an advertiser
+T2	Mention 571 587	the advertiser's
+*	Coreference T1 T2
+T3	Mention 306 308	we
+T4	Mention 445 447	We
+T5	Mention 460 462	we
+T6	Mention 667 669	we
+T7	Mention 751 754	Our
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 478 502	the text of the Web page
+T9	Mention 1062 1086	the text of the Web page
+*	Coreference T8 T9
+T10	Mention 1202 1207	These
+T11	Mention 1212 1225	first results
+*	Coreference T10 T11
+T12	Mention 351 361	a Web page
+T13	Mention 490 502	the Web page
+T14	Mention 1074 1086	the Web page
+*	Coreference T12 T13 T14
+T15	Mention 315 443	the problem of associating ads with a Web page, referred to as content-targeted advertising, from a computer science perspective
+T16	Mention 705 716	the problem
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 101
+T1	Mention 793 999	an intelligent client-side web search agent (UCAIR) that can perform eager implicit feedback, e.g., query expansion based on previous queries and immediate result reranking based on clickthrough information
+T2	Mention 1037 1053	our search agent
+*	Coreference T1 T2
+T3	Mention 527 529	we
+T4	Mention 664 666	We
+T5	Mention 782 784	We
+T6	Mention 1037 1040	our
+*	Coreference T3 T4 T5 T6
+T7	Mention 549 557	a user's
+T8	Mention 572 582	the user's
+*	Coreference T7 T8
+T9	Mention 78 82	e.g.
+T10	Mention 211 215	they
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 102
+T1	Mention 938 940	we
+T2	Mention 973 976	our
+T3	Mention 1051 1053	We
+T4	Mention 1192 1194	We
+T5	Mention 1201 1204	our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 381 390	the users
+T7	Mention 401 410	the users
+*	Coreference T6 T7
+T8	Mention 458 519	some indexing which indicates when the data will be broadcast
+T9	Mention 524 527	its
+*	Coreference T8 T9
+T10	Mention 367 390	the server to the users
+T11	Mention 419 429	the server
+*	Coreference T10 T11
+T12	Mention 344 429	data being higher from the server to the users than from the users back to the server
+T13	Mention 493 501	the data
+*	Coreference T12 T13
+T14	Mention 283 429	broadcast [1] is essentially asymmetric, i.e., the volume of data being higher from the server to the users than from the users back to the server
+T15	Mention 540 553	the broadcast
+*	Coreference T14 T15
+T16	Mention 117 126	consumers
+T17	Mention 211 215	them
+*	Coreference T16 T17
+T18	Mention 1065 1098	this scheme, when applied to LDD,
+T19	Mention 1065 1076	this scheme
+*	Coreference T18 T19
+T20	Mention 966 1010	LDD in our project DAta in Your Space (DAYS)
+T21	Mention 1094 1097	LDD
+*	Coreference T20 T21
+T22	Mention 664 718	Two of the important indexing schemes proposed earlier
+T23	Mention 724 771	tree based and the exponential indexing schemes
+T24	Mention 724 734	tree based
+*	Coreference T22 T23 T24
+
+Finished!
+Start coref document no: 103
+T1	Mention 290 293	our
+T2	Mention 468 470	we
+*	Coreference T1 T2
+
+Finished!
+Start coref document no: 104
+T1	Mention 65 86	a promising direction
+T2	Mention 90 92	it
+*	Coreference T1 T2
+T3	Mention 636 786	The proposed fusion methods leverage the hidden links discovered by a duplicate photo detection algorithm, and aims at minimizing score differences of
+T4	Mention 873 900	the proposed fusion methods
+*	Coreference T3 T4
+T5	Mention 196 198	we
+T6	Mention 316 318	we
+T7	Mention 492 494	We
+T8	Mention 970 972	we
+*	Coreference T5 T6 T7 T8
+T9	Mention 205 258	the Web object-ranking problem, one of the key issues
+T10	Mention 205 235	the Web object-ranking problem
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 105
+T1	Mention 73 123	A content-based personalized recommendation system
+T2	Mention 181 183	it
+*	Coreference T1 T2
+T3	Mention 270 287	millions of users
+T4	Mention 533 550	millions of users
+*	Coreference T3 T4
+
+Finished!
+Start coref document no: 106
+T1	Mention 362 380	resource selection
+T2	Mention 508 521	the selection
+T3	Mention 685 698	the selection
+*	Coreference T1 T2 T3
+T4	Mention 787 801	This new model
+T5	Mention 901 903	it
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 107
+T1	Mention 92 94	we
+T2	Mention 197 199	we
+T3	Mention 584 586	we
+T4	Mention 653 656	our
+T5	Mention 667 669	we
+T6	Mention 863 866	Our
+T7	Mention 892 894	we
+T8	Mention 1361 1363	we
+T9	Mention 1451 1453	we
+T10	Mention 1538 1540	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8 T9 T10
+T11	Mention 415 431	title extraction
+T12	Mention 454 456	It
+*	Coreference T11 T12
+T13	Mention 843 861	the trained models
+T14	Mention 966 976	the models
+T15	Mention 1374 1380	models
+T16	Mention 1469 1475	models
+*	Coreference T13 T14 T15 T16
+T17	Mention 1405 1409	them
+T18	Mention 1502 1506	them
+*	Coreference T17 T18
+T19	Mention 1181 1238	precision and recall for title extraction from PowerPoint
+T20	Mention 1242 1257	0.875 and 0.895
+T21	Mention 1242 1247	0.875
+*	Coreference T19 T20 T21
+
+Finished!
+Start coref document no: 108
+T1	Mention 223 225	We
+T2	Mention 236 238	we
+T3	Mention 347 349	We
+T4	Mention 446 448	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 453 499	RankNet, a ranking machine learning algorithm,
+T6	Mention 453 460	RankNet
+T7	Mention 462 498	a ranking machine learning algorithm
+*	Coreference T5 T6 T7
+
+Finished!
+Start coref document no: 109
+T1	Mention 80 99	relevance judgments
+T2	Mention 248 263	these judgments
+T3	Mention 437 446	judgments
+T4	Mention 561 580	relevance judgments
+T5	Mention 631 650	relevance judgments
+T6	Mention 923 932	judgments
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 400 402	we
+T8	Mention 582 584	We
+T9	Mention 843 845	we
+*	Coreference T7 T8 T9
+T10	Mention 598 665	a method for augmenting a set of relevance judgments with relevance
+T11	Mention 726 737	this method
+*	Coreference T10 T11
+T12	Mention 117 240	researchers who need to evaluate new retrieval tasks or topics but do not have the resources to make thousands of judgments
+T13	Mention 328 332	they
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 110
+T1	Mention 77 126	the careful choice of suitable proximity measures
+T2	Mention 130 154	a crucial success factor
+*	Coreference T1 T2
+T3	Mention 156 194	The evaluation presented in this paper
+T4	Mention 672 686	The evaluation
+*	Coreference T3 T4
+T5	Mention 0 44	Distance Measures for MPEG-7-based Retrieval
+T6	Mention 216 228	the distance
+T7	Mention 698 710	the distance
+*	Coreference T5 T6 T7
+
+Finished!
+Start coref document no: 111
+T1	Mention 489 500	the results
+T2	Mention 1356 1367	our results
+*	Coreference T1 T2
+T3	Mention 835 852	a Hidden Web site
+T4	Mention 996 1004	the site
+*	Coreference T3 T4
+T5	Mention 676 678	we
+T6	Mention 689 691	we
+T7	Mention 1012 1014	we
+T8	Mention 1114 1116	we
+T9	Mention 1182 1185	Our
+T10	Mention 1262 1264	We
+T11	Mention 1356 1359	our
+*	Coreference T5 T6 T7 T8 T9 T10 T11
+T12	Mention 317 331	the Hidden Web
+T13	Mention 321 331	Hidden Web
+T14	Mention 715 725	Hidden Web
+T15	Mention 789 803	the Hidden Web
+T16	Mention 1095 1109	the Hidden Web
+T17	Mention 1099 1109	Hidden Web
+*	Coreference T12 T13 T14 T15 T16 T17
+T18	Mention 246 255	the pages
+T19	Mention 280 291	These pages
+T20	Mention 778 783	pages
+*	Coreference T18 T19 T20
+T21	Mention 166 175	the users
+T22	Mention 481 485	them
+*	Coreference T21 T22
+T23	Mention 1125 1166	effective policies for generating queries
+T24	Mention 1182 1194	Our policies
+*	Coreference T23 T24
+T25	Mention 811 852	the only entry point to a Hidden Web site
+T26	Mention 856 873	a query interface
+*	Coreference T25 T26
+
+Finished!
+Start coref document no: 112
+T1	Mention 145 149	They
+T2	Mention 178 183	their
+T3	Mention 217 221	they
+T4	Mention 324 329	their
+*	Coreference T1 T2 T3 T4
+T5	Mention 609 634	well-motivated algorithms
+T6	Mention 693 707	The algorithms
+T7	Mention 735 739	that
+*	Coreference T5 T6 T7
+T8	Mention 348 414	One disadvantage such systems have over large-scale search engines
+T9	Mention 418 452	the lack of global PageRank values
+*	Coreference T8 T9
+T10	Mention 598 600	we
+T11	Mention 852 854	We
+T12	Mention 860 863	our
+T13	Mention 971 973	We
+T14	Mention 1039 1042	our
+*	Coreference T10 T11 T12 T13 T14
+T15	Mention 860 871	our methods
+T16	Mention 1039 1050	our methods
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 113
+T1	Mention 288 293	their
+T2	Mention 536 541	their
+T3	Mention 643 648	their
+*	Coreference T1 T2 T3
+T4	Mention 343 355	a news topic
+T5	Mention 448 457	the topic
+*	Coreference T4 T5
+T6	Mention 579 595	our event models
+T7	Mention 1198 1208	our models
+*	Coreference T6 T7
+T8	Mention 503 570	the rich structure of events and their dependencies in a news topic
+T9	Mention 718 742	the structure of a topic
+T10	Mention 774 777	its
+*	Coreference T8 T9 T10
+T11	Mention 845 862	the novel problem
+T12	Mention 932 943	the problem
+*	Coreference T11 T12
+T13	Mention 1159 1187	a manually labeled data sets
+T14	Mention 1272 1276	them
+*	Coreference T13 T14
+T15	Mention 324 326	We
+T16	Mention 481 483	we
+T17	Mention 579 582	our
+T18	Mention 597 599	We
+T19	Mention 679 681	We
+T20	Mention 690 693	our
+T21	Mention 826 828	We
+T22	Mention 987 990	our
+T23	Mention 1140 1143	Our
+T24	Mention 1198 1201	our
+*	Coreference T15 T16 T17 T18 T19 T20 T21 T22 T23 T24
+T25	Mention 23 34	News Topics
+T26	Mention 288 300	their topics
+*	Coreference T25 T26
+
+Finished!
+Start coref document no: 114
+T1	Mention 199 201	We
+T2	Mention 476 479	Our
+T3	Mention 628 630	We
+T4	Mention 641 644	our
+T5	Mention 755 757	We
+T6	Mention 769 772	our
+T7	Mention 934 936	We
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 66 77	Preferences
+T9	Mention 303 314	preferences
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 115
+T1	Mention 596 600	Ctrk
+T2	Mention 970 974	Ctrk
+*	Coreference T1 T2
+T3	Mention 165 184	incremental Rocchio
+T4	Mention 563 570	Rocchio
+*	Coreference T3 T4
+T5	Mention 320 322	we
+T6	Mention 463 465	We
+T7	Mention 741 743	we
+*	Coreference T5 T6 T7
+T8	Mention 14 40	Adaptive Filtering Methods
+T9	Mention 333 346	these methods
+T10	Mention 732 739	methods
+*	Coreference T8 T9 T10
+T11	Mention 787 810	TDT5, TREC10 and TREC11
+T12	Mention 865 873	the TDT5
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 116
+T1	Mention 652 683	the Evaluation of XML Retrieval
+T2	Mention 711 725	the evaluation
+*	Coreference T1 T2
+
+Finished!
+Start coref document no: 117
+T1	Mention 618 620	we
+T2	Mention 865 867	We
+T3	Mention 877 880	our
+T4	Mention 1005 1008	our
+*	Coreference T1 T2 T3 T4
+T5	Mention 303 336	two deficiencies of this approach
+T6	Mention 640 662	these two deficiencies
+*	Coreference T5 T6
+T7	Mention 497 498	2
+T8	Mention 779 780	2
+*	Coreference T7 T8
+T9	Mention 303 306	two
+T10	Mention 342 490	it not always work well: (1) the clusters discovered do not necessarily correspond to the interesting aspects of a topic from the user's perspective
+T11	Mention 646 649	two
+*	Coreference T9 T10 T11
+T12	Mention 368 369	1
+T13	Mention 667 668	1
+*	Coreference T12 T13
+T14	Mention 242 292	a user to navigate into relevant documents quickly
+T15	Mention 468 478	the user's
+*	Coreference T14 T15
+T16	Mention 877 896	our proposed method
+T17	Mention 1005 1015	our method
+*	Coreference T16 T17
+
+Finished!
+Start coref document no: 118
+T1	Mention 307 309	we
+T2	Mention 498 500	We
+T3	Mention 713 715	We
+T4	Mention 826 829	our
+*	Coreference T1 T2 T3 T4
+T5	Mention 565 625	statistical language models to combine the preceding queries
+T6	Mention 826 836	our models
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 119
+T1	Mention 72 74	We
+T2	Mention 196 198	We
+T3	Mention 365 367	We
+T4	Mention 497 499	We
+*	Coreference T1 T2 T3 T4
+
+Finished!
+Start coref document no: 120
+T1	Mention 217 230	the detection
+T2	Mention 241 337	the disambiguation of place references, by matching them explicitly with concepts at an ontology
+*	Coreference T1 T2
+T3	Mention 197 199	We
+T4	Mention 396 398	we
+*	Coreference T3 T4
+T5	Mention 354 361	a query
+T6	Mention 450 459	the query
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 121
+T1	Mention 246 300	a new method of gathering information on user interest
+T2	Mention 388 390	it
+T3	Mention 414 416	it
+*	Coreference T1 T2 T3
+T4	Mention 448 450	we
+T5	Mention 617 620	Our
+*	Coreference T4 T5
+T6	Mention 515 520	three
+T7	Mention 647 652	three
+*	Coreference T6 T7
+T8	Mention 130 145	a search system
+T9	Mention 227 237	the system
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 122
+T1	Mention 59 71	E-mail users
+T2	Mention 115 120	their
+*	Coreference T1 T2
+
+Finished!
+Start coref document no: 123
+T1	Mention 465 467	We
+T2	Mention 825 827	we
+*	Coreference T1 T2
+T3	Mention 954 973	one of these models
+T4	Mention 991 1118	attractive (introducing few new parameters while increasing flexibility), computationally efficient, and empirically preferable
+T5	Mention 991 1063	attractive (introducing few new parameters while increasing flexibility)
+*	Coreference T3 T4 T5
+
+Finished!
+Start coref document no: 124
+T1	Mention 426 428	we
+T2	Mention 500 502	We
+T3	Mention 637 639	We
+T4	Mention 764 766	We
+T5	Mention 900 902	us
+T6	Mention 959 962	our
+T7	Mention 1068 1070	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 333 344	the agent's
+T9	Mention 1157 1166	the agent
+*	Coreference T8 T9
+T10	Mention 1042 1078	A key technical challenge we address
+T11	Mention 1082 1256	the presence of parallel execution threads and of sub-tasks, which require the agent to ensure that the abort methods for each plan are carried out in an appropriate sequence
+*	Coreference T10 T11
+T12	Mention 1011 1039	JACK, Jadex, Jason, or SPARK
+T13	Mention 1011 1030	JACK, Jadex, Jason,
+*	Coreference T12 T13
+T14	Mention 881 1040	CAN, which enables us to specify a BDI-based execution model without limiting our attention to a particular agent system (such as JACK, Jadex, Jason, or SPARK)
+T15	Mention 881 884	CAN
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 125
+index: ;--RRB-
+ ;-)
+T
+T1	Mention 142 152	each agent
+T2	Mention 316 318	he
+*	Coreference T1 T2
+T3	Mention 178 220	its beliefs B (the concept representation)
+T4	Mention 193 219	the concept representation
+T5	Mention 229 231	it
+*	Coreference T3 T4 T5
+T6	Mention 50 62	This article
+T7	Mention 178 181	its
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 126
+T1	Mention 64 99	agents that we observe in the world
+T2	Mention 749 756	agents'
+T3	Mention 829 834	their
+T4	Mention 888 893	their
+*	Coreference T1 T2 T3 T4
+T5	Mention 178 189	the agent's
+T6	Mention 280 291	the agent's
+T7	Mention 458 469	the agent's
+T8	Mention 578 589	the agent's
+*	Coreference T5 T6 T7 T8
+T9	Mention 280 418	the agent's internal state, which includes not only rational elements (such as intentions and plans), but also emotive ones (such as fear)
+T10	Mention 280 380	the agent's internal state, which includes not only rational elements (such as intentions and plans)
+T11	Mention 280 306	the agent's internal state
+T12	Mention 607 610	its
+*	Coreference T9 T10 T11 T12
+T13	Mention 458 622	the agent's future actions, which are constrained not only by these inward characteristics, but also by the dynamics of the agent's interaction with its environment
+T14	Mention 458 484	the agent's future actions
+*	Coreference T13 T14
+T15	Mention 578 622	the agent's interaction with its environment
+T16	Mention 888 926	their interaction with the environment
+*	Coreference T15 T16
+T17	Mention 607 622	its environment
+T18	Mention 717 732	the environment
+T19	Mention 911 926	the environment
+*	Coreference T17 T18 T19
+T20	Mention 562 622	the dynamics of the agent's interaction with its environment
+T21	Mention 872 926	the dynamics of their interaction with the environment
+*	Coreference T20 T21
+T22	Mention 76 78	we
+T23	Mention 116 119	Our
+T24	Mention 262 264	we
+T25	Mention 433 435	we
+*	Coreference T22 T23 T24 T25
+
+Finished!
+Start coref document no: 127
+T1	Mention 91 101	This paper
+T2	Mention 425 427	it
+T3	Mention 540 549	The paper
+T4	Mention 620 623	its
+T5	Mention 856 859	its
+T6	Mention 1034 1040	itself
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 231 239	an agent
+T8	Mention 369 378	The agent
+T9	Mention 1269 1279	an agent's
+*	Coreference T7 T8 T9
+T10	Mention 560 738	a mechanism that enables the agent to significantly improve its estimation by augmenting its direct observations with those obtained by other agents with which it is coordinating
+T11	Mention 873 886	the mechanism
+*	Coreference T10 T11
+T12	Mention 620 634	its estimation
+T13	Mention 649 652	its
+T14	Mention 720 722	it
+*	Coreference T12 T13 T14
+T15	Mention 403 414	estimations
+T16	Mention 856 871	its estimations
+*	Coreference T15 T16
+T17	Mention 79 90	Sparse Data
+T18	Mention 527 538	sparse data
+*	Coreference T17 T18
+T19	Mention 915 928	other agents'
+T20	Mention 1017 1040	these agents and itself
+T21	Mention 1017 1029	these agents
+*	Coreference T19 T20 T21
+
+Finished!
+Start coref document no: 128
+T1	Mention 861 877	incoming queries
+T2	Mention 1107 1118	the queries
+*	Coreference T1 T2
+T3	Mention 781 790	estimates
+T4	Mention 879 894	These estimates
+T5	Mention 1160 1173	the estimates
+*	Coreference T3 T4 T5
+T6	Mention 234 261	similarity-based approaches
+T7	Mention 266 282	these approaches
+*	Coreference T6 T7
+T8	Mention 284 290	agents
+T9	Mention 353 358	their
+T10	Mention 765 771	agents
+T11	Mention 1026 1036	the agents
+*	Coreference T8 T9 T10 T11
+T12	Mention 934 997	the feedback information returned from previous search sessions
+T13	Mention 1008 1024	this information
+*	Coreference T12 T13
+T14	Mention 353 384	their direct neighboring agents
+T15	Mention 472 494	the neighboring agents
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 129
+T1	Mention 203 213	This paper
+T2	Mention 555 564	the paper
+*	Coreference T1 T2
+T3	Mention 436 473	their information provision abilities
+T4	Mention 745 776	information provision abilities
+*	Coreference T3 T4
+T5	Mention 396 422	their neighbors' interests
+T6	Mention 727 740	the interests
+*	Coreference T5 T6
+T7	Mention 396 412	their neighbors'
+T8	Mention 436 441	their
+*	Coreference T7 T8
+T9	Mention 74 121	the right agents in a large and dynamic network
+T10	Mention 354 360	agents
+T11	Mention 396 401	their
+T12	Mention 645 651	agents
+T13	Mention 702 706	they
+*	Coreference T9 T10 T11 T12 T13
+
+Finished!
+Start coref document no: 130
+index: behavior
+ behaviour 
+index: maximize
+ maximise 
+T1	Mention 87 89	we
+T2	Mention 343 346	Our
+T3	Mention 575 577	We
+T4	Mention 815 818	Our
+*	Coreference T1 T2 T3 T4
+T5	Mention 280 285	users
+T6	Mention 310 315	their
+T7	Mention 424 450	users who view the adverts
+*	Coreference T5 T6 T7
+T8	Mention 536 548	the exposure
+T9	Mention 554 557	its
+*	Coreference T8 T9
+T10	Mention 439 450	the adverts
+T11	Mention 554 565	its adverts
+T12	Mention 976 987	its adverts
+*	Coreference T10 T11 T12
+T13	Mention 407 450	the behaviour of users who view the adverts
+T14	Mention 474 476	it
+T15	Mention 498 500	It
+*	Coreference T13 T14 T15
+T16	Mention 708 733	a simple bidding strategy
+T17	Mention 864 891	the simple bidding strategy
+T18	Mention 1011 1038	the simple bidding strategy
+*	Coreference T16 T17 T18
+T19	Mention 378 401	probabilistic models of
+T20	Mention 511 523	these models
+*	Coreference T19 T20
+T21	Mention 758 813	a centralised optimal allocation with perfect foresight
+T22	Mention 1092 1126	the centralised optimal allocation
+*	Coreference T21 T22
+T23	Mention 98 176	an advanced bidding agent that participates in first-price sealed bid auctions
+T24	Mention 343 360	Our bidding agent
+T25	Mention 608 626	this bidding agent
+T26	Mention 815 832	Our bidding agent
+*	Coreference T23 T24 T25 T26
+T27	Mention 1050 1065	its performance
+T28	Mention 1177 1179	it
+*	Coreference T27 T28
+T29	Mention 859 917	both the simple bidding strategy and the random allocation
+T30	Mention 1050 1053	its
+*	Coreference T29 T30
+T31	Mention 926 954	a mixed population of agents
+T32	Mention 976 979	its
+*	Coreference T31 T32
+
+Finished!
+Start coref document no: 131
+index: behaviors
+ behaviours 
+index: behavior
+ behaviour 
+T1	Mention 134 136	We
+T2	Mention 246 248	We
+*	Coreference T1 T2
+T3	Mention 283 320	the problem, a communication protocol
+T4	Mention 283 294	the problem
+T5	Mention 296 320	a communication protocol
+*	Coreference T3 T4 T5
+T6	Mention 262 390	the formalization of the problem, a communication protocol, a solving method based on reactive decision rules, and first results
+T7	Mention 262 320	the formalization of the problem, a communication protocol
+T8	Mention 322 371	a solving method based on reactive decision rules
+*	Coreference T6 T7 T8
+
+Finished!
+Start coref document no: 132
+T1	Mention 344 353	this case
+T2	Mention 697 705	the case
+*	Coreference T1 T2
+T3	Mention 87 89	We
+T4	Mention 243 245	We
+T5	Mention 355 357	we
+T6	Mention 589 591	we
+T7	Mention 981 983	we
+T8	Mention 1138 1140	we
+*	Coreference T3 T4 T5 T6 T7 T8
+T9	Mention 712 739	the number of local bidders
+T10	Mention 758 769	this number
+T11	Mention 1219 1246	the number of local bidders
+*	Coreference T9 T10 T11
+
+Finished!
+Start coref document no: 133
+T1	Mention 435 458	The Banzhaf power index
+T2	Mention 462 485	one of the most popular
+T3	Mention 487 489	it
+T4	Mention 498 542	well-defined for any simple coalitional game
+T5	Mention 614 637	the Banzhaf power index
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 698 704	Agents
+T7	Mention 1250 1257	agents'
+*	Coreference T6 T7
+T8	Mention 735 746	a coalition
+T9	Mention 755 757	it
+*	Coreference T8 T9
+T10	Mention 831 862	The relative power of each edge
+T11	Mention 878 881	its
+*	Coreference T10 T11
+T12	Mention 559 561	we
+T13	Mention 1035 1037	We
+T14	Mention 1142 1144	We
+*	Coreference T12 T13 T14
+T15	Mention 439 446	Banzhaf
+T16	Mention 618 625	Banzhaf
+T17	Mention 1064 1071	Banzhaf
+*	Coreference T15 T16 T17
+
+Finished!
+Start coref document no: 134
+index: behavior
+ behaviour 
+index: behavior
+ behaviour 
+index: behavior
+ behaviour 
+index: behavior
+ behaviour 
+T1	Mention 85 87	We
+T2	Mention 194 197	Our
+T3	Mention 866 868	We
+T4	Mention 1026 1029	our
+T5	Mention 1046 1048	We
+*	Coreference T1 T2 T3 T4 T5
+
+Finished!
+Start coref document no: 135
+T1	Mention 98 116	Human team members
+T2	Mention 196 201	their
+T3	Mention 644 656	team members
+T4	Mention 943 948	their
+*	Coreference T1 T2 T3 T4
+T5	Mention 227 256	the concept Shared Belief Map
+T6	Mention 728 757	The shared belief map concept
+*	Coreference T5 T6
+T7	Mention 495 502	agents'
+T8	Mention 561 566	their
+*	Coreference T7 T8
+T9	Mention 914 956	the concept, the models, and their impacts
+T10	Mention 914 925	the concept
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 136
+T1	Mention 601 603	We
+T2	Mention 906 908	we
+*	Coreference T1 T2
+T3	Mention 128 134	agents
+T4	Mention 217 227	the agents
+T5	Mention 425 435	the agents
+T6	Mention 637 648	the agents'
+T7	Mention 985 995	the agents
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 668 705	a stable equilibrium in the new model
+T9	Mention 890 905	the equilibrium
+*	Coreference T8 T9
+T10	Mention 355 366	one of them
+T11	Mention 766 773	the one
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 137
+T1	Mention 51 53	We
+T2	Mention 139 141	We
+T3	Mention 567 569	We
+*	Coreference T1 T2 T3
+T4	Mention 700 720	the agent's schedule
+T5	Mention 946 966	the agent's schedule
+*	Coreference T4 T5
+T6	Mention 887 914	a set of feasible solutions
+T7	Mention 1003 1024	this set of solutions
+*	Coreference T6 T7
+T8	Mention 1511 1513	we
+T9	Mention 1541 1544	our
+*	Coreference T8 T9
+T10	Mention 114 137	distributed environment
+T11	Mention 1494 1509	the environment
+*	Coreference T10 T11
+T12	Mention 700 711	the agent's
+T13	Mention 946 957	the agent's
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 138
+T1	Mention 225 227	We
+T2	Mention 339 341	We
+T3	Mention 399 402	Our
+T4	Mention 520 522	We
+T5	Mention 880 883	our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 119 129	the agents
+T7	Mention 460 466	agents
+*	Coreference T6 T7
+T8	Mention 147 163	a social network
+T9	Mention 212 223	the network
+*	Coreference T8 T9
+T10	Mention 350 362	an algorithm
+T11	Mention 399 412	Our algorithm
+T12	Mention 444 446	it
+T13	Mention 880 893	our algorithm
+T14	Mention 914 916	it
+*	Coreference T10 T11 T12 T13 T14
+T15	Mention 238 268	the complexity of this problem
+T16	Mention 296 298	it
+*	Coreference T15 T16
+T17	Mention 84 111	the task allocation problem
+T18	Mention 256 268	this problem
+*	Coreference T17 T18
+T19	Mention 31 46	Social Networks
+T20	Mention 698 706	networks
+*	Coreference T19 T20
+
+Finished!
+Start coref document no: 139
+T1	Mention 52 103	Agents that must reach agreements with other agents
+T2	Mention 129 134	their
+T3	Mention 256 261	their
+*	Coreference T1 T2 T3
+T4	Mention 582 731	a modal logic that is intended to support reasoning about judgment aggregation scenarios (and hence, as a special case, about preference aggregation)
+T5	Mention 884 893	the logic
+T6	Mention 1116 1125	the logic
+T7	Mention 1127 1136	The logic
+T8	Mention 1173 1175	it
+*	Coreference T4 T5 T6 T7 T8
+T9	Mention 571 573	We
+T10	Mention 809 811	We
+T11	Mention 871 873	We
+*	Coreference T9 T10 T11
+T12	Mention 129 170	their preferences, judgments, and beliefs
+T13	Mention 129 146	their preferences
+T14	Mention 148 157	judgments
+T15	Mention 163 170	beliefs
+*	Coreference T12 T13 T14 T15
+T16	Mention 1007 1070	the discursive paradox, Arrow's theorem and Condorcet's paradox
+T17	Mention 1007 1029	the discursive paradox
+T18	Mention 1031 1046	Arrow's theorem
+T19	Mention 1051 1070	Condorcet's paradox
+*	Coreference T16 T17 T18 T19
+
+Finished!
+Start coref document no: 140
+T1	Mention 733 843	present behavioral axioms that are intended to serve as design principles for building such adversarial agents
+T2	Mention 981 992	the axioms'
+*	Coreference T1 T2
+T3	Mention 620 622	We
+T4	Mention 725 727	We
+T5	Mention 845 847	We
+T6	Mention 875 878	our
+*	Coreference T3 T4 T5 T6
+T7	Mention 37 60	Bounded Rational Agents
+T8	Mention 170 176	agents
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 141
+T1	Mention 591 599	a result
+T2	Mention 816 818	it
+*	Coreference T1 T2
+T3	Mention 359 368	The paper
+T4	Mention 431 434	its
+*	Coreference T3 T4
+
+Finished!
+Start coref document no: 142
+index: realized
+ realised 
+index: \/
+/i
+index: \/
+/i
+T1	Mention 749 780	different virtual organizations
+T2	Mention 1196 1201	their
+*	Coreference T1 T2
+T3	Mention 391 528	virtual organizations realised as multi-agent systems, in which human and software agents interact to achieve individual and global goals
+T4	Mention 585 590	their
+*	Coreference T3 T4
+T5	Mention 1470 1568	a useful notion of inter-agent (and inter-role) delegation of actions and norms associated to them
+T6	Mention 1578 1580	it
+*	Coreference T5 T6
+T7	Mention 1010 1012	We
+T8	Mention 1131 1134	our
+T9	Mention 1154 1156	we
+T10	Mention 1296 1299	Our
+T11	Mention 1455 1457	we
+T12	Mention 1647 1649	We
+T13	Mention 1661 1664	our
+*	Coreference T7 T8 T9 T10 T11 T12 T13
+T14	Mention 208 214	agents
+T15	Mention 628 634	agents
+T16	Mention 664 669	their
+T17	Mention 1709 1715	agents
+*	Coreference T14 T15 T16 T17
+T18	Mention 1296 1308	Our approach
+T19	Mention 1661 1673	our approach
+*	Coreference T18 T19
+T20	Mention 40 76	Norm-Regulated Virtual Organizations
+T21	Mention 91 112	virtual organizations
+T22	Mention 263 284	virtual organizations
+*	Coreference T20 T21 T22
+T23	Mention 1422 1427	these
+T24	Mention 1564 1568	them
+*	Coreference T23 T24
+
+Finished!
+Start coref document no: 143
+index: recognized
+ recognised 
+index: behavior
+ behaviour 
+T1	Mention 137 172	The distributed management of norms
+T2	Mention 176 195	a challenging issue
+*	Coreference T1 T2
+T3	Mention 200 202	we
+T4	Mention 391 393	we
+T5	Mention 797 799	We
+T6	Mention 1009 1011	we
+T7	Mention 1072 1074	We
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 325 342	autonomous agents
+T9	Mention 580 587	agents'
+T10	Mention 690 697	agents'
+*	Coreference T8 T9 T10
+T11	Mention 402 419	a normative model
+T12	Mention 421 449	the Normative Structure (NS)
+T13	Mention 451 559	an artifact that is based on the propagation of normative positions (obligations, prohibitions, permissions)
+*	Coreference T11 T12 T13
+T14	Mention 1020 1070	a tractable algorithm to be employed distributedly
+T15	Mention 1097 1111	this algorithm
+*	Coreference T14 T15
+T16	Mention 41 60	Multi-Agent Systems
+T17	Mention 116 135	multi-agent systems
+*	Coreference T16 T17
+
+Finished!
+Start coref document no: 144
+T1	Mention 434 464	their local learning processes
+T2	Mention 526 541	these processes
+*	Coreference T1 T2
+T3	Mention 356 358	We
+T4	Mention 555 557	us
+T5	Mention 813 815	We
+T6	Mention 1064 1066	We
+*	Coreference T3 T4 T5 T6
+T7	Mention 909 933	the conceptual framework
+T8	Mention 1205 1218	the framework
+*	Coreference T7 T8
+T9	Mention 367 541	an abstract architecture that enables agents to exchange models of their local learning processes and introduces a number of different methods for integrating these processes
+T10	Mention 822 839	this architecture
+*	Coreference T9 T10
+T11	Mention 258 264	agents
+T12	Mention 348 354	agents
+T13	Mention 405 411	agents
+T14	Mention 434 439	their
+T15	Mention 742 748	agents
+T16	Mention 783 788	their
+*	Coreference T11 T12 T13 T14 T15 T16
+T17	Mention 1113 1161	this system, review related work on the subject,
+T18	Mention 1113 1124	this system
+T19	Mention 1126 1160	review related work on the subject
+*	Coreference T17 T18 T19
+
+Finished!
+Start coref document no: 145
+T1	Mention 324 338	the auctioneer
+T2	Mention 411 425	the auctioneer
+*	Coreference T1 T2
+T3	Mention 671 693	the computational load
+T4	Mention 854 856	it
+*	Coreference T3 T4
+T5	Mention 649 651	we
+T6	Mention 871 873	us
+T7	Mention 919 921	We
+T8	Mention 1004 1007	Our
+T9	Mention 1238 1240	we
+T10	Mention 1249 1252	our
+*	Coreference T5 T6 T7 T8 T9 T10
+T11	Mention 547 572	the bidders in such a way
+T12	Mention 578 582	they
+T13	Mention 700 711	the bidders
+T14	Mention 720 731	the bidders
+T15	Mention 754 759	their
+T16	Mention 822 833	the bidders
+T17	Mention 878 889	the bidders
+T18	Mention 907 912	their
+*	Coreference T11 T12 T13 T14 T15 T16 T17 T18
+T19	Mention 503 538	the problem of winner determination
+T20	Mention 1092 1103	the problem
+T21	Mention 1173 1175	it
+*	Coreference T19 T20 T21
+T22	Mention 1107 1114	NP-Hard
+T23	Mention 1281 1286	their
+T24	Mention 1348 1352	them
+*	Coreference T22 T23 T24
+T25	Mention 949 967	bidding algorithms
+T26	Mention 1004 1018	Our algorithms
+T27	Mention 1249 1271	our bidding algorithms
+*	Coreference T25 T26 T27
+
+Finished!
+Start coref document no: 146
+T1	Mention 95 114	A negotiation chain
+T2	Mention 269 278	the chain
+*	Coreference T1 T2
+T3	Mention 130 159	multiple related negotiations
+T4	Mention 239 255	the negotiations
+*	Coreference T3 T4
+T5	Mention 319 321	we
+T6	Mention 667 669	We
+*	Coreference T5 T6
+T7	Mention 461 471	each agent
+T8	Mention 783 792	the agent
+T9	Mention 953 962	the agent
+T10	Mention 1046 1055	The agent
+*	Coreference T7 T8 T9 T10
+T11	Mention 803 864	a more accurate model of the negotiation in terms of modeling
+T12	Mention 922 946	This more accurate model
+*	Coreference T11 T12
+T13	Mention 765 781	this information
+T14	Mention 1069 1085	this information
+*	Coreference T13 T14
+T15	Mention 633 645	the system's
+T16	Mention 1270 1282	the system's
+*	Coreference T15 T16
+T17	Mention 395 404	This work
+T18	Mention 476 479	its
+T19	Mention 512 515	its
+*	Coreference T17 T18 T19
+T20	Mention 176 191	multiple agents
+T21	Mention 716 722	agents
+T22	Mention 1254 1265	the agents'
+T23	Mention 1258 1265	agents'
+*	Coreference T20 T21 T22 T23
+
+Finished!
+Start coref document no: 147
+T1	Mention 364 366	We
+T2	Mention 469 472	Our
+T3	Mention 697 699	We
+T4	Mention 708 711	our
+T5	Mention 918 920	We
+T6	Mention 1094 1096	We
+T7	Mention 1236 1238	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 519 584	pseudotrees that include edges between nodes in separate branches
+T9	Mention 785 800	the pseudotrees
+T10	Mention 1133 1144	pseudotrees
+*	Coreference T8 T9 T10
+T11	Mention 393 467	the DPOP algorithm that handles an extended set of pseudotree arrangements
+T12	Mention 469 482	Our algorithm
+T13	Mention 586 599	The algorithm
+T14	Mention 708 721	our algorithm
+T15	Mention 903 916	the algorithm
+*	Coreference T11 T12 T13 T14 T15
+
+Finished!
+Start coref document no: 148
+T1	Mention 415 444	a recently developed planning
+T2	Mention 467 491	Extended Markov Tracking
+T3	Mention 493 496	EMT
+*	Coreference T1 T2 T3
+T4	Mention 83 85	we
+T5	Mention 402 404	We
+T6	Mention 631 633	We
+T7	Mention 780 782	We
+*	Coreference T4 T5 T6 T7
+T8	Mention 521 524	DBC
+T9	Mention 865 868	DBC
+*	Coreference T8 T9
+T10	Mention 0 8	Dynamics
+T11	Mention 96 104	Dynamics
+*	Coreference T10 T11
+T12	Mention 861 905	the DBC framework, and its EMT instantiation
+T13	Mention 861 878	the DBC framework
+T14	Mention 884 905	its EMT instantiation
+T15	Mention 884 887	its
+*	Coreference T12 T13 T14 T15
+
+Finished!
+Start coref document no: 149
+T1	Mention 379 381	we
+T2	Mention 607 609	We
+*	Coreference T1 T2
+T3	Mention 438 471	the commitment machines framework
+T4	Mention 473 487	This framework
+*	Coreference T3 T4
+T5	Mention 368 378	this paper
+T6	Mention 750 760	this paper
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 150
+T1	Mention 28 30	We
+T2	Mention 193 196	Our
+T3	Mention 365 367	We
+*	Coreference T1 T2 T3
+T4	Mention 169 175	agents
+T5	Mention 180 185	their
+*	Coreference T4 T5
+T6	Mention 54 120	representations that can be used for modeling (and model checking)
+T7	Mention 193 212	Our representations
+*	Coreference T6 T7
+T8	Mention 278 284	et al.
+T9	Mention 295 299	they
+*	Coreference T8 T9
+T10	Mention 263 284	Halpern, Fagin et al.
+T11	Mention 263 270	Halpern
+T12	Mention 272 284	Fagin et al.
+*	Coreference T10 T11 T12
+
+Finished!
+Start coref document no: 151
+T1	Mention 527 537	this paper
+T2	Mention 709 718	the paper
+T3	Mention 881 890	the paper
+*	Coreference T1 T2 T3
+T4	Mention 728 866	a connector-based model of multi-agent interactions which attempts to identify the essential structure underlying multi-agent interactions
+T5	Mention 905 915	this model
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 152
+T1	Mention 362 380	A normative system
+T2	Mention 476 496	the normative system
+T3	Mention 984 1011	the normative system or not
+*	Coreference T1 T2 T3
+T4	Mention 23 25	We
+T5	Mention 274 276	we
+T6	Mention 498 500	We
+T7	Mention 810 812	we
+T8	Mention 869 871	us
+T9	Mention 885 888	our
+T10	Mention 1013 1015	We
+T11	Mention 1168 1170	we
+*	Coreference T4 T5 T6 T7 T8 T9 T10 T11
+T12	Mention 529 584	a hierarchy of formulae of Computation Tree Logic (CTL)
+T13	Mention 699 712	the hierarchy
+T14	Mention 776 789	the hierarchy
+*	Coreference T12 T13 T14
+T15	Mention 509 525	an agent's goals
+T16	Mention 682 687	goals
+*	Coreference T15 T16
+T17	Mention 281 287	Kripke
+T18	Mention 641 647	Kripke
+*	Coreference T17 T18
+T19	Mention 72 78	agents
+T20	Mention 939 945	agents
+*	Coreference T19 T20
+T21	Mention 889 901	Kripke-based
+T22	Mention 1118 1130	Kripke-based
+*	Coreference T21 T22
+
+Finished!
+Start coref document no: 153
+T1	Mention 74 161	a new protocol to address multilateral multi-issue negotiation in a cooperative context
+T2	Mention 407 419	the protocol
+*	Coreference T1 T2
+T3	Mention 479 501	the cooperative agents
+T4	Mention 614 624	our agents
+*	Coreference T3 T4
+T5	Mention 63 65	we
+T6	Mention 163 165	We
+T7	Mention 318 320	us
+T8	Mention 614 617	our
+*	Coreference T5 T6 T7 T8
+
+Finished!
+Start coref document no: 154
+T1	Mention 119 175	distributed techniques for efficient resource allocation
+T2	Mention 177 193	These techniques
+*	Coreference T1 T2
+T3	Mention 347 349	we
+T4	Mention 462 465	Our
+T5	Mention 647 649	We
+*	Coreference T3 T4 T5
+T6	Mention 580 617	The resource allocation in the system
+T7	Mention 621 645	a purely emergent effect
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 155
+T1	Mention 290 292	We
+T2	Mention 672 674	we
+T3	Mention 743 745	we
+T4	Mention 815 817	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 0 6	Agents
+T6	Mention 179 183	they
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 156
+T1	Mention 772 784	other agents
+T2	Mention 896 901	their
+*	Coreference T1 T2
+T3	Mention 91 93	we
+T4	Mention 579 581	We
+*	Coreference T3 T4
+T5	Mention 607 651	the argumentation among committees of agents
+T6	Mention 806 809	its
+*	Coreference T5 T6
+T7	Mention 323 430	the argument preference relation, the argument generation policy, and the counterargument generation policy
+T8	Mention 323 355	the argument preference relation
+T9	Mention 357 387	the argument generation policy
+T10	Mention 393 430	the counterargument generation policy
+*	Coreference T7 T8 T9 T10
+T11	Mention 147 256	agents (AMAL) designed for two purposes: (1) for joint deliberation, and (2) for learning from communication.
+T12	Mention 490 496	agents
+T13	Mention 503 508	their
+T14	Mention 645 651	agents
+*	Coreference T11 T12 T13 T14
+T15	Mention 13 31	Joint Deliberation
+T16	Mention 196 214	joint deliberation
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 157
+T1	Mention 88 212	a unified and general framework for argumentation-based negotiation, in which the role of argumentation is formally analyzed
+T2	Mention 214 227	The framework
+T3	Mention 234 236	it
+T4	Mention 307 309	It
+T5	Mention 477 479	It
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 321 333	an agreement
+T7	Mention 342 344	it
+T8	Mention 392 394	it
+*	Coreference T6 T7 T8
+T9	Mention 538 556	situation an agent
+T10	Mention 587 589	it
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 158
+T1	Mention 460 462	we
+T2	Mention 594 596	we
+T3	Mention 802 804	We
+*	Coreference T1 T2 T3
+T4	Mention 334 387	the problem of finding this value for the voting game
+T5	Mention 520 531	the problem
+*	Coreference T4 T5
+T6	Mention 137 155	Its main advantage
+T7	Mention 164 166	it
+T8	Mention 208 211	its
+*	Coreference T6 T7 T8
+T9	Mention 66 73	Shapley
+T10	Mention 264 271	Shapley
+T11	Mention 716 723	Shapley
+*	Coreference T9 T10 T11
+T12	Mention 0 61	A Randomized Method for the Shapley Value for the Voting Game
+T13	Mention 754 765	this method
+*	Coreference T12 T13
+T14	Mention 46 61	the Voting Game
+T15	Mention 372 387	the voting game
+*	Coreference T14 T15
+T16	Mention 24 41	the Shapley Value
+T17	Mention 62 79	The Shapley value
+T18	Mention 137 140	Its
+T19	Mention 260 277	the Shapley value
+*	Coreference T16 T17 T18 T19
+
+Finished!
+Start coref document no: 159
+index: and
+. 
+Error at SetOffset
+Error at docToStandOff
+Finished!
+Start coref document no: 160
+index: realized
+ realised 
+index: maximizing
+ maximising 
+T1	Mention 634 636	we
+T2	Mention 910 912	We
+T3	Mention 1094 1096	We
+T4	Mention 1213 1215	we
+T5	Mention 1315 1317	we
+T6	Mention 1517 1519	We
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 939 962	the negotiating parties
+T8	Mention 1009 1014	their
+*	Coreference T7 T8
+T9	Mention 917 927	a mediator
+T10	Mention 1249 1261	the mediator
+*	Coreference T9 T10
+T11	Mention 384 475	the parties, (ii) tradeoffs on attributes that are valued differently by different parties,
+T12	Mention 384 395	the parties
+T13	Mention 457 474	different parties
+T14	Mention 1608 1619	the parties
+*	Coreference T11 T12 T13 T14
+T15	Mention 1280 1294	Pareto-optimal
+T16	Mention 1654 1668	Pareto-optimal
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 161
+T1	Mention 659 700	A major motivation for this BDI framework
+T2	Mention 709 711	it
+*	Coreference T1 T2
+T3	Mention 924 977	a new strategy called Unsolicited Mutual Advice (UMA)
+T4	Mention 1025 1041	the UMA strategy
+*	Coreference T3 T4
+T5	Mention 264 278	several agents
+T6	Mention 367 372	their
+*	Coreference T5 T6
+T7	Mention 46 73	a BDI Negotiation Framework
+T8	Mention 682 700	this BDI framework
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 162
+index: rumor
+ rumour 
+T1	Mention 114 116	we
+T2	Mention 243 246	Our
+T3	Mention 340 342	we
+T4	Mention 646 648	We
+T5	Mention 831 833	we
+T6	Mention 960 962	We
+T7	Mention 1135 1137	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 324 334	a contract
+T9	Mention 505 517	the contract
+*	Coreference T8 T9
+T10	Mention 353 357	this
+T11	Mention 844 848	this
+*	Coreference T10 T11
+T12	Mention 977 983	agents
+T13	Mention 1394 1404	the agents
+*	Coreference T12 T13
+T14	Mention 1146 1162	a novel solution
+T15	Mention 1221 1234	This solution
+*	Coreference T14 T15
+T16	Mention 66 99	a Decentralised Reputation System
+T17	Mention 1091 1124	a decentralised reputation system
+*	Coreference T16 T17
+
+Finished!
+Start coref document no: 163
+T1	Mention 246 303	domains where these threats come from unknown adversaries
+T2	Mention 305 318	These domains
+*	Coreference T1 T2
+T3	Mention 436 588	the case in multiagent security domains that one agent can commit to a mixed strategy which its adversaries observe before choosing their own strategies
+T4	Mention 593 602	this case
+*	Coreference T3 T4
+T5	Mention 481 490	one agent
+T6	Mention 604 613	the agent
+*	Coreference T5 T6
+T7	Mention 721 763	this problem of optimal strategy selection
+T8	Mention 863 874	the problem
+*	Coreference T7 T8
+T9	Mention 820 824	ASAP
+T10	Mention 1355 1359	ASAP
+*	Coreference T9 T10
+T11	Mention 481 484	one
+T12	Mention 528 531	its
+*	Coreference T11 T12
+T13	Mention 284 303	unknown adversaries
+T14	Mention 528 543	its adversaries
+T15	Mention 568 573	their
+*	Coreference T13 T14 T15
+T16	Mention 164 183	intentional threats
+T17	Mention 260 273	these threats
+*	Coreference T16 T17
+T18	Mention 1287 1359	an efficient Mixed Integer Linear Program (MILP) implementation for ASAP
+T19	Mention 1330 1334	MILP
+*	Coreference T18 T19
+T20	Mention 1157 1162	Third
+T21	Mention 1164 1166	it
+*	Coreference T20 T21
+T22	Mention 1068 1074	Second
+T23	Mention 1076 1078	it
+*	Coreference T22 T23
+T24	Mention 901 928	the highest-reward strategy
+T25	Mention 977 979	it
+*	Coreference T24 T25
+
+Finished!
+Start coref document no: 164
+T1	Mention 181 236	The ability to preserve the privacy of all participants
+T2	Mention 240 448	an essential requirement of the underlying Information Filtering architectures, because the deployed Recommender Systems have to be accepted by privacy-aware users as well as information and service providers
+*	Coreference T1 T2
+T3	Mention 523 525	We
+T4	Mention 773 775	We
+T5	Mention 805 808	our
+T6	Mention 844 846	we
+*	Coreference T3 T4 T5 T6
+T7	Mention 541 595	an approach for privacy-preserving Recommender Systems
+T8	Mention 873 886	this approach
+*	Coreference T7 T8
+T9	Mention 205 236	the privacy of all participants
+T10	Mention 740 771	the privacy of all participants
+*	Coreference T9 T10
+T11	Mention 28 66	Privacy-Preserving Recommender Systems
+T12	Mention 67 86	Recommender Systems
+T13	Mention 341 360	Recommender Systems
+T14	Mention 557 595	privacy-preserving Recommender Systems
+*	Coreference T11 T12 T13 T14
+
+Finished!
+Start coref document no: 165
+index: behavior
+ behaviour,
+index: behavior
+ behaviour,
+index: analyze
+ analyse 
+T1	Mention 125 129	ACLs
+T2	Mention 359 363	them
+T3	Mention 853 858	their
+*	Coreference T1 T2 T3
+T4	Mention 603 622	sanction and reward
+T5	Mention 653 659	itself
+*	Coreference T4 T5
+T6	Mention 413 416	our
+T7	Mention 661 663	We
+*	Coreference T6 T7
+T8	Mention 735 751	these properties
+T9	Mention 853 869	their properties
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 166
+T1	Mention 289 306	car manufacturers
+T2	Mention 329 334	their
+*	Coreference T1 T2
+T3	Mention 172 279	systems that will allow cars to interact autonomously with each other, e.g., regarding traffic on the roads
+T4	Mention 377 390	these systems
+*	Coreference T3 T4
+T5	Mention 410 412	we
+T6	Mention 951 953	we
+*	Coreference T5 T6
+T7	Mention 644 753	self-interested car owners, who will care more about their own welfare than the social welfare of their peers
+T8	Mention 644 670	self-interested car owners
+T9	Mention 697 702	their
+T10	Mention 742 747	their
+T11	Mention 755 771	These car owners
+T12	Mention 795 800	their
+*	Coreference T7 T8 T9 T10 T11 T12
+T13	Mention 742 753	their peers
+T14	Mention 846 857	their peers
+*	Coreference T13 T14
+T15	Mention 359 365	Though
+T16	Mention 395 408	a proprietary
+*	Coreference T15 T16
+T17	Mention 79 97	more and more cars
+T18	Mention 329 339	their cars
+*	Coreference T17 T18
+T19	Mention 31 75	Self-Interested Agents in Vehicular Networks
+T20	Mention 795 807	their agents
+T21	Mention 818 822	they
+T22	Mention 846 851	their
+T23	Mention 991 1013	self-interested agents
+*	Coreference T19 T20 T21 T22 T23
+
+Finished!
+Start coref document no: 167
+T1	Mention 356 383	the flow management problem
+T2	Mention 549 561	This problem
+T3	Mention 589 591	it
+*	Coreference T1 T2 T3
+T4	Mention 1254 1260	Agents
+T5	Mention 1315 1320	their
+T6	Mention 1489 1495	agents
+*	Coreference T4 T5 T6
+T7	Mention 911 913	we
+T8	Mention 1381 1384	Our
+*	Coreference T7 T8
+T9	Mention 124 165	the Federal Aviation Administration (FAA)
+T10	Mention 161 164	FAA
+T11	Mention 173 180	The FAA
+T12	Mention 999 1006	the FAA
+T13	Mention 1003 1006	FAA
+*	Coreference T9 T10 T11 T12 T13
+T14	Mention 12 51	Agent-Based Air Traffic Flow Management
+T15	Mention 52 79	Air traffic flow management
+T16	Mention 1059 1082	traffic flow management
+*	Coreference T14 T15 T16
+T17	Mention 1187 1252	the separation required among the airplanes going though that fix
+T18	Mention 1295 1310	this separation
+*	Coreference T17 T18
+T19	Mention 1112 1151	a fix (a specific location in 2D space)
+T20	Mention 1156 1159	its
+T21	Mention 1244 1252	that fix
+*	Coreference T19 T20 T21
+
+Finished!
+Start coref document no: 168
+T1	Mention 377 422	the reward obtained by at least another agent
+T2	Mention 465 477	these reward
+*	Coreference T1 T2
+T3	Mention 273 362	the resources which are already shared among the agents, but the actions made by an agent
+T4	Mention 589 602	the resources
+*	Coreference T3 T4
+T5	Mention 0 17	A Q-decomposition
+T6	Mention 424 443	The Q-decomposition
+T7	Mention 632 650	no Q-decomposition
+*	Coreference T5 T6 T7
+
+Finished!
+Start coref document no: 169
+T1	Mention 203 205	We
+T2	Mention 670 672	We
+T3	Mention 905 907	We
+T4	Mention 1027 1029	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 293 384	agents that operate in stochastic environments, modeled as Markov decision processes (MDPs)
+T6	Mention 379 383	MDPs
+T7	Mention 468 474	agents
+T8	Mention 507 511	MDPs
+T9	Mention 761 767	agents
+T10	Mention 808 813	their
+*	Coreference T5 T6 T7 T8 T9 T10
+
+Finished!
+Start coref document no: 170
+T1	Mention 996 1021	the existing OSD approach
+T2	Mention 1183 1195	our approach
+*	Coreference T1 T2
+T3	Mention 986 988	We
+T4	Mention 1166 1168	We
+T5	Mention 1183 1186	our
+T6	Mention 1244 1247	our
+*	Coreference T3 T4 T5 T6
+T7	Mention 406 421	the environment
+T8	Mention 1327 1342	the environment
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 171
+T1	Mention 824 848	other interacting agents
+T2	Mention 924 929	their
+*	Coreference T1 T2
+T3	Mention 272 349	These graphical models called interactive dynamic influence diagrams (I-DIDs)
+T4	Mention 342 348	I-DIDs
+T5	Mention 543 549	I-DIDs
+T6	Mention 699 705	I-DIDs
+T7	Mention 886 892	I-DIDs
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 561 697	DIDs, which may be viewed as graphical representations of POMDPs, to multiagent settings in the same way that I-POMDPs generalize POMDPs
+T9	Mention 561 565	DIDs
+*	Coreference T8 T9
+T10	Mention 743 751	an agent
+T11	Mention 762 771	the agent
+*	Coreference T10 T11
+T12	Mention 375 541	the structure that is often present in real-world problems by decomposing the situation into chance and decision variables, and the dependencies between the variables
+T13	Mention 375 497	the structure that is often present in real-world problems by decomposing the situation into chance and decision variables
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 172
+T1	Mention 365 385	one popular approach
+T2	Mention 431 444	this approach
+T3	Mention 481 494	this approach
+*	Coreference T1 T2 T3
+T4	Mention 707 717	This paper
+T5	Mention 881 883	it
+*	Coreference T4 T5
+T6	Mention 782 875	SPIDER, a novel combination of three key features for policy generation in distributed POMDPs
+T7	Mention 782 788	SPIDER
+T8	Mention 790 875	a novel combination of three key features for policy generation in distributed POMDPs
+*	Coreference T6 T7 T8
+T9	Mention 650 660	two agents
+T10	Mention 940 952	agents (i.e.
+*	Coreference T9 T10
+T11	Mention 962 977	easier scale-up
+T12	Mention 1012 1014	it
+T13	Mention 1084 1086	it
+*	Coreference T11 T12 T13
+
+Finished!
+Start coref document no: 173
+T1	Mention 575 580	First
+T2	Mention 582 584	it
+T3	Mention 802 804	it
+T4	Mention 897 899	it
+*	Coreference T1 T2 T3 T4
+T5	Mention 301 303	we
+T6	Mention 451 454	Our
+T7	Mention 868 871	our
+T8	Mention 965 967	We
+T9	Mention 1074 1077	Our
+*	Coreference T5 T6 T7 T8 T9
+T10	Mention 451 522	Our heuristic solution method, called Value Function Propagation (VFP),
+T11	Mention 451 480	Our heuristic solution method
+*	Coreference T10 T11
+T12	Mention 106 156	Decentralized Markov Decision Processes (DEC-MDPs)
+T13	Mention 147 155	DEC-MDPs
+T14	Mention 361 449	DEC-MDPs, called OC-DEC-MDP, that has recently been shown to scale up to larger DEC-MDPs
+T15	Mention 361 369	DEC-MDPs
+T16	Mention 434 449	larger DEC-MDPs
+*	Coreference T12 T13 T14 T15 T16
+T17	Mention 54 60	Markov
+T18	Mention 120 126	Markov
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 174
+T1	Mention 539 541	We
+T2	Mention 710 712	we
+T3	Mention 785 788	our
+T4	Mention 835 837	we
+T5	Mention 1023 1025	we
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 738 749	the players
+T7	Mention 755 760	their
+T8	Mention 867 878	the players
+T9	Mention 972 1006	the players that committed earlier
+*	Coreference T6 T7 T8 T9
+T10	Mention 774 797	Central to our analyses
+T11	Mention 801 1006	the notion of an extortion, which we define, for a given order of the players, as a profile that contains, for each player, an optimal commitment given the commitments of the players that committed earlier
+*	Coreference T10 T11
+T12	Mention 291 295	some
+T13	Mention 619 624	their
+*	Coreference T12 T13
+T14	Mention 223 231	a player
+T15	Mention 297 305	a player
+T16	Mention 366 368	he
+T17	Mention 380 387	himself
+*	Coreference T14 T15 T16 T17
+T18	Mention 45 49	e.g.
+T19	Mention 126 129	his
+T20	Mention 190 193	his
+*	Coreference T18 T19 T20
+
+Finished!
+Start coref document no: 175
+T1	Mention 53 82	Ontologies building from text
+T2	Mention 92 161	a time-consuming task which justifies the growth of Ontology Learning
+*	Coreference T1 T2
+T3	Mention 163 166	Our
+T4	Mention 313 315	we
+T5	Mention 381 384	our
+T6	Mention 470 472	We
+T7	Mention 572 574	we
+T8	Mention 597 600	our
+*	Coreference T3 T4 T5 T6 T7 T8
+T9	Mention 163 186	Our system named Dynamo
+T10	Mention 597 607	our system
+*	Coreference T9 T10
+T11	Mention 302 312	this paper
+T12	Mention 395 397	It
+T13	Mention 490 492	it
+*	Coreference T11 T12 T13
+T14	Mention 231 251	an original approach
+T15	Mention 381 393	our approach
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 176
+T1	Mention 482 484	we
+T2	Mention 791 793	We
+*	Coreference T1 T2
+T3	Mention 493 707	a formal model for a semantic alignment procedure that incrementally aligns differing conceptualisations of two or more agents relative to their respective perception of the environment or domain they are acting in
+T4	Mention 780 789	the model
+*	Coreference T3 T4
+T5	Mention 569 619	differing conceptualisations of two or more agents
+T6	Mention 632 637	their
+T7	Mention 689 693	they
+*	Coreference T5 T6 T7
+T8	Mention 470 480	this paper
+T9	Mention 709 711	It
+*	Coreference T8 T9
+T10	Mention 384 393	semantics
+T11	Mention 394 398	that
+*	Coreference T10 T11
+T12	Mention 106 189	the semantic alignment of ontological entities used by knowledge-based applications
+T13	Mention 747 760	the alignment
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 177
+T1	Mention 183 218	the service consumers and providers
+T2	Mention 232 237	their
+*	Coreference T1 T2
+T3	Mention 115 124	consumers
+T4	Mention 749 758	consumers
+*	Coreference T3 T4
+T5	Mention 320 331	the parties
+T6	Mention 466 477	the parties
+T7	Mention 565 576	the parties
+T8	Mention 609 614	their
+*	Coreference T5 T6 T7 T8
+T9	Mention 744 772	both consumers and producers
+T10	Mention 872 882	consumers'
+*	Coreference T9 T10
+T11	Mention 533 693	a negotiation approach in which the parties can understand the semantics of their requests and offers and learn each other's preferences incrementally over time
+T12	Mention 1191 1203	our approach
+*	Coreference T11 T12
+T13	Mention 708 710	we
+T14	Mention 990 992	we
+T15	Mention 1081 1083	We
+T16	Mention 1191 1194	our
+*	Coreference T13 T14 T15 T16
+T17	Mention 341 366	service content and focus
+T18	Mention 492 516	the content of a service
+*	Coreference T17 T18
+T19	Mention 169 173	This
+T20	Mention 518 522	This
+*	Coreference T19 T20
+T21	Mention 67 87	dynamic environments
+T22	Mention 89 124	the services requested by consumers
+T23	Mention 1151 1159	services
+*	Coreference T21 T22 T23
+T24	Mention 1001 1013	an extension
+T25	Mention 1043 1045	it
+*	Coreference T24 T25
+
+Finished!
+Start coref document no: 178
+T1	Mention 148 155	agents'
+T2	Mention 270 274	them
+T3	Mention 432 439	agents'
+*	Coreference T1 T2 T3
+T4	Mention 306 312	agents
+T5	Mention 754 797	agents that use different reputation models
+*	Coreference T4 T5
+T6	Mention 593 634	semantic data obtained from this ontology
+T7	Mention 636 645	This data
+*	Coreference T6 T7
+T8	Mention 489 524	an ontology to deal with this issue
+T9	Mention 621 634	this ontology
+*	Coreference T8 T9
+T10	Mention 467 469	we
+T11	Mention 526 528	We
+*	Coreference T10 T11
+T12	Mention 351 388	the decision about trust other agents
+T13	Mention 392 451	a crucial condition to the formation of agents' cooperation
+*	Coreference T12 T13
+T14	Mention 127 172	a problem to achieve agents' interoperability
+T15	Mention 195 198	its
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 179
+T1	Mention 303 309	agents
+T2	Mention 418 424	agents
+T3	Mention 491 495	they
+T4	Mention 655 661	agents
+T5	Mention 795 799	they
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 554 566	the dialogue
+T7	Mention 694 706	the dialogue
+*	Coreference T6 T7
+T8	Mention 541 566	the rules of the dialogue
+T9	Mention 823 832	the rules
+*	Coreference T8 T9
+T10	Mention 63 99	Work on argumentation-based dialogue
+T11	Mention 258 267	This work
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 180
+index: favored
+ favoured 
+T1	Mention 99 183	a multiagent system where each (distributed) agent locally perceives its environment
+T2	Mention 755 765	the system
+*	Coreference T1 T2
+T3	Mention 66 68	We
+T4	Mention 395 397	we
+T5	Mention 510 512	we
+T6	Mention 592 594	We
+T7	Mention 647 649	we
+T8	Mention 1002 1004	we
+T9	Mention 1165 1167	We
+*	Coreference T3 T4 T5 T6 T7 T8 T9
+T10	Mention 225 235	each agent
+T11	Mention 825 833	no agent
+*	Coreference T10 T11
+T12	Mention 306 318	other agents
+T13	Mention 874 880	agents
+*	Coreference T12 T13
+T14	Mention 190 223	perception of an unexpected event
+T15	Mention 253 256	its
+T16	Mention 300 302	it
+*	Coreference T14 T15 T16
+T17	Mention 125 129	each
+T18	Mention 168 171	its
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 181
+T1	Mention 125 127	We
+T2	Mention 208 210	we
+T3	Mention 319 321	we
+T4	Mention 588 590	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 508 529	conditional proposals
+T6	Mention 647 662	these proposals
+*	Coreference T5 T6
+T7	Mention 330 408	the techniques of extended abduction in artificial intelligence and relaxation
+T8	Mention 455 471	These techniques
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 182
+T1	Mention 388 398	an agent's
+T2	Mention 689 697	an agent
+*	Coreference T1 T2
+T3	Mention 28 50	Successful negotiators
+T4	Mention 74 79	their
+*	Coreference T3 T4
+T5	Mention 388 431	an agent's contribution to the relationship
+T6	Mention 436 439	its
+*	Coreference T5 T6
+T7	Mention 304 332	balance (degree of fairness)
+T8	Mention 556 567	The balance
+T9	Mention 571 608	the difference between these matrices
+*	Coreference T7 T8 T9
+T10	Mention 269 299	intimacy (degree of closeness)
+T11	Mention 334 346	The intimacy
+T12	Mention 350 554	a pair of matrices that evaluate both an agent's contribution to the relationship and its opponent's contribution each from an information view and from a utilitarian view across the five LOGIC dimensions
+*	Coreference T10 T11 T12
+T13	Mention 124 131	Options
+T14	Mention 797 853	Options that are in-line with the current intimacy level
+*	Coreference T13 T14
+T15	Mention 95 99	five
+T16	Mention 533 537	five
+*	Coreference T15 T16
+T17	Mention 644 661	a target intimacy
+T18	Mention 1011 1030	the target intimacy
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 183
+T1	Mention 354 356	we
+T2	Mention 623 625	We
+T3	Mention 856 858	We
+*	Coreference T1 T2 T3
+T4	Mention 331 337	agents
+T5	Mention 635 641	agents
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 184
+T1	Mention 534 536	we
+T2	Mention 729 731	We
+T3	Mention 762 765	our
+T4	Mention 820 823	our
+T5	Mention 996 999	our
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 314 328	IR, IC, and BB
+T7	Mention 691 727	IR, IC and BB with a loss of welfare
+T8	Mention 691 693	IR
+T9	Mention 695 727	IC and BB with a loss of welfare
+*	Coreference T6 T7 T8 T9
+T10	Mention 226 230	[15]
+T11	Mention 377 381	[15]
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 185
+T1	Mention 323 325	we
+T2	Mention 411 413	We
+T3	Mention 590 592	We
+T4	Mention 731 733	we
+T5	Mention 890 892	us
+T6	Mention 979 982	Our
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 643 660	a certain feature
+T8	Mention 709 721	that feature
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 186
+T1	Mention 377 379	We
+T2	Mention 664 666	We
+T3	Mention 833 835	We
+T4	Mention 976 978	we
+T5	Mention 1278 1281	Our
+T6	Mention 1369 1372	our
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 71 100	individual buyers and sellers
+T8	Mention 607 625	buyers and sellers
+T9	Mention 646 650	they
+*	Coreference T7 T8 T9
+T10	Mention 424 452	buyers, sellers, and traders
+T11	Mention 424 430	buyers
+T12	Mention 432 439	sellers
+T13	Mention 445 452	traders
+T14	Mention 536 547	the traders
+T15	Mention 564 571	traders
+T16	Mention 1016 1027	the traders
+T17	Mention 1269 1276	traders
+*	Coreference T10 T11 T12 T13 T14 T15 T16 T17
+T18	Mention 1159 1180	the network structure
+T19	Mention 1343 1360	network structure
+*	Coreference T18 T19
+T20	Mention 241 264	the same intermediaries
+T21	Mention 270 274	they
+T22	Mention 330 335	their
+*	Coreference T20 T21 T22
+T23	Mention 1092 1109	a positive profit
+T24	Mention 1125 1127	it
+*	Coreference T23 T24
+
+Finished!
+Start coref document no: 187
+T1	Mention 97 155	The winner determination problem in combinatorial auctions
+T2	Mention 159 281	the problem of determining the allocation of the items among the bidders that maximizes the sum of the accepted bid prices
+T3	Mention 289 301	this problem
+T4	Mention 998 1010	this problem
+T5	Mention 1443 1475	the winner determination problem
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 989 991	we
+T7	Mention 1150 1152	we
+T8	Mention 1281 1283	We
+T9	Mention 1430 1432	we
+T10	Mention 1645 1647	we
+T11	Mention 1714 1717	our
+*	Coreference T6 T7 T8 T9 T10 T11
+T12	Mention 485 498	an item graph
+T13	Mention 627 629	it
+*	Coreference T12 T13
+T14	Mention 45 67	Structured Item Graphs
+T15	Mention 450 472	structured item graphs
+*	Coreference T14 T15
+T16	Mention 1294 1387	the notion of hypertree decomposition, a recently introduced measure of hypergraph cyclicity,
+T17	Mention 1294 1331	the notion of hypertree decomposition
+T18	Mention 1333 1386	a recently introduced measure of hypergraph cyclicity
+*	Coreference T16 T17 T18
+
+Finished!
+Start coref document no: 188
+T1	Mention 50 60	This paper
+T2	Mention 431 441	this paper
+*	Coreference T1 T2
+T3	Mention 396 416	the underlying graph
+T4	Mention 420 426	a path
+T5	Mention 459 479	the underlying graph
+T6	Mention 483 504	a bounded-degree tree
+*	Coreference T3 T4 T5 T6
+T7	Mention 184 312	the best response policy, which was proposed by Kearns et al. [13] as a way to represent all Nash equilibria of a graphical game
+T8	Mention 184 208	the best response policy
+T9	Mention 340 364	the best response policy
+T10	Mention 509 533	the best response policy
+T11	Mention 999 1023	the best response policy
+*	Coreference T7 T8 T9 T10 T11
+T12	Mention 277 281	Nash
+T13	Mention 610 614	Nash
+T14	Mention 721 725	Nash
+T15	Mention 1093 1097	Nash
+*	Coreference T12 T13 T14 T15
+T16	Mention 133 136	Our
+T17	Mention 443 445	we
+T18	Mention 773 775	We
+T19	Mention 837 839	we
+*	Coreference T16 T17 T18 T19
+T20	Mention 71 131	the problem of fair equilibrium selection in graphical games
+T21	Mention 859 871	this problem
+*	Coreference T20 T21
+T22	Mention 34 49	Graphical Games
+T23	Mention 116 131	graphical games
+*	Coreference T22 T23
+
+Finished!
+Start coref document no: 189
+T1	Mention 432 434	We
+T2	Mention 807 809	We
+*	Coreference T1 T2
+T3	Mention 820 955	an iterative auction mechanism that maintains prices on local clusters of attributes rather than the full space of joint configurations
+T4	Mention 1049 1062	the mechanism
+*	Coreference T3 T4
+T5	Mention 406 430	a multiattribute auction
+T6	Mention 1003 1016	the auction's
+*	Coreference T5 T6
+T7	Mention 144 152	traders'
+T8	Mention 962 970	traders'
+*	Coreference T7 T8
+T9	Mention 144 164	traders' preferences
+T10	Mention 962 982	traders' preferences
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 190
+T1	Mention 82 84	We
+T2	Mention 427 429	We
+T3	Mention 754 756	We
+T4	Mention 1103 1105	we
+T5	Mention 1287 1290	Our
+T6	Mention 1339 1341	we
+T7	Mention 1426 1428	we
+T8	Mention 1774 1778	ours
+T9	Mention 1872 1875	our
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8 T9
+T10	Mention 565 588	the low and high values
+T11	Mention 1052 1075	the low and high values
+T12	Mention 1080 1101	the same for all jobs
+*	Coreference T10 T11 T12
+T13	Mention 469 559	this problem, where the processing time of a job on each machine may either be low or high
+T14	Mention 469 481	this problem
+*	Coreference T13 T14
+T15	Mention 249 253	This
+T16	Mention 257 293	a multidimensional scheduling domain
+T17	Mention 619 623	This
+T18	Mention 661 671	the domain
+T19	Mention 880 884	This
+*	Coreference T15 T16 T17 T18 T19
+T20	Mention 1165 1170	These
+T21	Mention 1175 1285	the first truthful mechanisms with non-trivial performance guarantees for a multidimensional scheduling domain
+T22	Mention 1723 1742	truthful mechanisms
+*	Coreference T20 T21 T22
+T23	Mention 136 154	unrelated machines
+T24	Mention 209 221	the machines
+*	Coreference T23 T24
+T25	Mention 63 81	Cycle Monotonicity
+T26	Mention 1460 1478	cycle monotonicity
+*	Coreference T25 T26
+T27	Mention 1914 1919	first
+T28	Mention 2029 2031	it
+*	Coreference T27 T28
+T29	Mention 971 997	a multidimensional problem
+T30	Mention 1996 2007	the problem
+*	Coreference T29 T30
+T31	Mention 721 728	pj, ∞
+T32	Mention 725 728	∞
+*	Coreference T31 T32
+
+Finished!
+Start coref document no: 191
+T1	Mention 31 41	A mediator
+T2	Mention 116 126	A mediator
+T3	Mention 893 905	the mediator
+T4	Mention 1097 1111	the mediator's
+T5	Mention 1165 1177	the mediator
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 102 114	a given game
+T7	Mention 217 225	the game
+*	Coreference T6 T7
+T8	Mention 413 416	VCG
+T9	Mention 795 798	VCG
+*	Coreference T8 T9
+T10	Mention 486 518	some nice theoretical properties
+T11	Mention 595 611	These properties
+*	Coreference T10 T11
+T12	Mention 844 865	the mediator services
+T13	Mention 1097 1120	the mediator's services
+*	Coreference T12 T13
+T14	Mention 274 321	mediators for games with incomplete information
+T15	Mention 666 671	their
+*	Coreference T14 T15
+T16	Mention 250 252	we
+T17	Mention 682 684	We
+T18	Mention 818 820	We
+T19	Mention 1179 1181	We
+T20	Mention 1422 1424	we
+*	Coreference T16 T17 T18 T19 T20
+T21	Mention 239 249	this paper
+T22	Mention 333 335	it
+*	Coreference T21 T22
+T23	Mention 45 62	a reliable entity
+T24	Mention 162 165	its
+*	Coreference T23 T24
+T25	Mention 1384 1387	k=1
+T26	Mention 1389 1420	the self-price position auction
+T27	Mention 1507 1518	the auction
+*	Coreference T25 T26 T27
+T28	Mention 1377 1378	1
+T29	Mention 1386 1387	1
+*	Coreference T28 T29
+T30	Mention 1067 1120	the agents who did not choose the mediator's services
+T31	Mention 1128 1177	the agents who report false types to the mediator
+*	Coreference T30 T31
+
+Finished!
+Start coref document no: 192
+T1	Mention 736 747	Cavallo [3]
+T2	Mention 1151 1160	Cavallo's
+*	Coreference T1 T2
+T3	Mention 98 150	the well-known Vickrey-Clarke-Groves (VCG) mechanism
+T4	Mention 243 260	the VCG mechanism
+T5	Mention 279 305	budget balanced: generally
+*	Coreference T3 T4 T5
+T6	Mention 365 403	an auctioneer who is selling the items
+T7	Mention 483 497	the auctioneer
+*	Coreference T6 T7
+T8	Mention 951 953	we
+T9	Mention 998 1000	We
+T10	Mention 1236 1238	we
+T11	Mention 1510 1512	We
+T12	Mention 1731 1733	We
+T13	Mention 1934 1936	we
+*	Coreference T8 T9 T10 T11 T12 T13
+T14	Mention 405 409	this
+T15	Mention 677 679	it
+*	Coreference T14 T15
+T16	Mention 1247 1330	a family of mechanisms that redistribute some of the VCG payment back to the agents
+T17	Mention 1350 1360	the family
+T18	Mention 1442 1452	The family
+T19	Mention 1666 1676	the family
+*	Coreference T16 T17 T18 T19
+T20	Mention 307 318	the agents'
+T21	Mention 546 556	the agents
+T22	Mention 621 631	themselves
+T23	Mention 719 725	agents
+T24	Mention 820 830	the agents
+T25	Mention 1098 1104	agents
+T26	Mention 1320 1330	the agents
+*	Coreference T20 T21 T22 T23 T24 T25 T26
+T27	Mention 1462 1490	the Bailey-Cavallo mechanism
+T28	Mention 1875 1903	the Bailey-Cavallo mechanism
+*	Coreference T27 T28
+T29	Mention 1713 1729	a linear program
+T30	Mention 1782 1801	this linear program
+*	Coreference T29 T30
+T31	Mention 1526 1547	an optimization model
+T32	Mention 1699 1709	this model
+*	Coreference T31 T32
+T33	Mention 79 96	one or more items
+T34	Mention 394 403	the items
+T35	Mention 511 520	the items
+T36	Mention 593 602	the items
+*	Coreference T33 T34 T35 T36
+T37	Mention 37 40	VCG
+T38	Mention 136 139	VCG
+T39	Mention 247 250	VCG
+T40	Mention 800 803	VCG
+T41	Mention 1300 1303	VCG
+*	Coreference T37 T38 T39 T40 T41
+T42	Mention 1641 1655	the worst case
+T43	Mention 1908 1922	the worst case
+*	Coreference T42 T43
+T44	Mention 1560 1581	the optimal mechanism
+T45	Mention 1585 1589	that
+*	Coreference T44 T45
+T46	Mention 796 811	the VCG payment
+T47	Mention 1296 1311	the VCG payment
+*	Coreference T46 T47
+T48	Mention 850 934	efficiency, strategy-proofness, individual rationality, and the non-deficit property
+T49	Mention 910 934	the non-deficit property
+*	Coreference T48 T49
+
+Finished!
+Start coref document no: 193
+T1	Mention 114 120	agents
+T2	Mention 134 139	their
+T3	Mention 184 189	their
+T4	Mention 238 244	agents
+*	Coreference T1 T2 T3 T4
+T5	Mention 332 495	the upcoming national kidney-exchange market, where patients with kidney disease can obtain compatible donors by swapping their own willing but incompatible donors
+T6	Mention 332 376	the upcoming national kidney-exchange market
+T7	Mention 571 582	this market
+*	Coreference T5 T6 T7
+T8	Mention 384 412	patients with kidney disease
+T9	Mention 454 459	their
+*	Coreference T8 T9
+T10	Mention 1045 1099	the clearing problem with this cycle-length constraint
+T11	Mention 1120 1122	it
+*	Coreference T10 T11
+T12	Mention 1031 1033	We
+T13	Mention 1205 1207	We
+T14	Mention 1337 1339	We
+T15	Mention 1429 1431	we
+T16	Mention 1508 1510	We
+T17	Mention 1597 1600	Our
+T18	Mention 1694 1697	Our
+T19	Mention 1893 1896	our
+*	Coreference T12 T13 T14 T15 T16 T17 T18 T19
+T20	Mention 89 112	barter-exchange markets
+T21	Mention 1256 1269	these markets
+*	Coreference T20 T21
+T22	Mention 1752 1764	the Alliance
+T23	Mention 1756 1784	Alliance for Paired Donation
+*	Coreference T22 T23
+T24	Mention 1216 1235	the first algorithm
+T25	Mention 1597 1610	Our algorithm
+T26	Mention 1694 1707	Our algorithm
+*	Coreference T24 T25 T26
+
+Finished!
+Start coref document no: 194
+T1	Mention 330 332	We
+T2	Mention 427 430	Our
+T3	Mention 560 562	We
+T4	Mention 882 884	We
+T5	Mention 967 969	We
+T6	Mention 1148 1150	we
+T7	Mention 1236 1238	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 603 650	a strategic model of dynamic parimutuel markets
+T9	Mention 1182 1191	the model
+*	Coreference T8 T9
+T10	Mention 986 1023	a special form of the projection game
+T11	Mention 1087 1089	it
+*	Coreference T10 T11
+T12	Mention 427 451	Our central contribution
+T13	Mention 455 558	a new abstract betting game, the projection game, that serves as a useful model for information markets
+T14	Mention 455 482	a new abstract betting game
+T15	Mention 484 503	the projection game
+T16	Mention 580 589	this game
+T17	Mention 725 744	The projection game
+T18	Mention 889 891	it
+T19	Mention 1004 1023	the projection game
+*	Coreference T12 T13 T14 T15 T16 T17 T18 T19
+T20	Mention 260 263	two
+T21	Mention 1162 1165	two
+*	Coreference T20 T21
+T22	Mention 98 116	aggregate traders'
+T23	Mention 1282 1289	traders
+*	Coreference T22 T23
+T24	Mention 22 41	Information Markets
+T25	Mention 42 61	Information markets
+T26	Mention 224 243	information markets
+T27	Mention 321 328	markets
+T28	Mention 406 425	information markets
+T29	Mention 539 558	information markets
+*	Coreference T24 T25 T26 T27 T28 T29
+
+Finished!
+Start coref document no: 195
+T1	Mention 24 26	We
+T2	Mention 168 170	We
+T3	Mention 511 513	We
+T4	Mention 1002 1004	we
+T5	Mention 1245 1247	We
+T6	Mention 1316 1318	We
+T7	Mention 1434 1436	We
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 847 861	4, 9, or 13-21
+T9	Mention 847 848	4
+*	Coreference T8 T9
+T10	Mention 179 310	the auctioneer problem of risklessly matching up wagers or, equivalently, finding arbitrage opportunities among the proposed wagers
+T11	Mention 630 652	the auctioneer problem
+T12	Mention 1015 1037	the auctioneer problem
+T13	Mention 1259 1281	the auctioneer problem
+*	Coreference T10 T11 T12 T13
+T14	Mention 433 456	the number of orderings
+T15	Mention 467 477	the number
+*	Coreference T14 T15
+T16	Mention 312 389	Requiring bidders to explicitly list the orderings that they'd like to bet on
+T17	Mention 577 584	bidders
+*	Coreference T16 T17
+T18	Mention 205 310	risklessly matching up wagers or, equivalently, finding arbitrage opportunities among the proposed wagers
+T19	Mention 368 372	they
+*	Coreference T18 T19
+T20	Mention 930 948	example horse A, B
+T21	Mention 930 945	example horse A
+T22	Mention 1210 1225	example horse A
+*	Coreference T20 T21 T22
+T23	Mention 689 739	traders to bet either that a candidate will end up
+T24	Mention 1116 1123	traders
+*	Coreference T23 T24
+
+Finished!
+Start coref document no: 196
+index: analyze
+ analyse 
+T1	Mention 101 136	several overlapping teams of agents
+T2	Mention 181 192	these teams
+*	Coreference T1 T2
+T3	Mention 459 478	the frugality ratio
+T4	Mention 482 554	the ratio of the total payment of a mechanism to a desired payment bound
+T5	Mention 556 565	The ratio
+T6	Mention 874 893	the frugality ratio
+*	Coreference T3 T4 T5 T6
+T7	Mention 413 428	frugality ratio
+T8	Mention 778 797	its frugality ratio
+*	Coreference T7 T8
+T9	Mention 516 554	a mechanism to a desired payment bound
+T10	Mention 595 608	the mechanism
+*	Coreference T9 T10
+T11	Mention 689 691	we
+T12	Mention 1040 1042	we
+T13	Mention 1152 1154	we
+T14	Mention 1230 1232	we
+T15	Mention 1392 1394	We
+T16	Mention 1573 1575	We
+T17	Mention 1618 1621	our
+*	Coreference T11 T12 T13 T14 T15 T16 T17
+T18	Mention 358 381	Karlin, Kempe and Tamir
+T19	Mention 358 364	Karlin
+T20	Mention 1211 1217	Karlin
+*	Coreference T18 T19 T20
+T21	Mention 961 965	this
+T22	Mention 969 1028	the first auction for this problem to have these properties
+*	Coreference T21 T22
+T23	Mention 677 687	this paper
+T24	Mention 778 781	its
+*	Coreference T23 T24
+
+Finished!
+Start coref document no: 197
+index: #
+�p
+T1	Mention 459 487	A compound securities market
+T2	Mention 641 651	the market
+*	Coreference T1 T2
+T3	Mention 1000 1033	the auctioneer's matching problem
+T4	Mention 1064 1084	the matching problem
+T5	Mention 1283 1294	the problem
+*	Coreference T3 T4 T5
+T6	Mention 827 829	We
+T7	Mention 974 976	We
+T8	Mention 1035 1037	We
+T9	Mention 1169 1171	We
+T10	Mention 1372 1374	We
+*	Coreference T6 T7 T8 T9 T10
+T11	Mention 375 381	agents
+T12	Mention 495 501	agents
+T13	Mention 570 574	them
+T14	Mention 599 604	their
+T15	Mention 775 786	the agents'
+*	Coreference T11 T12 T13 T14 T15
+T16	Mention 98 254	a framework for trading in compound securities: financial instruments that pay off contingent on the outcomes of arbitrary statements in propositional logic
+T17	Mention 907 920	the framework
+*	Coreference T16 T17
+T18	Mention 1147 1167	the indivisible case
+T19	Mention 1350 1370	the indivisible case
+*	Coreference T18 T19
+T20	Mention 1106 1167	the divisible case and Σp 2-complete in the indivisible case
+T21	Mention 1312 1330	the divisible case
+*	Coreference T20 T21
+
+Finished!
+Start coref document no: 198
+T1	Mention 458 467	Our model
+T2	Mention 471 556	a combinatorial variant of the classical principal-agent problem from economic theory
+*	Coreference T1 T2
+T3	Mention 609 625	strategic agents
+T4	Mention 668 673	their
+T5	Mention 770 780	the agents
+T6	Mention 828 838	the agents
+T7	Mention 854 858	them
+T8	Mention 898 908	the agents
+*	Coreference T3 T4 T5 T6 T7 T8
+T9	Mention 458 461	Our
+T10	Mention 561 564	our
+T11	Mention 703 706	Our
+T12	Mention 954 956	We
+*	Coreference T9 T10 T11 T12
+T13	Mention 573 584	a principal
+T14	Mention 652 655	his
+T15	Mention 698 701	him
+T16	Mention 804 817	The principal
+*	Coreference T13 T14 T15 T16
+T17	Mention 394 456	the hidden actions that are performed by the different parties
+T18	Mention 668 681	their actions
+*	Coreference T17 T18
+T19	Mention 267 319	the different parties in such computational settings
+T20	Mention 435 456	the different parties
+*	Coreference T19 T20
+T21	Mention 68 142	the Internet, whose components are owned and operated by different parties
+T22	Mention 68 80	the Internet
+*	Coreference T21 T22
+
+Finished!
+Start coref document no: 199
+T1	Mention 164 175	the demands
+T2	Mention 180 265	the maximizers of the utility function over the budget set corresponding to the price
+*	Coreference T1 T2
+T3	Mention 532 586	learnability of degenerate classes of demand functions
+T4	Mention 820 867	the learnability of classes of demand functions
+*	Coreference T3 T4
+T5	Mention 493 506	Their results
+T6	Mention 920 931	Our results
+*	Coreference T5 T6
+T7	Mention 799 801	we
+T8	Mention 920 923	Our
+T9	Mention 1137 1139	We
+*	Coreference T7 T8 T9
+T10	Mention 267 276	Afriat [1
+T11	Mention 1214 1222	Afriat's
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 200
+T1	Mention 308 512	a fully polynomial-time approximation scheme for the multi-unit allocation problem, which computes a (1 + )approximation in worst-case time T = O(n3 / ), given n bids each with a constant number of pieces
+T2	Mention 531 556	this approximation scheme
+*	Coreference T1 T2
+T3	Mention 62 64	We
+T4	Mention 223 226	our
+T5	Mention 297 299	we
+T6	Mention 522 524	we
+*	Coreference T3 T4 T5 T6
+T7	Mention 564 603	a Vickrey-Clarke-Groves (VCG) mechanism
+T8	Mention 589 592	VCG
+*	Coreference T7 T8
+T9	Mention 357 512	the multi-unit allocation problem, which computes a (1 + )approximation in worst-case time T = O(n3 / ), given n bids each with a constant number of pieces
+T10	Mention 357 390	the multi-unit allocation problem
+*	Coreference T9 T10
+T11	Mention 410 411	1
+T12	Mention 770 771	1
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 201
+T1	Mention 193 212	the auction process
+T2	Mention 217 220	its
+T3	Mention 253 255	it
+*	Coreference T1 T2 T3
+T4	Mention 315 502	the advertisers, who must solve a complex optimization problem to decide how to place bids on keywords to maximize their return (the number of user clicks on their ads) for a given budget
+T5	Mention 315 330	the advertisers
+T6	Mention 430 435	their
+T7	Mention 473 478	their
+*	Coreference T4 T5 T6 T7
+T8	Mention 303 305	we
+T9	Mention 504 506	We
+T10	Mention 609 611	we
+T11	Mention 844 847	our
+T12	Mention 930 932	We
+*	Coreference T8 T9 T10 T11 T12
+T13	Mention 790 791	1
+T14	Mention 796 797	1
+*	Coreference T13 T14
+
+Finished!
+Start coref document no: 202
+T1	Mention 289 291	We
+T2	Mention 417 420	Our
+T3	Mention 455 457	we
+T4	Mention 723 725	we
+T5	Mention 923 925	we
+T6	Mention 1119 1122	Our
+T7	Mention 1189 1191	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7
+T8	Mention 880 883	two
+T9	Mention 896 899	two
+*	Coreference T8 T9
+T10	Mention 116 127	the agents'
+T11	Mention 172 182	the agents
+T12	Mention 211 216	their
+*	Coreference T10 T11 T12
+T13	Mention 20 42	a Bounded Action Space
+T14	Mention 211 229	their action space
+*	Coreference T13 T14
+T15	Mention 1041 1050	O( 1 k2 )
+T16	Mention 1044 1048	1 k2
+*	Coreference T15 T16
+T17	Mention 880 891	two players
+T18	Mention 1204 1209	their
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 203
+T1	Mention 800 802	we
+T2	Mention 973 975	We
+*	Coreference T1 T2
+T3	Mention 131 142	the players
+T4	Mention 150 155	their
+*	Coreference T3 T4
+T5	Mention 192 202	this model
+T6	Mention 508 517	the model
+*	Coreference T5 T6
+T7	Mention 150 166	their strategies
+T8	Mention 524 534	strategies
+*	Coreference T7 T8
+
+Finished!
+Start coref document no: 204
+T1	Mention 350 453	the problem of finding Nash equilibria in a general degree-3 graphical game with two actions per player
+T2	Mention 576 588	this problem
+*	Coreference T1 T2
+T3	Mention 778 863	a dynamic programming-based algorithm that computes all Nash equilibria of such games
+T4	Mention 885 900	their algorithm
+*	Coreference T3 T4
+T5	Mention 1111 1113	We
+T6	Mention 1209 1211	We
+T7	Mention 1448 1451	our
+T8	Mention 1620 1622	We
+T9	Mention 1788 1791	our
+T10	Mention 1858 1860	we
+*	Coreference T5 T6 T7 T8 T9 T10
+T11	Mention 1225 1436	a new algorithm that is based on the ideas of Kearns et al. and computes all Nash equilibria in quadratic time if the input graph is a path, and in polynomial time if it is an arbitrary graph of maximum degree 2
+T12	Mention 1448 1461	our algorithm
+T13	Mention 1788 1801	our algorithm
+*	Coreference T11 T12 T13
+T14	Mention 373 377	Nash
+T15	Mention 834 838	Nash
+T16	Mention 1074 1078	Nash
+T17	Mention 1191 1195	Nash
+T18	Mention 1302 1306	Nash
+T19	Mention 1485 1489	Nash
+T20	Mention 1881 1885	Nash
+*	Coreference T14 T15 T16 T17 T18 T19 T20
+T21	Mention 431 434	two
+T22	Mention 653 656	two
+*	Coreference T21 T22
+T23	Mention 219 239	the underlying graph
+T24	Mention 1937 1957	the underlying graph
+*	Coreference T23 T24
+T25	Mention 183 204	the number of players
+T26	Mention 318 320	It
+*	Coreference T25 T26
+T27	Mention 154 176	non-cooperative agents
+T28	Mention 256 260	they
+*	Coreference T27 T28
+T29	Mention 19 53	Graphical Games on Trees Revisited
+T30	Mention 54 69	Graphical games
+T31	Mention 632 647	graphical games
+T32	Mention 1504 1519	graphical games
+*	Coreference T29 T30 T31 T32
+T33	Mention 1633 1637	this
+T34	Mention 1757 1759	It
+T35	Mention 1763 1779	an open question
+*	Coreference T33 T34 T35
+T36	Mention 1321 1364	quadratic time if the input graph is a path
+T37	Mention 1392 1394	it
+T38	Mention 1398 1436	an arbitrary graph of maximum degree 2
+*	Coreference T36 T37 T38
+T39	Mention 1339 1354	the input graph
+T40	Mention 1358 1364	a path
+*	Coreference T39 T40
+T41	Mention 1435 1436	2
+T42	Mention 1754 1755	2
+*	Coreference T41 T42
+T43	Mention 1065 1109	a single Nash equilibrium in polynomial time
+T44	Mention 1164 1174	the output
+T45	Mention 1189 1207	a Nash equilibrium
+*	Coreference T43 T44 T45
+T46	Mention 865 900	The running time of their algorithm
+T47	Mention 1544 1560	the running time
+*	Coreference T46 T47
+T48	Mention 738 863	Kearns, Littman and Singh, who proposed a dynamic programming-based algorithm that computes all Nash equilibria of such games
+T49	Mention 738 763	Kearns, Littman and Singh
+T50	Mention 738 744	Kearns
+T51	Mention 992 998	Kearns
+T52	Mention 1271 1277	Kearns
+*	Coreference T48 T49 T50 T51 T52
+T53	Mention 746 753	Littman
+T54	Mention 983 1008	Littman, Kearns and Singh
+T55	Mention 983 990	Littman
+*	Coreference T53 T54 T55
+T56	Mention 758 763	Singh
+T57	Mention 1003 1008	Singh
+*	Coreference T56 T57
+
+Finished!
+Start coref document no: 205
+T1	Mention 77 79	We
+T2	Mention 318 320	We
+T3	Mention 573 575	We
+T4	Mention 720 722	we
+*	Coreference T1 T2 T3 T4
+
+Finished!
+Start coref document no: 206
+T1	Mention 876 927	INET, a large electronic exchange for NASDAQ stocks
+T2	Mention 876 880	INET
+T3	Mention 882 927	a large electronic exchange for NASDAQ stocks
+*	Coreference T1 T2 T3
+T4	Mention 49 51	We
+T5	Mention 187 189	We
+T6	Mention 379 381	We
+T7	Mention 630 632	We
+T8	Mention 783 786	Our
+*	Coreference T4 T5 T6 T7 T8
+T9	Mention 454 543	absolute traders (who determine their prices independent of the current order book state)
+T10	Mention 579 584	their
+*	Coreference T9 T10
+T11	Mention 486 498	their prices
+T12	Mention 579 591	their prices
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 207
+T1	Mention 286 319	the total amount of money (scrip)
+T2	Mention 450 475	the total amount of money
+*	Coreference T1 T2
+T3	Mention 53 65	P2P Networks
+T4	Mention 587 599	P2P networks
+*	Coreference T3 T4
+T5	Mention 34 48	a Scrip System
+T6	Mention 152 166	a scrip system
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 208
+T1	Mention 248 254	people
+T2	Mention 324 328	they
+*	Coreference T1 T2
+T3	Mention 421 429	a player
+T4	Mention 499 502	his
+*	Coreference T3 T4
+T5	Mention 384 386	we
+T6	Mention 410 412	We
+T7	Mention 563 565	we
+T8	Mention 911 913	We
+T9	Mention 1496 1498	we
+T10	Mention 1654 1656	we
+*	Coreference T5 T6 T7 T8 T9 T10
+T11	Mention 584 592	Socratic
+T12	Mention 611 619	Socratic
+T13	Mention 1224 1232	Socratic
+T14	Mention 1729 1737	Socratic
+T15	Mention 1790 1798	Socratic
+*	Coreference T11 T12 T13 T14 T15
+T16	Mention 372 382	this paper
+T17	Mention 1151 1161	this paper
+*	Coreference T16 T17
+T18	Mention 276 317	the utility of taking a particular action
+T19	Mention 351 354	its
+*	Coreference T18 T19
+T20	Mention 149 164	the game-either
+T21	Mention 506 509	her
+*	Coreference T20 T21
+T22	Mention 66 73	players
+T23	Mention 626 633	players
+T24	Mention 759 766	Players
+T25	Mention 983 990	players
+T26	Mention 1018 1023	their
+T27	Mention 1081 1088	players
+T28	Mention 1114 1119	their
+T29	Mention 1438 1449	the players
+*	Coreference T22 T23 T24 T25 T26 T27 T28 T29
+T30	Mention 1539 1543	Nash
+T31	Mention 1691 1695	Nash
+*	Coreference T30 T31
+T32	Mention 1186 1237	the underlying worlds of a two-player Socratic game
+T33	Mention 1249 1449	constant-sum games or strategically zero-sum games, a class that generalizes constant-sum games to include all games in which the sum of payoffs depends linearly on the interaction between the players
+T34	Mention 1249 1267	constant-sum games
+T35	Mention 1285 1299	zero-sum games
+T36	Mention 1326 1344	constant-sum games
+T37	Mention 1456 1477	the underlying worlds
+T38	Mention 1615 1625	the worlds
+*	Coreference T32 T33 T34 T35 T36 T37 T38
+
+Finished!
+Start coref document no: 209
+T1	Mention 698 710	an algorithm
+T2	Mention 785 788	Its
+*	Coreference T1 T2
+T3	Mention 268 270	we
+T4	Mention 491 493	we
+T5	Mention 687 689	We
+T6	Mention 755 758	our
+T7	Mention 859 861	we
+T8	Mention 1073 1075	we
+T9	Mention 1220 1222	We
+T10	Mention 1318 1320	we
+*	Coreference T3 T4 T5 T6 T7 T8 T9 T10
+T11	Mention 712 722	GameShrink
+T12	Mention 974 984	GameShrink
+T13	Mention 1061 1071	GameShrink
+T14	Mention 1276 1286	GameShrink
+*	Coreference T11 T12 T13 T14
+T15	Mention 509 513	Nash
+T16	Mention 648 652	Nash
+*	Coreference T15 T16
+T17	Mention 314 376	the related ordered game isomorphic abstraction transformation
+T18	Mention 597 615	the transformation
+*	Coreference T17 T18
+T19	Mention 281 309	the ordered game isomorphism
+T20	Mention 755 770	our isomorphism
+*	Coreference T19 T20
+T21	Mention 22 69	Large Sequential Games of Imperfect Information
+T22	Mention 238 249	large games
+*	Coreference T21 T22
+T23	Mention 740 783	the game using our isomorphism exhaustively
+T24	Mention 905 913	the game
+*	Coreference T23 T24
+T25	Mention 785 799	Its complexity
+T26	Mention 803 811	˜O(n2 )
+T27	Mention 884 886	It
+T28	Mention 890 918	no larger than the game tree
+T29	Mention 944 946	it
+T30	Mention 1040 1053	the game tree
+*	Coreference T25 T26 T27 T28 T29 T30
+
+Finished!
+Start coref document no: 210
+T1	Mention 34 36	We
+T2	Mention 267 269	us
+T3	Mention 342 344	We
+T4	Mention 468 470	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 98 108	the agents
+T6	Mention 149 159	the agents
+*	Coreference T5 T6
+T7	Mention 134 167	the attributes the agents possess
+T8	Mention 198 214	these attributes
+*	Coreference T7 T8
+T9	Mention 67 108	the value of cooperation among the agents
+T10	Mention 233 243	this value
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 211
+T1	Mention 904 928	the options-based scheme
+T2	Mention 952 976	the options-based scheme
+*	Coreference T1 T2
+T3	Mention 34 38	eBay
+T4	Mention 88 92	eBay
+T5	Mention 245 249	eBay
+T6	Mention 694 700	eBay's
+T7	Mention 818 822	eBay
+T8	Mention 1010 1052	eBay, while also increasing seller revenue
+T9	Mention 1010 1014	eBay
+*	Coreference T3 T4 T5 T6 T7 T8 T9
+
+Finished!
+Start coref document no: 212
+T1	Mention 158 169	Advertisers
+T2	Mention 244 249	their
+T3	Mention 255 266	Advertisers
+T4	Mention 333 338	their
+*	Coreference T1 T2 T3 T4
+T5	Mention 390 512	a family of ranking rules that contains those typically used to model Yahoo! and Google's auction designs as special cases
+T6	Mention 812 822	our family
+*	Coreference T5 T6
+T7	Mention 378 380	We
+T8	Mention 514 516	We
+T9	Mention 732 734	We
+T10	Mention 812 815	our
+T11	Mention 900 902	We
+*	Coreference T7 T8 T9 T10 T11
+T12	Mention 460 466	Yahoo!
+T13	Mention 990 995	Yahoo
+*	Coreference T12 T13
+T14	Mention 32 66	Ranking Rules for Keyword Auctions
+T15	Mention 402 415	ranking rules
+*	Coreference T14 T15
+
+Finished!
+Start coref document no: 213
+T1	Mention 145 247	a setting in which pairwise interactions are restricted to the edges of an undirected graph or network
+T2	Mention 404 415	our setting
+*	Coreference T1 T2
+T3	Mention 75 77	We
+T4	Mention 249 251	We
+T5	Mention 404 407	our
+T6	Mention 670 672	We
+T7	Mention 707 737	our generalized ESS definition
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 217 247	an undirected graph or network
+T9	Mention 512 521	the graph
+T10	Mention 595 604	the graph
+*	Coreference T8 T9 T10
+T11	Mention 681 737	natural strengthenings of our generalized ESS definition
+T12	Mention 799 803	them
+*	Coreference T11 T12
+T13	Mention 545 561	the mutation set
+T14	Mention 633 649	the mutation set
+*	Coreference T13 T14
+T15	Mention 463 492	the classical ESS of any game
+T16	Mention 723 726	ESS
+*	Coreference T15 T16
+T17	Mention 263 318	the definition of an evolutionary stable strategy (ESS)
+T18	Mention 723 737	ESS definition
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 214
+T1	Mention 396 398	we
+T2	Mention 638 640	We
+T3	Mention 776 778	We
+T4	Mention 984 986	We
+T5	Mention 1116 1118	We
+T6	Mention 1273 1275	we
+T7	Mention 1352 1354	We
+T8	Mention 1439 1441	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8
+T9	Mention 300 310	a merchant
+T10	Mention 333 336	his
+*	Coreference T9 T10
+T11	Mention 407 484	the incentive, efficiency, and revenue properties of two slot auction designs
+T12	Mention 407 420	the incentive
+*	Coreference T11 T12
+T13	Mention 930 933	RBR
+T14	Mention 1164 1167	RBR
+*	Coreference T13 T14
+
+Finished!
+Start coref document no: 215
+T1	Mention 58 99	a person-to-person recommendation network
+T2	Mention 334 360	the recommendation network
+T3	Mention 395 397	it
+*	Coreference T1 T2 T3
+T4	Mention 32 34	We
+T5	Mention 196 198	We
+T6	Mention 271 273	we
+T7	Mention 312 314	We
+T8	Mention 577 579	we
+*	Coreference T4 T5 T6 T7 T8
+T9	Mention 115 124	4 million
+T10	Mention 178 185	million
+*	Coreference T9 T10
+
+Finished!
+Start coref document no: 216
+T1	Mention 362 364	We
+T2	Mention 505 507	us
+T3	Mention 616 618	we
+T4	Mention 1301 1303	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 629 634	three
+T6	Mention 1319 1324	three
+*	Coreference T5 T6
+T7	Mention 629 823	three roles -- scouts, promoters, and connectors -- that capture how users receive recommendations, how items get recommended, and how ratings of these two types are themselves connected (resp.)
+T8	Mention 825 836	These roles
+*	Coreference T7 T8
+T9	Mention 1388 1408	a recommender system
+T10	Mention 1413 1416	its
+*	Coreference T9 T10
+T11	Mention 23 33	Connectors
+T12	Mention 667 677	connectors
+*	Coreference T11 T12
+T13	Mention 979 1000	the system as a whole
+T14	Mention 1261 1271	the system
+*	Coreference T13 T14
+T15	Mention 698 703	users
+T16	Mention 795 805	themselves
+T17	Mention 887 892	users
+T18	Mention 1016 1020	they
+T19	Mention 1189 1223	users who are in danger of leaving
+*	Coreference T15 T16 T17 T18 T19
+
+Finished!
+Start coref document no: 217
+T1	Mention 81 84	Our
+T2	Mention 228 230	We
+T3	Mention 242 245	our
+T4	Mention 443 446	Our
+T5	Mention 697 699	we
+*	Coreference T1 T2 T3 T4 T5
+
+Finished!
+Start coref document no: 218
+T1	Mention 49 51	We
+T2	Mention 323 325	We
+T3	Mention 431 433	We
+T4	Mention 515 517	we
+*	Coreference T1 T2 T3 T4
+T5	Mention 3 48	the Computational Power of Iterative Auctions
+T6	Mention 87 96	the power
+*	Coreference T5 T6
+
+Finished!
+Start coref document no: 219
+T1	Mention 78 80	we
+T2	Mention 170 172	We
+T3	Mention 415 417	We
+T4	Mention 604 607	Our
+T5	Mention 791 793	we
+*	Coreference T1 T2 T3 T4 T5
+T6	Mention 604 615	Our results
+T7	Mention 1079 1090	The results
+*	Coreference T6 T7
+T8	Mention 441 506	multiple experts via linear and logarithmic aggregation functions
+T9	Mention 909 914	their
+*	Coreference T8 T9
+
+Finished!
+Start coref document no: 220
+T1	Mention 48 50	We
+T2	Mention 352 354	we
+T3	Mention 472 474	we
+*	Coreference T1 T2 T3
+T4	Mention 355 360	first
+T5	Mention 462 464	it
+*	Coreference T4 T5
+T6	Mention 0 47	Communication Complexity of Common Voting Rules
+T7	Mention 61 116	the communication complexity of the common voting rules
+T8	Mention 139 169	their communication complexity
+*	Coreference T6 T7 T8
+
+Finished!
+Start coref document no: 221
+T1	Mention 35 37	We
+T2	Mention 131 133	We
+T3	Mention 345 347	We
+T4	Mention 384 386	We
+T5	Mention 526 528	us
+T6	Mention 985 987	We
+T7	Mention 1120 1122	we
+T8	Mention 1250 1252	we
+T9	Mention 1569 1571	we
+T10	Mention 1594 1596	We
+T11	Mention 1980 1982	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 T11
+T12	Mention 1326 1382	a limit on the support size of the dominating strategies
+T13	Mention 1523 1552	the limit on the support size
+*	Coreference T12 T13
+T14	Mention 1578 1586	Bayesian
+T15	Mention 1719 1727	Bayesian
+T16	Mention 2087 2095	Bayesian
+*	Coreference T14 T15 T16
+T17	Mention 1337 1382	the support size of the dominating strategies
+T18	Mention 1536 1552	the support size
+*	Coreference T17 T18
+T19	Mention 1017 1040	the dominating strategy
+T20	Mention 1141 1164	the dominating strategy
+*	Coreference T19 T20
+
+Finished!
+Start coref document no: 222
+T1	Mention 474 476	we
+T2	Mention 718 720	We
+T3	Mention 873 875	we
+*	Coreference T1 T2 T3
+T4	Mention 809 844	the principal or the social welfare
+T5	Mention 809 822	the principal
+*	Coreference T4 T5
+
+Finished!
+Start coref document no: 223
+T1	Mention 240 254	Multiple users
+T2	Mention 280 285	their
+T3	Mention 337 342	their
+T4	Mention 378 383	their
+*	Coreference T1 T2 T3 T4
+T5	Mention 97 99	we
+T6	Mention 404 406	We
+T7	Mention 580 582	We
+*	Coreference T5 T6 T7
+T8	Mention 473 578	the equilibrium, where fairness is evaluated through the measures of utility uniformity and envy-freeness
+T9	Mention 473 488	the equilibrium
+T10	Mention 896 911	the equilibrium
+*	Coreference T8 T9 T10
+T11	Mention 415 451	both the efficiency and the fairness
+T12	Mention 869 892	efficiency and fairness
+*	Coreference T11 T12
+
+Finished!
+Start coref document no: 224
+T1	Mention 440 443	[8]
+T2	Mention 887 890	[8]
+*	Coreference T1 T2
+T3	Mention 937 968	the optimal competitive auction
+T4	Mention 985 1016	the optimal competitive auction
+*	Coreference T3 T4
+T5	Mention 372 406	an optimal auction for three items
+T6	Mention 478 490	this auction
+*	Coreference T5 T6
+T7	Mention 50 52	We
+T8	Mention 178 180	We
+T9	Mention 356 358	we
+T10	Mention 453 455	we
+T11	Mention 548 550	we
+T12	Mention 675 678	our
+T13	Mention 712 714	we
+T14	Mention 859 861	we
+T15	Mention 902 905	our
+*	Coreference T7 T8 T9 T10 T11 T12 T13 T14 T15
+T16	Mention 395 400	three
+T17	Mention 699 704	three
+*	Coreference T16 T17
+
+Finished!
+Start coref document no: 225
+T1	Mention 176 183	bidders
+T2	Mention 249 254	their
+*	Coreference T1 T2
+T3	Mention 516 518	We
+T4	Mention 849 851	we
+T5	Mention 928 930	we
+T6	Mention 1261 1263	we
+T7	Mention 1355 1357	we
+T8	Mention 1484 1486	We
+T9	Mention 1661 1663	We
+*	Coreference T3 T4 T5 T6 T7 T8 T9
+T10	Mention 561 568	Problem
+T11	Mention 910 917	Problem
+*	Coreference T10 T11
+T12	Mention 536 551	the Bid-taker's
+T13	Mention 632 645	the bid-taker
+T14	Mention 1469 1482	the bid-taker
+*	Coreference T12 T13 T14
+T15	Mention 121 133	most bidding
+T16	Mention 240 242	it
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 226
+T1	Mention 82 84	We
+T2	Mention 335 337	We
+T3	Mention 674 677	our
+*	Coreference T1 T2 T3
+T4	Mention 459 478	this representation
+T5	Mention 674 692	our representation
+*	Coreference T4 T5
+T6	Mention 421 438	the Shapley value
+T7	Mention 480 497	The Shapley value
+*	Coreference T6 T7
+T8	Mention 443 451	the core
+T9	Mention 572 580	the core
+*	Coreference T8 T9
+T10	Mention 64 81	Coalitional Games
+T11	Mention 124 141	coalitional games
+*	Coreference T10 T11
+T12	Mention 28 81	A Compact Representation Scheme for Coalitional Games
+T13	Mention 213 239	This representation scheme
+*	Coreference T12 T13
+
+Finished!
+Start coref document no: 227
+T1	Mention 87 108	Vickrey-Clarke-Groves
+T2	Mention 110 113	VCG
+T3	Mention 209 212	VCG
+*	Coreference T1 T2 T3
+T4	Mention 229 234	their
+T5	Mention 248 252	They
+T6	Mention 344 349	their
+*	Coreference T4 T5 T6
+T7	Mention 294 338	a utilitarian (or affine) objective function
+T8	Mention 373 395	the objective function
+*	Coreference T7 T8
+T9	Mention 491 493	we
+T10	Mention 697 699	we
+T11	Mention 825 827	we
+T12	Mention 834 837	our
+T13	Mention 977 979	we
+T14	Mention 1130 1132	We
+T15	Mention 1179 1181	We
+T16	Mention 1312 1314	we
+*	Coreference T9 T10 T11 T12 T13 T14 T15 T16
+T17	Mention 229 246	their limitations
+T18	Mention 648 665	these limitations
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 228
+T1	Mention 313 315	We
+T2	Mention 390 393	Our
+*	Coreference T1 T2
+T3	Mention 218 223	their
+T4	Mention 254 259	their
+*	Coreference T3 T4
+T5	Mention 373 388	fairness axioms
+T6	Mention 390 400	Our axioms
+*	Coreference T5 T6
+T7	Mention 193 237	waiting costs (linear in their waiting time)
+T8	Mention 254 265	their costs
+*	Coreference T7 T8
+T9	Mention 74 78	jobs
+T10	Mention 156 160	Jobs
+T11	Mention 239 247	The jobs
+*	Coreference T9 T10 T11
+
+Finished!
+Start coref document no: 229
+T1	Mention 228 231	VCG
+T2	Mention 348 350	it
+*	Coreference T1 T2
+T3	Mention 575 577	We
+T4	Mention 737 739	We
+T5	Mention 870 872	us
+T6	Mention 1077 1079	we
+T7	Mention 1086 1089	our
+*	Coreference T3 T4 T5 T6 T7
+T8	Mention 464 468	This
+T9	Mention 857 861	this
+*	Coreference T8 T9
+T10	Mention 160 185	The main positive results
+T11	Mention 190 343	the celebrated Vickrey-Clarke-Groves (VCG) mechanisms and computationally efficient mechanisms for severely restricted players (single-parameter domains)
+T12	Mention 190 243	the celebrated Vickrey-Clarke-Groves (VCG) mechanisms
+T13	Mention 248 343	computationally efficient mechanisms for severely restricted players (single-parameter domains)
+*	Coreference T10 T11 T12 T13
+
+Finished!
+Start coref document no: 230
+T1	Mention 212 219	Bidders
+T2	Mention 254 259	their
+*	Coreference T1 T2
+T3	Mention 73 114	an iterative combinatorial exchange (ICE)
+T4	Mention 116 128	The exchange
+T5	Mention 489 501	the exchange
+T6	Mention 843 855	The exchange
+*	Coreference T3 T4 T5 T6
+
+Finished!
+Start coref document no: 231
+T1	Mention 296 303	Mu'alem
+T2	Mention 637 644	Mu'alem
+*	Coreference T1 T2
+T3	Mention 290 317	Lavi, Mu'alem and Nisan [6]
+T4	Mention 290 294	Lavi
+T5	Mention 631 654	Lavi, Mu'alem and Nisan
+T6	Mention 631 635	Lavi
+*	Coreference T3 T4 T5 T6
+T7	Mention 315 317	6]
+T8	Mention 656 658	6]
+*	Coreference T7 T8
+T9	Mention 405 430	Gui, Muller and Vohra [5]
+T10	Mention 405 408	Gui
+*	Coreference T9 T10
+T11	Mention 308 313	Nisan
+T12	Mention 649 654	Nisan
+*	Coreference T11 T12
+T13	Mention 195 197	10
+T14	Mention 211 213	it
+*	Coreference T13 T14
+T15	Mention 591 739	the more general result, conjectured by Lavi, Mu'alem and Nisan [6], that weak monotonicity is sufficient for functions defined on any convex domain
+T16	Mention 591 614	the more general result
+*	Coreference T15 T16
+
+Finished!
+Start coref document no: 232
+
+Finished!
+Start coref document no: 233
+index: `
+ 'n
+index: `
+ 's
+T1	Mention 631 690	individuals who may genuinely want to protect their privacy
+T2	Mention 936 947	individuals
+T3	Mention 987 992	their
+*	Coreference T1 T2 T3
+T4	Mention 190 192	We
+T5	Mention 350 352	We
+T6	Mention 619 621	we
+T7	Mention 790 792	we
+T8	Mention 897 899	we
+*	Coreference T4 T5 T6 T7 T8
+T9	Mention 718 788	psychological distortions well documented in the behavioral literature
+T10	Mention 803 820	these distortions
+*	Coreference T9 T10
+T11	Mention 318 348	privacy in electronic commerce
+T12	Mention 677 690	their privacy
+T13	Mention 987 1000	their privacy
+*	Coreference T11 T12 T13
+
+Finished!
+Start coref document no: 234
+T1	Mention 821 866	the limited expressiveness of matching offers
+T2	Mention 889 891	it
+*	Coreference T1 T2
+T3	Mention 1092 1094	we
+T4	Mention 1202 1204	We
+T5	Mention 1418 1420	We
+T6	Mention 1560 1562	We
+T7	Mention 1711 1713	we
+T8	Mention 2036 2038	we
+T9	Mention 2076 2078	We
+T10	Mention 2198 2200	We
+*	Coreference T3 T4 T5 T6 T7 T8 T9 T10
+T11	Mention 353 359	others
+T12	Mention 394 399	their
+*	Coreference T11 T12
+T13	Mention 1829 1838	charities
+T14	Mention 2249 2262	the charities
+*	Coreference T13 T14
+T15	Mention 1765 1769	bids
+T16	Mention 1902 1910	the bids
+T17	Mention 1980 1988	the bids
+T18	Mention 2192 2196	bids
+*	Coreference T15 T16 T17 T18
+T19	Mention 1215 1322	the corresponding clearing problem (deciding how much each bidder pays, and how much each charity receives)
+T20	Mention 1465 1485	the clearing problem
+T21	Mention 1724 1744	the clearing problem
+T22	Mention 1799 1810	the problem
+*	Coreference T19 T20 T21 T22
+
+Finished!
+Start coref document no: 235
+T1	Mention 431 433	we
+T2	Mention 829 831	we
+T3	Mention 904 906	we
+T4	Mention 1016 1018	We
+*	Coreference T1 T2 T3 T4
+T5	Mention 731 743	the schedule
+T6	Mention 749 774	the payment of each agent
+*	Coreference T5 T6
+T7	Mention 231 256	a deterministic algorithm
+T8	Mention 364 377	the algorithm
+T9	Mention 602 615	the algorithm
+*	Coreference T7 T8 T9
+T10	Mention 521 554	a separate, self-interested agent
+T11	Mention 556 565	The agent
+*	Coreference T10 T11
+T12	Mention 497 505	each job
+T13	Mention 591 598	the job
+T14	Mention 625 628	its
+T15	Mention 685 692	the job
+*	Coreference T12 T13 T14 T15
+T16	Mention 295 377	the non-strategic setting in which the jobs are released directly to the algorithm
+T17	Mention 876 901	the non-strategic setting
+*	Coreference T16 T17
+T18	Mention 185 256	the competitive ratio that can be achieved by a deterministic algorithm
+T19	Mention 986 1007	the competitive ratio
+*	Coreference T18 T19
+T20	Mention 99 125	jobs on a single processor
+T21	Mention 330 338	the jobs
+*	Coreference T20 T21
+
+Finished!
+Start coref document no: 236
+T1	Mention 384 386	we
+T2	Mention 729 731	we
+*	Coreference T1 T2
+T3	Mention 532 553	incentives techniques
+T4	Mention 555 571	These techniques
+T5	Mention 742 758	these techniques
+*	Coreference T3 T4 T5
+T6	Mention 219 229	challenges
+T7	Mention 367 383	these challenges
+*	Coreference T6 T7
+
+Finished!
+Start coref document no: 237
+T1	Mention 625 627	we
+T2	Mention 825 828	Our
+T3	Mention 1052 1054	We
+T4	Mention 1243 1245	We
+T5	Mention 1640 1642	We
+T6	Mention 1713 1715	we
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 378 381	two
+T8	Mention 1768 1771	two
+*	Coreference T7 T8
+T9	Mention 46 58	Technologies
+T10	Mention 111 123	technologies
+T11	Mention 1573 1585	technologies
+*	Coreference T9 T10 T11
+T12	Mention 67 82	Social Networks
+T13	Mention 727 742	social networks
+*	Coreference T12 T13
+T14	Mention 1306 1379	its quality relative to B, and also this additional cost of adopting both
+T15	Mention 1342 1379	this additional cost of adopting both
+*	Coreference T14 T15
+T16	Mention 1090 1118	the compatibility of A and B
+T17	Mention 1306 1309	its
+*	Coreference T16 T17
+T18	Mention 1029 1050	users of technology B
+T19	Mention 1159 1164	users
+*	Coreference T18 T19
+
+Finished!
+Start coref document no: 238
+T1	Mention 218 228	the agents
+T2	Mention 240 245	their
+T3	Mention 315 325	themselves
+T4	Mention 398 408	the agents
+T5	Mention 433 438	their
+T6	Mention 1077 1088	the agents'
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 840 861	a benevolent designer
+T8	Mention 928 940	the designer
+*	Coreference T7 T8
+T9	Mention 144 189	the preferences reported by a group of agents
+T10	Mention 1077 1100	the agents' preferences
+*	Coreference T9 T10
+T11	Mention 570 581	a mechanism
+T12	Mention 1246 1259	the mechanism
+T13	Mention 1583 1596	the mechanism
+*	Coreference T11 T12 T13
+T14	Mention 877 879	we
+T15	Mention 1278 1280	we
+T16	Mention 1536 1538	We
+T17	Mention 1659 1661	we
+T18	Mention 1872 1874	We
+*	Coreference T14 T15 T16 T17 T18
+T19	Mention 975 985	the center
+T20	Mention 1122 1132	the center
+T21	Mention 1223 1225	it
+T22	Mention 1386 1396	the center
+T23	Mention 1440 1442	it
+T24	Mention 1483 1493	the center
+*	Coreference T19 T20 T21 T22 T23 T24
+T25	Mention 1158 1168	each agent
+T26	Mention 1193 1202	the agent
+*	Coreference T25 T26
+T27	Mention 278 296	the chosen outcome
+T28	Mention 1516 1534	the outcome chosen
+*	Coreference T27 T28
+T29	Mention 1755 1870	the optimal (revenue-maximizing) combinatorial auction design problem, where the bidders have best-only preferences
+T30	Mention 1755 1824	the optimal (revenue-maximizing) combinatorial auction design problem
+*	Coreference T29 T30
+T31	Mention 964 973	this case
+T32	Mention 1057 1059	it
+*	Coreference T31 T32
+T33	Mention 1036 1044	payments
+T34	Mention 1419 1431	the payments
+T35	Mention 1453 1461	payments
+*	Coreference T33 T34 T35
+
+Finished!
+Start coref document no: 239
+T1	Mention 197 202	A DPM
+T2	Mention 356 361	a DPM
+T3	Mention 449 454	a DPM
+*	Coreference T1 T2 T3
+T4	Mention 80 81	I
+T5	Mention 1086 1087	I
+*	Coreference T4 T5
+T6	Mention 251 327	a continuous double auction (CDA), inheriting some of the advantages of both
+T7	Mention 280 283	CDA
+T8	Mention 444 447	CDA
+*	Coreference T6 T7 T8
+T9	Mention 90 153	a new mechanism for risk allocation and information speculation
+T10	Mention 967 980	the mechanism
+T11	Mention 984 1018	pari-mutuel (i.e., redistributive)
+*	Coreference T9 T10 T11
+T12	Mention 1165 1169	each
+T13	Mention 1202 1207	their
+*	Coreference T12 T13
+T14	Mention 33 67	Hedging, Wagering, and Information
+T15	Mention 33 40	Hedging
+*	Coreference T14 T15
+T16	Mention 893 903	some price
+T17	Mention 916 925	the price
+*	Coreference T16 T17
+
+Finished!
+Start coref document no: 240
+T1	Mention 55 57	We
+T2	Mention 220 222	We
+T3	Mention 392 394	We
+T4	Mention 484 487	Our
+T5	Mention 516 518	us
+T6	Mention 666 668	we
+*	Coreference T1 T2 T3 T4 T5 T6
+T7	Mention 315 351	The resulting elicitation algorithms
+T8	Mention 428 452	the resulting algorithms
+T9	Mention 577 587	algorithms
+*	Coreference T7 T8 T9
+T10	Mention 9 28	Learning Algorithms
+T11	Mention 242 252	algorithms
+*	Coreference T10 T11
+
+Finished!
+Start coref document no: 241
+T1	Mention 56 58	We
+T2	Mention 203 205	We
+*	Coreference T1 T2
+
+Finished!
+Start coref document no: 242
+T1	Mention 206 208	we
+T2	Mention 509 511	we
+*	Coreference T1 T2
+T3	Mention 15 34	Sealed-Bid Auctions
+T4	Mention 158 177	sealed-bid auctions
+T5	Mention 633 652	sealed-bid auctions
+*	Coreference T3 T4 T5
+
+Finished!
+Start coref document no: 243
+T1	Mention 65 67	we
+T2	Mention 297 299	We
+T3	Mention 492 495	Our
+T4	Mention 571 573	we
+T5	Mention 706 708	we
+T6	Mention 858 860	we
+T7	Mention 1005 1007	we
+T8	Mention 1333 1335	we
+*	Coreference T1 T2 T3 T4 T5 T6 T7 T8
+T9	Mention 111 122	each player
+T10	Mention 145 147	he
+*	Coreference T9 T10
+T11	Mention 387 399	no coalition
+T12	Mention 432 435	its
+*	Coreference T11 T12
+T13	Mention 46 51	Games
+T14	Mention 289 294	games
+*	Coreference T13 T14
+T15	Mention 1098 1118	the optimal solution
+T16	Mention 1377 1396	an optimal solution
+*	Coreference T15 T16
+T17	Mention 913 958	a strong equilibrium in fair connection games
+T18	Mention 982 1004	the strong equilibrium
+*	Coreference T17 T18
+
+Finished!
+Start coref document no: 244
+T1	Mention 155 175	a financial security
+T2	Mention 218 232	the security's
+*	Coreference T1 T2
+T3	Mention 240 242	We
+T4	Mention 432 434	We
+T5	Mention 586 588	We
+T6	Mention 1051 1053	We
+*	Coreference T3 T4 T5 T6
+T7	Mention 808 856	securities whose payoffs are threshold functions
+T8	Mention 936 962	these threshold securities
+*	Coreference T7 T8
+T9	Mention 255 280	the computational process
+T10	Mention 573 584	the process
+*	Coreference T9 T10
+
+Finished!
+Resolved all: 244 doc(s)

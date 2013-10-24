@@ -1,6 +1,11 @@
 package com.panot.JavaCoref;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -88,9 +93,22 @@ public class MyStanfordDCoref {
 		mentionExtractor.resetDocs();
 
 		List<String> rawTexts = null;
+		Vector<String> filenames = null;
 
 		if (props.containsKey(MyConstants.RAWTEXT_LIST_PROP)) {
 			rawTexts = TextReader.ReadFiles(props.getProperty(MyConstants.RAWTEXT_LIST_PROP));
+
+			File fread = new File(props.getProperty(MyConstants.RAWTEXT_LIST_PROP));
+			BufferedReader reader = new BufferedReader(new FileReader(fread));
+
+			filenames = new Vector<String>();
+
+			String filename;
+			while ((filename = reader.readLine()) != null) {
+				filenames.add(filename);
+			}
+
+			reader.close();
 		}
 
 		int count = 0;
@@ -107,16 +125,32 @@ public class MyStanfordDCoref {
 
 			if (props.containsKey(MyConstants.RAWTEXT_LIST_PROP)) {
 				String rawText = rawTexts.get(count - 1);
-				boolean offsetPass = TokenMatcher.SetOffset(document.annotation, rawText);
 
-				System.err.println(documentToStandOff(document, rawText));
+				try {
+					boolean offsetPass = TokenMatcher.SetOffset(document.annotation, rawText);
+				} catch (Exception e) {
+					System.err.println("Error at SetOffset");
+				}
+
+				File outfile = new File(filenames.get(count - 1) + ".ann");
+				BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outfile));
+
+				try {
+					String standoff = documentToStandOff(document, rawText);
+					System.err.println(standoff);
+					bufferedWriter.write(standoff);
+				} catch (Exception e) {
+					System.err.println("Error at docToStandOff");
+				}
+
+				bufferedWriter.close();
 			}
 
 			System.err.println("Finished!");
 
 			// only first doc for debugging
-			if (count >= 2)
-				break;
+			//if (count >= 2)
+			//	break;
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
