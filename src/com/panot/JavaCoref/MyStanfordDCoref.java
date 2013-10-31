@@ -132,18 +132,29 @@ public class MyStanfordDCoref {
 					System.err.println("Error at SetOffset");
 				}
 
-				File outfile = new File(filenames.get(count - 1) + ".ann");
-				BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outfile));
+				boolean output = props.containsKey(MyConstants.OUTPUT_PROP);
+
+				File outfile = null;
+				BufferedWriter bufferedWriter = null;
+
+				if (output) {
+					outfile = new File(filenames.get(count - 1) + ".ann");
+					bufferedWriter = new BufferedWriter(new FileWriter(outfile));
+				}
 
 				try {
 					String standoff = documentToStandOff(document, rawText);
 					System.err.println(standoff);
-					bufferedWriter.write(standoff);
+
+					if (output)
+						bufferedWriter.write(standoff);
+
 				} catch (Exception e) {
 					System.err.println("Error at docToStandOff");
 				}
 
-				bufferedWriter.close();
+				if (output)
+					bufferedWriter.close();
 			}
 
 			System.err.println("Finished!");

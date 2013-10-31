@@ -93,6 +93,9 @@ public class TokenMatcher {
 				token.set(CoreAnnotations.CharacterOffsetEndAnnotation.class  , offsetEnd);
 
 				currentIndex = offsetEnd;
+
+				if (!text.substring(offsetBegin, offsetEnd).equals(word))
+					System.err.println(text.substring(offsetBegin, offsetEnd) + " " + word + " " + offsetBegin + " " + offsetEnd);
 			}
 		}
 
