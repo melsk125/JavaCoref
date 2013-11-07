@@ -18,6 +18,7 @@ import edu.stanford.nlp.dcoref.CorefChain;
 import edu.stanford.nlp.dcoref.CorefCoreAnnotations;
 import edu.stanford.nlp.dcoref.CorefMentionFinder;
 import edu.stanford.nlp.dcoref.Document;
+import edu.stanford.nlp.dcoref.Mention;
 import edu.stanford.nlp.dcoref.MentionExtractor;
 import edu.stanford.nlp.dcoref.MUCMentionExtractor;
 import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
@@ -134,12 +135,16 @@ public class MyStanfordDCoref {
 
 				boolean output = props.containsKey(MyConstants.OUTPUT_PROP);
 				boolean output_token = props.containsKey(MyConstants.OUTPUT_TOKEN_PROP);
+				boolean output_mention = props.containsKey(MyConstants.OUTPUT_MENTION_PROP);
 
 				File outfile = null;
 				BufferedWriter bufferedWriter = null;
 
 				File outfile_token = null;
 				BufferedWriter bufferedWriter_token = null;
+
+				File outfile_mention = null;
+				BufferedWriter bufferedWriter_mention = null;
 
 				if (output) {
 					outfile = new File(filenames.get(count - 1) + ".ann");
@@ -151,12 +156,18 @@ public class MyStanfordDCoref {
 					bufferedWriter_token = new BufferedWriter(new FileWriter(outfile_token));
 				}
 
+				if (output_mention) {
+					outfile_mention = new File(filenames.get(count - 1) + ".mention");
+					bufferedWriter_mention = new BufferedWriter(new FileWriter(outfile_mention));
+				}
+
 				try {
 					//String standoff = documentToStandOff(document, rawText);
 					//System.err.println(standoff);
 					
 					String standoff = null; //documentToStandOff(document, rawText);
 					String tokens = null;
+					String mentions = null;
 
 					System.err.println(filenames.get(count - 1));
 
@@ -172,6 +183,12 @@ public class MyStanfordDCoref {
 						bufferedWriter_token.write(tokens);
 					}
 
+					if (output_mention) {
+						mentions = documentToMention(document);
+						System.err.println(mentions);
+						bufferedWriter_mention.write(mentions);
+					}
+
 				} catch (Exception e) {
 					System.err.println("Error at docToStandOff");
 				}
@@ -181,6 +198,9 @@ public class MyStanfordDCoref {
 
 				if (output_token)
 					bufferedWriter_token.close();
+
+				if (output_mention)
+					bufferedWriter_mention.close();
 			}
 
 			System.err.println("Finished!");
@@ -193,17 +213,14 @@ public class MyStanfordDCoref {
 		System.err.println("Resolved all: " + count + " doc(s)");
 	}
 
-	public static String documentToToken(Document document) {
-		Annotation annotation = document.annotation;
+	public static String annotationToToken(Annotation annotation) {
 		StringBuilder tokens_text = new StringBuilder();
 
 		// Print tokens
-		
 		if (annotation.get(CoreAnnotations.SentencesAnnotation.class) != null) {
 			int sentCount = 1;
 
 			// for each sentence
-			
 			for (CoreMap sentence: annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
 				List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
 				for (int j = 0; j < tokens.size(); j++) {
@@ -214,14 +231,17 @@ public class MyStanfordDCoref {
 				sentCount ++;
 			}
 		}
-		
+
+		return tokens_text.toString();
+	}
+
+	public static String annotationToCoref(Annotation annotation) {
+		StringBuilder tokens_text = new StringBuilder();
 
 		// Print coref chains
-
 		Map<Integer, CorefChain> corefChains = annotation.get(CorefCoreAnnotations.CorefChainAnnotation.class);
 
 		int mentionCount = 0;
-
 		for (CorefChain chain : corefChains.values()) {
 			if (chain.getMentionsInTextualOrder().size() <= 1)
 				continue;
@@ -233,6 +253,44 @@ public class MyStanfordDCoref {
 		}
 
 		return tokens_text.toString();
+	}
+
+	public static String documentToToken(Document document) {
+		Annotation annotation = document.annotation;
+		StringBuilder tokens_text = new StringBuilder();
+
+		tokens_text.append(annotationToToken(annotation));
+		tokens_text.append(annotationToCoref(annotation));
+
+		return tokens_text.toString();
+	}
+
+	public static String documentToMention(Document document) {
+		Annotation annotation = document.annotation;
+		StringBuilder os = new StringBuilder();
+
+		os.append(annotationToToken(annotation));
+
+		List<List<Mention>> orderedMentionsBySentence = document.getOrderedMentions();
+
+		for (int sentI = 0; sentI < orderedMentionsBySentence.size(); sentI++) {
+	    	List<Mention> orderedMentions = orderedMentionsBySentence.get(sentI);
+
+	    	for (int mentionI = 0; mentionI < orderedMentions.size(); mentionI++) {
+
+	        	Mention m1 = orderedMentions.get(mentionI);
+
+	        	os.append("M\t");
+	        	os.append(m1.sentNum + 1);
+	        	os.append(":");
+	        	os.append(m1.startIndex + 1);
+	        	os.append(":");
+	        	os.append(m1.endIndex + 1);
+	        	os.append("\n");
+	        }
+		}
+
+		return os.toString();
 	}
 
 	public static String documentToStandOff(Document document, String text) {
