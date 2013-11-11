@@ -58,12 +58,12 @@ public class TokenMatcher {
 					
 					// Find beginning of the token
 					
-					System.err.println("index: " + word);
+					//System.err.println("index: " + word);
 					int index = currentIndex;
-					System.err.print(text.charAt(index));
+					//System.err.print(text.charAt(index));
 					while (Character.isWhitespace(text.codePointAt(index))) {
 						index ++;
-						System.err.print(text.charAt(index));
+						//System.err.print(text.charAt(index));
 					}
 					nextIndex = index;
 
@@ -71,17 +71,17 @@ public class TokenMatcher {
 					if (Character.isLetter(typeChecker) || Character.isDigit(typeChecker)) {
 						while (Character.isLetter(typeChecker) || Character.isDigit(typeChecker)) {
 							index ++;
-							System.err.print(text.charAt(index));
+							//System.err.print(text.charAt(index));
 							typeChecker = text.codePointAt(index);
 						}
 					} else {
 						while (!Character.isLetter(typeChecker) && !Character.isDigit(typeChecker)) {
 							index ++;
-							System.err.print(text.charAt(index));
+							//System.err.print(text.charAt(index));
 							typeChecker = text.codePointAt(index);
 						}
 					}
-					System.err.println();
+					//System.err.println();
 
 					offsetBegin = nextIndex;
 					offsetEnd   = index;
