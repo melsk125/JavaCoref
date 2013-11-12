@@ -8,6 +8,9 @@ import edu.stanford.nlp.dcoref.Document;
 import edu.stanford.nlp.dcoref.Mention;
 import edu.stanford.nlp.dcoref.Semantics;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.IndexedWord;
+import edu.stanford.nlp.semgraph.SemanticGraph;
+import edu.stanford.nlp.semgraph.SemanticGraphEdge;
 
 public class AuthorProposalSieve extends DeterministicCorefSieve {
 	public AuthorProposalSieve() {
@@ -16,10 +19,10 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 	}
 
 	public boolean skipThisMention(Document document, Mention m1, CorefCluster c, Dictionaries dict) {
-		String firstWord = m1.originalSpan.get(0).get(CoreAnnotations.TextAnnotation.class).toLowerCase();
-		if (dict.firstPersonPronouns.contains(firstWord) && dict.possessivePronouns.contains(firstWord))
-			return false;
-		return true;
+
+		// Everything goes to coreferent()
+
+		return false;
 	}
 
 	public boolean coreferent(Document document, CorefCluster mentionCluster,
@@ -30,33 +33,63 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 		Set<Mention> roleSet,
 		Semantics semantics) throws Exception {
 		
-		// mention2 already starts with our/my
-		// Check only ant
-		
 		String headWordMention = mention2.headWord.get(CoreAnnotations.LemmaAnnotation.class).toLowerCase();
-		String headWordAnt = ant.headWord.get(CoreAnnotations.LemmaAnnotation.class).toLowerCase();
+		String headWordAnt     =      ant.headWord.get(CoreAnnotations.LemmaAnnotation.class).toLowerCase();
 
-		/*
-		System.err.println("mf: " + mention2.spanToString());
-		System.err.println("af: " + ant.spanToString());
-		System.err.println();
-		System.err.println("mh: " + headWordMention);
-		System.err.println("ah: " + headWordAnt);
-		System.err.println();
-		*/
-	
+		// May change to return false when both head words are unsimilar
 		if (headWordMention != headWordAnt) return false;
-	
+
+
+		boolean potentialAuthorProposalMention = false;
+		boolean potentialAuthorProposalAnt     = false;
+
+		// Check if mention2 is modified with first-person possessive pronoun
+		String firstWordMention = mention2.originalSpan.get(0).get(CoreAnnotations.TextAnnotation.class).toLowerCase();
+		if (checkFirstPersonPossessivePronoun(firstWordMention, dict))
+			potentialAuthorProposalMention = true;
+
+		// Check if mention2 is an object of a construct with first person pronoun as subject
+		boolean isObjectMention = true;
+		IndexedWord subjectMention = getSubjectIndexedWord(mention2);
+		if (subjectMention == null)
+			isObjectMention = false;
+		String subjectWordMention = subjectMention.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
+		if (isObjectMention && dict.firstPersonPronouns.contains(subjectWordMention))
+			potentialAuthorProposalMention = true;
+
+		// Check if ant is modified with first-person possessive pronoun
 		String firstWordAnt = ant.originalSpan.get(0).get(CoreAnnotations.TextAnnotation.class).toLowerCase();
-		if (dict.firstPersonPronouns.contains(firstWordAnt) && dict.possessivePronouns.contains(firstWordAnt)) {
-			System.err.println("mf: " + mention2.spanToString());
-			System.err.println("af: " + ant.spanToString());
-			System.err.println();
-			return true;
+		if (checkFirstPersonPossessivePronoun(firstWordAnt, dict))
+			potentialAuthorProposalAnt = false;
+
+		// Check if ant is an object of a construct with first person pronoun as subject
+		boolean isObjectAnt = true;
+		IndexedWord subjectAnt = getSubjectIndexedWord(ant);
+		if (subjectAnt == null)
+			isObjectAnt = false;
+		String subjectWordAnt = subjectAnt.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
+		if (isObjectAnt && dict.firstPersonPronouns.contains(subjectWordAnt))
+			potentialAuthorProposalAnt = true;
+
+		return (potentialAuthorProposalMention && potentialAuthorProposalAnt);
+	}
+
+	private static IndexedWord getSubjectIndexedWord(Mention mention) {
+		if (!mention.isDirectObject)
+			return null;
+		SemanticGraph dependency = mention.dependency;
+		IndexedWord dependingVerb = mention.dependingVerb;
+		for (SemanticGraphEdge edge : dependency.outgoingEdgeList(dependingVerb)) {
+			if (edge.getRelation().toString() == "nsubj") {
+				return edge.getTarget();
+			}
 		}
+		return null;
+	}
 
-
-
+	private static boolean checkFirstPersonPossessivePronoun(String word, Dictionaries dict) {
+		if (dict.firstPersonPronouns.contains(word) && dict.possessivePronouns.contains(word))
+			return true;
 		return false;
 	}
 }
