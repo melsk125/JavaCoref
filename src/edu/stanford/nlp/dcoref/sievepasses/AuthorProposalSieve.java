@@ -51,11 +51,11 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 		// Check if mention2 is an object of a construct with first person pronoun as subject
 		boolean isObjectMention = true;
 		IndexedWord subjectMention = getSubjectIndexedWord(mention2);
-		if (subjectMention == null)
-			isObjectMention = false;
-		String subjectWordMention = subjectMention.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
-		if (isObjectMention && dict.firstPersonPronouns.contains(subjectWordMention))
-			potentialAuthorProposalMention = true;
+		if (subjectMention != null) {
+			String subjectWordMention = subjectMention.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
+			if (dict.firstPersonPronouns.contains(subjectWordMention))
+				potentialAuthorProposalMention = true;
+		}
 
 		// Check if ant is modified with first-person possessive pronoun
 		String firstWordAnt = ant.originalSpan.get(0).get(CoreAnnotations.TextAnnotation.class).toLowerCase();
@@ -65,11 +65,17 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 		// Check if ant is an object of a construct with first person pronoun as subject
 		boolean isObjectAnt = true;
 		IndexedWord subjectAnt = getSubjectIndexedWord(ant);
-		if (subjectAnt == null)
-			isObjectAnt = false;
-		String subjectWordAnt = subjectAnt.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
-		if (isObjectAnt && dict.firstPersonPronouns.contains(subjectWordAnt))
-			potentialAuthorProposalAnt = true;
+		if (subjectAnt != null) {
+			String subjectWordAnt = subjectAnt.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
+			if (dict.firstPersonPronouns.contains(subjectWordAnt))
+				potentialAuthorProposalAnt = true;
+		}
+
+		if (potentialAuthorProposalMention && potentialAuthorProposalAnt) {
+			System.err.println(mention2.toString());
+			System.err.println(ant.toString());
+			System.err.println();
+		}
 
 		return (potentialAuthorProposalMention && potentialAuthorProposalAnt);
 	}
