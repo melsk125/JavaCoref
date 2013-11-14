@@ -6,3 +6,5 @@ mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/data/annotate-stanf
 
 dcoref.sievePasses = AuthorProposalSieve
 
+mydcoref.output.mention.dep
+

@@ -25,6 +25,8 @@ import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.semgraph.SemanticGraph;
+import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 
@@ -133,9 +135,19 @@ public class MyStanfordDCoref {
 					System.err.println("Error at SetOffset");
 				}
 
+				/*
+				for (CoreMap sentence : document.annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+					SemanticGraph dependency = sentence.get(SemanticGraphCoreAnnotations.CollapsedDependenciesAnnotation.class);
+					System.err.println("Dependency:");
+					System.err.println(dependency.toString());
+					System.err.println("=====================");
+				}
+				*/
+
 				boolean output = props.containsKey(MyConstants.OUTPUT_PROP);
 				boolean output_token = props.containsKey(MyConstants.OUTPUT_TOKEN_PROP);
 				boolean output_mention = props.containsKey(MyConstants.OUTPUT_MENTION_PROP);
+				boolean output_mention_dep = props.containsKey(MyConstants.OUTPUT_MENTION_DEP_PROP);
 
 				File outfile = null;
 				BufferedWriter bufferedWriter = null;
@@ -145,6 +157,9 @@ public class MyStanfordDCoref {
 
 				File outfile_mention = null;
 				BufferedWriter bufferedWriter_mention = null;
+
+				File outfile_mention_dep = null;
+				BufferedWriter bufferedWriter_mention_dep = null;
 
 				if (output) {
 					outfile = new File(filenames.get(count - 1) + ".ann");
@@ -161,6 +176,11 @@ public class MyStanfordDCoref {
 					bufferedWriter_mention = new BufferedWriter(new FileWriter(outfile_mention));
 				}
 
+				if (output_mention_dep) {
+					outfile_mention_dep = new File(filenames.get(count - 1) + ".mention.dep");
+					bufferedWriter_mention_dep = new BufferedWriter(new FileWriter(outfile_mention_dep));
+				}
+
 				try {
 					//String standoff = documentToStandOff(document, rawText);
 					//System.err.println(standoff);
@@ -168,6 +188,7 @@ public class MyStanfordDCoref {
 					String standoff = null; //documentToStandOff(document, rawText);
 					String tokens = null;
 					String mentions = null;
+					String mention_deps = null;
 
 					System.err.println(filenames.get(count - 1));
 
@@ -189,6 +210,12 @@ public class MyStanfordDCoref {
 						bufferedWriter_mention.write(mentions);
 					}
 
+					if (output_mention_dep) {
+						mention_deps = documentToMentionDep(document);
+						//System.err.println(mention_deps);
+						bufferedWriter_mention_dep.write(mention_deps);
+					}
+
 				} catch (Exception e) {
 					System.err.println("Error at docToStandOff");
 				}
@@ -201,6 +228,9 @@ public class MyStanfordDCoref {
 
 				if (output_mention)
 					bufferedWriter_mention.close();
+
+				if (output_mention_dep)
+					bufferedWriter_mention_dep.close();
 			}
 
 			System.err.println("Finished!");
@@ -263,6 +293,42 @@ public class MyStanfordDCoref {
 		tokens_text.append(annotationToCoref(annotation));
 
 		return tokens_text.toString();
+	}
+
+	public static String documentToMentionDep(Document document) {
+		Annotation annotation = document.annotation;
+		StringBuilder os = new StringBuilder();
+
+		List<List<Mention>> orderedMentionsBySentence = document.getOrderedMentions();
+
+		for (int sentI = 0; sentI < orderedMentionsBySentence.size(); sentI++) {
+			List<Mention> orderedMentions = orderedMentionsBySentence.get(sentI);
+
+			CoreMap sentence = document.annotation.get(CoreAnnotations.SentencesAnnotation.class).get(sentI);
+
+			SemanticGraph dependency = sentence.get(SemanticGraphCoreAnnotations.CollapsedDependenciesAnnotation.class);
+			os.append("Dependency: ").append(sentI+1).append("\n");
+			os.append(dependency.toString());
+			os.append("\n\n");
+
+			for (int mentionI = 0; mentionI < orderedMentions.size(); mentionI++) {
+				Mention mention = orderedMentions.get(mentionI);
+				os.append(sentI+1).append(":").append(mentionI+1).append("\n");
+				os.append(mentionToDepString(mention));
+			}
+		}
+
+		return os.toString();
+	}
+
+	public static String mentionToDepString(Mention mention) {
+		StringBuilder os = new StringBuilder();
+		os.append(mention.originalSpan.toString()).append("\n");
+		os.append("Headword\t").append(mention.headWord.toString()).append("\n");
+		if (mention.dependingVerb != null)
+			os.append("DepVerb \t").append(mention.dependingVerb.toString()).append("\n");
+
+		return os.toString();
 	}
 
 	public static String documentToMention(Document document) {
