@@ -4,6 +4,7 @@ import java.util.Set;
 
 import edu.stanford.nlp.dcoref.CorefCluster;
 import edu.stanford.nlp.dcoref.Dictionaries;
+import edu.stanford.nlp.dcoref.Dictionaries.MentionType;
 import edu.stanford.nlp.dcoref.Document;
 import edu.stanford.nlp.dcoref.Mention;
 import edu.stanford.nlp.dcoref.Semantics;
@@ -31,21 +32,22 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 		Dictionaries dict,
 		Set<Mention> roleSet,
 		Semantics semantics) throws Exception {
+
+		if (mention2.isPronominal())
+			return false;
 		
 		String headWordMention = mention2.headWord.get(CoreAnnotations.LemmaAnnotation.class).toLowerCase();
-		String headWordAnt     =      ant.headWord.get(CoreAnnotations.LemmaAnnotation.class).toLowerCase();
-
-		// May change to return false when both head words are unsimilar
-		if (headWordMention != headWordAnt) return false;
 
 		boolean potentialAuthorProposalMention = false;
 		boolean potentialAuthorProposalAnt     = false;
+
+		// System.err.println(headWordMention);
 
 		// Check if mention2 is modified with first-person possessive pronoun
 		String firstWordMention = mention2.originalSpan.get(0).get(CoreAnnotations.TextAnnotation.class).toLowerCase();
 		if (checkFirstPersonPossessivePronoun(firstWordMention, dict)) {
 			potentialAuthorProposalMention = true;
-			System.err.println("m: \"" + mention2.toString() + "\" starts with our");
+			// System.err.println("m: \"" + mention2.toString() + "\" starts with our");
 		}
 
 		// Check if mention2 is an object of a construct with first person pronoun as subject
@@ -55,20 +57,29 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 			String subjectWordMention = subjectMention.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
 			if (dict.firstPersonPronouns.contains(subjectWordMention)) {
 				potentialAuthorProposalMention = true;
-				System.err.println("m: \"" + mention2.toString() + "\" is an object of we");
+				// System.err.println("m: \"" + mention2.toString() + "\" is an object of we");
 			}
 		}
 
-		if (!potentialAuthorProposalMention)
+		if (!potentialAuthorProposalMention) {
+			// System.err.println("m: \"" + mention2.toString() + "\" is NOTHING");
 			return false;
+		}
 
 		for (Mention m1 : potentialAntecedent.getCorefMentions()) {
+
+			if (m1.isPronominal())
+				continue;
+
+			String headWordAnt  = m1.headWord.get(CoreAnnotations.LemmaAnnotation.class).toLowerCase();
+
+			// System.err.println(headWordAnt);
 
 			// Check if m1 is modified with first-person possessive pronoun
 			String firstWordAnt = m1.originalSpan.get(0).get(CoreAnnotations.TextAnnotation.class).toLowerCase();
 			if (checkFirstPersonPossessivePronoun(firstWordAnt, dict)) {
 				potentialAuthorProposalAnt = true;
-				System.err.println("a: \"" + m1.toString() + "\" starts with our");
+				// System.err.println("a: \"" + m1.toString() + "\" starts with our");
 			}
 
 			// Check if m1 is an object of a construct with first person pronoun as subject
@@ -78,23 +89,23 @@ public class AuthorProposalSieve extends DeterministicCorefSieve {
 				String subjectWordAnt = subjectAnt.get(CoreAnnotations.TextAnnotation.class).toLowerCase();
 				if (dict.firstPersonPronouns.contains(subjectWordAnt)) {
 					potentialAuthorProposalAnt = true;
-					System.err.println("a: \"" + m1.toString() + "\" is an object of we");
+					// System.err.println("a: \"" + m1.toString() + "\" is an object of we");
 				}
 			}
 
-			if (potentialAuthorProposalMention && potentialAuthorProposalAnt) {
+			// if (!potentialAuthorProposalAnt) {
+			// 	System.err.println("a: \"" + m1.toString() + "\" is NOTHING");
+			// }
+
+			if (potentialAuthorProposalMention && potentialAuthorProposalAnt && (headWordMention.equals(headWordAnt))) {
 				System.err.println(">>>> " + mention2.toString());
 				System.err.println(">>>> " + m1.toString());
-				System.err.println();
 				System.err.println();
 				return true;
 			}
 		}
 
-		// May change to return false when both head words are unsimilar
-		if (headWordMention != headWordAnt) return false;
-
-		return (potentialAuthorProposalMention && potentialAuthorProposalAnt);
+		return false;
 	}
 
 	private static IndexedWord getSubjectIndexedWord(Mention mention) {
