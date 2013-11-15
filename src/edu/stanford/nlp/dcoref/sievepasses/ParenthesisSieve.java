@@ -40,10 +40,10 @@ public class ParenthesisSieve extends DeterministicCorefSieve {
 		if (afterWord != "-RRB-")
 			return true;
 
-		System.err.println("sentNum = " + sentNum);
-		System.err.println("startIndex = " + startIndex);
-		System.err.println("endIndex = " + endIndex);
-		System.err.println(m1.originalSpan.toString());
+		// System.err.println("sentNum = " + sentNum);
+		// System.err.println("startIndex = " + startIndex);
+		// System.err.println("endIndex = " + endIndex);
+		// System.err.println(m1.originalSpan.toString());
 
 		return false;
 	}
@@ -66,7 +66,11 @@ public class ParenthesisSieve extends DeterministicCorefSieve {
 
 		for (Mention m1 : potentialAntecedent.getCorefMentions()) {
 			if (m1.sentNum != sentNum) continue;
-			if (m1.endIndex == startIndex - 2) return true;
+			if (m1.endIndex == startIndex - 2) {
+				System.err.println(mention2.originalSpan.toString());
+				System.err.println(m1.originalSpan.toString());
+				return true;
+			}
 		}
 
 		return false;
