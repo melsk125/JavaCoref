@@ -9,4 +9,6 @@ public class MyConstants {
 	public static final String OUTPUT_TOKEN_PROP = "mydcoref.output.token";
 	public static final String OUTPUT_MENTION_PROP = "mydcoref.output.mention";
 	public static final String OUTPUT_MENTION_DEP_PROP = "mydcoref.output.mention.dep";
+
+	public static final String DO_SCORE_PROP = "mydcoref.score";
 }

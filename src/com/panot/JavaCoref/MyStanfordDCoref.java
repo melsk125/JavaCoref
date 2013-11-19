@@ -21,6 +21,10 @@ import edu.stanford.nlp.dcoref.Document;
 import edu.stanford.nlp.dcoref.Mention;
 import edu.stanford.nlp.dcoref.MentionExtractor;
 import edu.stanford.nlp.dcoref.MUCMentionExtractor;
+import edu.stanford.nlp.dcoref.MyScoreModule;
+import edu.stanford.nlp.dcoref.ScorerBCubed;
+import edu.stanford.nlp.dcoref.ScorerMUC;
+import edu.stanford.nlp.dcoref.ScorerPairwise;
 import edu.stanford.nlp.dcoref.SieveCoreferenceSystem;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
@@ -35,8 +39,17 @@ import com.panot.JavaCoref.TextUtils.TokenMatcher;
 
 public class MyStanfordDCoref {
 
+	private static boolean doScore;
+
+	public static MyScoreModule myScoreModule;
+	public static ScorerPairwise scorePairwise;
+	public static ScorerMUC scoreMUC;
+	public static ScorerBCubed scoreBCubed;
+
 	public static void main(String[] args) throws Exception {
 	    Properties props = StringUtils.argsToProperties(args);
+
+	    doScore = Boolean.parseBoolean(props.getProperty(MyConstants.DO_SCORE_PROP, "false"));
 
 	    // instantiate coref system
 	    SieveCoreferenceSystem corefSystem = new SieveCoreferenceSystem(props);
@@ -82,6 +95,13 @@ public class MyStanfordDCoref {
 
 		System.err.println("Start runCoref!");
 
+		if (doScore) {
+			myScoreModule = new MyScoreModule();
+			scorePairwise = myScoreModule.scorePairwise;
+			scoreMUC = myScoreModule.scoreMUC;
+			scoreBCubed = myScoreModule.scoreBCubed;
+		}
+
 		try {
 			runCoref(corefSystem, mentionExtractor, props);
 		} catch (Exception ex) {
@@ -125,6 +145,13 @@ public class MyStanfordDCoref {
 
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
 			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
+
+			if (doScore) {
+				myScoreModule.calculateScore(document);
+				MyScoreModule thisDocScore = new MyScoreModule();
+				thisDocScore.calculateScore(document);
+				System.err.println(thisDocScore.toString());
+			}
 
 			if (props.containsKey(MyConstants.RAWTEXT_LIST_PROP)) {
 				String rawText = rawTexts.get(count - 1);
@@ -232,6 +259,10 @@ public class MyStanfordDCoref {
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
+
+		if (doScore) {
+			System.err.println(myScoreModule.toString());
+		}
 	}
 
 	public static String annotationToToken(Annotation annotation) {
