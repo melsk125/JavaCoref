@@ -71,10 +71,12 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     tokenizerFactory = PTBTokenizer.factory(new CoreLabelTokenFactory(false), "invertible");
     stanfordProcessor = loadStanfordProcessor(props);
 
-    if (props.contains(MyConstants.USE_GOLD_MENTION_PROP)) {
+    if (props.containsKey(MyConstants.USE_GOLD_MENTION_PROP)) {
       useGoldMention = true;
+      System.err.println("Using Gold Mention");
     } else {
       useGoldMention = false;
+      System.err.println("Not Using Gold Mention");
     }
   }
 
@@ -295,13 +297,6 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     if(useGoldMention) allPredictedMentions = allGoldMentions;
     else {
       allPredictedMentions = mentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
-      allGoldMentions = allPredictedMentions;
-    }
-
-    if (allPredictedMentions != allGoldMentions) {
-      System.err.println("Not gold!");
-    } else {
-      System.err.println("Gold");
     }
 
     // add the relevant fields to mentions and order them for coref

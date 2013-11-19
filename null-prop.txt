@@ -2,7 +2,9 @@ annotators = tokenize, ssplit, pos, lemma, ner, parse, dcoref
 
 dcoref.muc = /Users/Panot/Dropbox/research/remote/data/annotate-muc-fixed/muc
 
-mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/data/annotate-stanford-null/rawtext.list
+mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/CoreferenceResolution/experiments/2013-11-19/ex01-GoldMention/output2-WithGold/rawtext.list
 
+mydcoref.output.token
 mydcoref.output.mention
+mydcoref.gold.mention
 

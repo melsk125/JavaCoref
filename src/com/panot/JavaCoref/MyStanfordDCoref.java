@@ -135,15 +135,6 @@ public class MyStanfordDCoref {
 					System.err.println("Error at SetOffset");
 				}
 
-				/*
-				for (CoreMap sentence : document.annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
-					SemanticGraph dependency = sentence.get(SemanticGraphCoreAnnotations.CollapsedDependenciesAnnotation.class);
-					System.err.println("Dependency:");
-					System.err.println(dependency.toString());
-					System.err.println("=====================");
-				}
-				*/
-
 				boolean output = props.containsKey(MyConstants.OUTPUT_PROP);
 				boolean output_token = props.containsKey(MyConstants.OUTPUT_TOKEN_PROP);
 				boolean output_mention = props.containsKey(MyConstants.OUTPUT_MENTION_PROP);
@@ -194,19 +185,19 @@ public class MyStanfordDCoref {
 
 					if (output) {
 						standoff = documentToStandOff(document, rawText);
-						System.err.println(standoff);
+						//System.err.println(standoff);
 						bufferedWriter.write(standoff);
 					}
 
 					if (output_token) {
 						tokens = documentToToken(document);
-						System.err.println(tokens);
+						//System.err.println(tokens);
 						bufferedWriter_token.write(tokens);
 					}
 
 					if (output_mention) {
 						mentions = documentToMention(document);
-						System.err.println(mentions);
+						//System.err.println(mentions);
 						bufferedWriter_mention.write(mentions);
 					}
 
