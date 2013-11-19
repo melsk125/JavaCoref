@@ -39,17 +39,9 @@ import com.panot.JavaCoref.TextUtils.TokenMatcher;
 
 public class MyStanfordDCoref {
 
-	private static boolean doScore;
-
-	public static MyScoreModule myScoreModule;
-	public static ScorerPairwise scorePairwise;
-	public static ScorerMUC scoreMUC;
-	public static ScorerBCubed scoreBCubed;
 
 	public static void main(String[] args) throws Exception {
 	    Properties props = StringUtils.argsToProperties(args);
-
-	    doScore = Boolean.parseBoolean(props.getProperty(MyConstants.DO_SCORE_PROP, "false"));
 
 	    // instantiate coref system
 	    SieveCoreferenceSystem corefSystem = new SieveCoreferenceSystem(props);
@@ -95,13 +87,6 @@ public class MyStanfordDCoref {
 
 		System.err.println("Start runCoref!");
 
-		if (doScore) {
-			myScoreModule = new MyScoreModule();
-			scorePairwise = myScoreModule.scorePairwise;
-			scoreMUC = myScoreModule.scoreMUC;
-			scoreBCubed = myScoreModule.scoreBCubed;
-		}
-
 		try {
 			runCoref(corefSystem, mentionExtractor, props);
 		} catch (Exception ex) {
@@ -112,6 +97,10 @@ public class MyStanfordDCoref {
 
 	public static void runCoref(SieveCoreferenceSystem corefSystem, MentionExtractor mentionExtractor, Properties props) throws Exception {
 		System.err.println("In runCoref!");
+
+		boolean doScore = Boolean.parseBoolean(props.getProperty(MyConstants.DO_SCORE_PROP, "false"));
+
+		MyScoreModule myScoreModule = new MyScoreModule();
 
 		mentionExtractor.resetDocs();
 
@@ -147,6 +136,7 @@ public class MyStanfordDCoref {
 			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
 
 			if (doScore) {
+				document.extractGoldCorefClusters();
 				myScoreModule.calculateScore(document);
 				MyScoreModule thisDocScore = new MyScoreModule();
 				thisDocScore.calculateScore(document);
