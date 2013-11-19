@@ -299,7 +299,9 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     }
 
     if (allPredictedMentions != allGoldMentions) {
-      System.err.println("YEAH!");
+      System.err.println("Not gold!");
+    } else {
+      System.err.println("Gold");
     }
 
     // add the relevant fields to mentions and order them for coref

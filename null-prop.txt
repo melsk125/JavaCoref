@@ -4,7 +4,5 @@ dcoref.muc = /Users/Panot/Dropbox/research/remote/data/annotate-muc-fixed/muc
 
 mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/data/annotate-stanford-null/rawtext.list
 
-dcoref.sievePasses = ParenthesisSieve
-
-mydcoref.output.mention.dep
+mydcoref.output.mention
 
