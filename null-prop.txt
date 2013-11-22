@@ -2,10 +2,12 @@ annotators = tokenize, ssplit, pos, lemma, ner, parse, dcoref
 
 dcoref.muc = /Users/Panot/Dropbox/research/remote/data/annotate-muc-fixed/muc
 
-mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/CoreferenceResolution/experiments/2013-11-19/ex02-ScoreCompare/output2-WithGold/rawtext.list
+mydcoref.rawtext.list = /Users/Panot/Dropbox/research/remote/CoreferenceResolution/experiments/2013-11-22/ex03-union/rawtext.list
 
 mydcoref.output.token
 mydcoref.output.mention
-mydcoref.gold.mention
 
 mydcoref.score = true
+
+mydcoref.exp.type = mydcoref.exp.03.union
+mydcoref.exp.title = 03-Union

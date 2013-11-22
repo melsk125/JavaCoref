@@ -28,6 +28,7 @@ package com.panot.JavaCoref;
 
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -62,6 +63,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
   private final String fileContents;
   private int currentOffset;
   private boolean useGoldMention;
+  private String experimentType;
 
   public MyMUCMentionExtractor(Dictionaries dict, Properties props, Semantics semantics) throws Exception {
     super(dict, semantics);
@@ -77,6 +79,12 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     } else {
       useGoldMention = false;
       System.err.println("Not Using Gold Mention");
+    }
+
+    if (props.containsKey(MyConstants.EXP_TYPE_PROP)) {
+      experimentType = props.getProperty(MyConstants.EXP_TYPE_PROP);
+    } else {
+      experimentType = null;
     }
   }
 
@@ -294,12 +302,53 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     }
 
     // extract predicted mentions
-    if(useGoldMention) allPredictedMentions = allGoldMentions;
-    else {
-      allPredictedMentions = mentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
+    
+    allPredictedMentions = mentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
+
+    if (experimentType != null) {
+      if (experimentType.equals(MyConstants.EXP_TYPE_03_UNION)) {
+        List<List<Mention>> usingMentions = unionMentions(allPredictedMentions, allGoldMentions);
+        allPredictedMentions = usingMentions;
+      } else if (experimentType.equals(MyConstants.EXP_TYPE_03_INTERSECT)) {
+        List<List<Mention>> usingMentions = intersectMentions(allPredictedMentions, allGoldMentions);
+        allPredictedMentions = usingMentions;
+      } else {
+        System.err.println("Unknown experiment type. Using mention detector."); 
+      }
+    } else if(useGoldMention) {
+      allPredictedMentions = allGoldMentions;
     }
+
+
 
     // add the relevant fields to mentions and order them for coref
     return arrange(docAnno, allWords, allTrees, allPredictedMentions, allGoldMentions, true);
   }
+
+  public static List<List<Mention>> unionMentions(List<List<Mention>> set1, List<List<Mention>> set2) {
+    List<List<Mention>> result = new ArrayList<List<Mention>>();
+    int size = set1.size();
+
+    for (int sentI = 0; sentI < size; sentI ++) {
+      HashSet mentionSet = new HashSet(set1.get(sentI));
+      mentionSet.addAll(set2.get(sentI));
+      result.add(new ArrayList(mentionSet));
+    }
+
+    return result;
+  }
+
+  public static List<List<Mention>> intersectMentions(List<List<Mention>> set1, List<List<Mention>> set2) {
+    List<List<Mention>> result = new ArrayList<List<Mention>>();
+    int size = set1.size();
+
+    for (int sentI = 0; sentI < size; sentI ++) {
+      HashSet mentionSet = new HashSet(set1.get(sentI));
+      mentionSet.retainAll(set2.get(sentI));
+      result.add(new ArrayList(mentionSet));
+    }
+
+    return result;
+  }
+
 }

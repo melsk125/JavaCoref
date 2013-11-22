@@ -85,6 +85,10 @@ public class MyStanfordDCoref {
 	    	System.err.println("Use gold mention");
 	    }
 
+		if (props.containsKey(MyConstants.EXP_TITLE_PROP)) {
+			System.err.println("Experiment: " + props.getProperty(MyConstants.EXP_TITLE_PROP));
+		}
+
 		System.err.println("Start runCoref!");
 
 		try {
@@ -249,6 +253,10 @@ public class MyStanfordDCoref {
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
+
+		if (props.containsKey(MyConstants.EXP_TITLE_PROP)) {
+			System.err.println("Experiment: " + props.getProperty(MyConstants.EXP_TITLE_PROP));
+		}
 
 		if (doScore) {
 			System.err.println(myScoreModule.toString());

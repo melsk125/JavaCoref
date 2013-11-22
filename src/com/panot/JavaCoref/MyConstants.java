@@ -11,4 +11,12 @@ public class MyConstants {
 	public static final String OUTPUT_MENTION_DEP_PROP = "mydcoref.output.mention.dep";
 
 	public static final String DO_SCORE_PROP = "mydcoref.score";
+
+	public static final String EXP_TYPE_PROP = "mydcoref.exp.type";
+
+	public static final String EXP_TITLE_PROP = "mydcoref.exp.title";
+
+
+	public static final String EXP_TYPE_03_UNION = "mydcoref.exp.03.union";
+	public static final String EXP_TYPE_03_INTERSECT = "mydcoref.exp.03.intersect";
 }
