@@ -49,6 +49,7 @@ import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.Generics;
+import edu.stanford.nlp.util.IntPair;
 
 import edu.stanford.nlp.dcoref.*;
 
@@ -330,9 +331,22 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     int size = set1.size();
 
     for (int sentI = 0; sentI < size; sentI ++) {
-      HashSet mentionSet = new HashSet(set1.get(sentI));
-      mentionSet.addAll(set2.get(sentI));
-      result.add(new ArrayList(mentionSet));
+      ArrayList<Mention> thisList = new ArrayList<Mention>();
+      HashSet<IntPair> intPairSet = new HashSet<IntPair>();
+
+      for (Mention m1 : set1.get(sentI)) {
+        thisList.add(m1);
+        intPairSet.add(new IntPair(m1.startIndex, m1.endIndex));
+      }
+
+      for (Mention m2 : set2.get(sentI)) {
+        IntPair thisPair = new IntPair(m2.startIndex, m2.endIndex);
+        if (!intPairSet.contains(thisPair)) {
+          intPairSet.add(thisPair);
+          thisList.add(m2);
+        }
+      }
+      result.add(thisList);
     }
 
     return result;
@@ -343,9 +357,20 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     int size = set1.size();
 
     for (int sentI = 0; sentI < size; sentI ++) {
-      HashSet mentionSet = new HashSet(set1.get(sentI));
-      mentionSet.retainAll(set2.get(sentI));
-      result.add(new ArrayList(mentionSet));
+      ArrayList<Mention> thisList = new ArrayList<Mention>();
+      HashSet<IntPair> intPairSet = new HashSet<IntPair>();
+
+      for (Mention m1 : set1.get(sentI)) {
+        intPairSet.add(new IntPair(m1.startIndex, m1.endIndex));
+      }
+
+      for (Mention m2 : set2.get(sentI)) {
+        IntPair thisPair = new IntPair(m2.startIndex, m2.endIndex);
+        if (intPairSet.contains(thisPair)) {
+          thisList.add(m2);
+        }
+      }
+      result.add(thisList);
     }
 
     return result;
