@@ -19,4 +19,11 @@ public class MyConstants {
 
 	public static final String EXP_TYPE_03_UNION = "mydcoref.exp.03.union";
 	public static final String EXP_TYPE_03_INTERSECT = "mydcoref.exp.03.intersect";
+
+	public static final String TTE_TYPE = "mydcoref.tte.type";
+	public static final String TTE_MODEL = "mydcoref.tte.model";
+
+
+	public static final String TTE_TYPE_TRAIN = "train";
+	public static final String TTE_TYPE_USE   = "use";
 }

@@ -34,6 +34,7 @@ import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 
+import com.panot.JavaCoref.TermUtils.CrfFormatter;
 import com.panot.JavaCoref.TextUtils.TextReader;
 import com.panot.JavaCoref.TextUtils.TokenMatcher;
 
@@ -135,6 +136,21 @@ public class MyStanfordDCoref {
 
 			count += 1;
 			System.err.println("Start coref document no: " + count);
+
+			// If TTE_TYPE == TTE_TYPE_TRAIN then skip corefSystem.coref
+			// Generate CRF format for CRFSuite and run that get the result and write it into file
+			// 
+			// If TTE_TYPE == TTE_TYPE_USE then call CRFSuite for term info
+			
+			if (props.containsKey(MyConstants.TTE_TYPE) && props.containsKey(MyConstants.TTE_MODEL)) {
+				String tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
+
+				if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+					// train
+				} else {
+					// use
+				}
+			}
 
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
 			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
