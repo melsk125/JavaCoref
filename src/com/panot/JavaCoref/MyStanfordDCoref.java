@@ -170,7 +170,7 @@ public class MyStanfordDCoref {
 				// train
 				crfFormatter.addDocument(document);
 				continue;
-			} else {
+			} else if tte_type.equals(MyConstants.TTE_TYPE_USE) {
 				// use
 			}
 
@@ -288,8 +288,11 @@ public class MyStanfordDCoref {
 			//	break;
 		}
 
+		// Here is where crfsuite should be called
 		if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
 			System.err.println(crfFormatter.toString());
+		} else if tte_type.equals(MyConstants.TTE_TYPE_USE) {
+			
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
