@@ -27,25 +27,28 @@ public class CrfFormatter {
 		crfTokens = new ArrayList<List<CrfToken>>();
 	}
 
-	public void AddDocument(Document doc) {
+	public void addDocument(Document doc) {
 		Annotation ann = doc.annotation;
 
 		for (CoreMap sentence : ann.get(CoreAnnotations.SentencesAnnotation.class)) {
 			List<CoreLabel> sentenceTokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
-			crfTokens.add(CompileSentence(sentenceTokens));
+			crfTokens.add(compileSentence(sentenceTokens));
 		}
 	}
 
-	private static List<CrfToken> CompileSentence(List<CoreLabel> sentenceTokens) {
+	private static List<CrfToken> compileSentence(List<CoreLabel> sentenceTokens) {
 		List<CrfToken> sentenceCrfTokens = new ArrayList<CrfToken>();
 
-		for (CoreMap token : sentenceTokens) {
-			// Orthographic features
+		for (int tokenI = 0; tokenI < sentenceTokens.size(); tokenI++) {
+			CoreMap token = sentenceTokens.get(tokenI);
 			
 			CrfToken crfToken = new CrfToken();
+
+			// Orthographic features
 			OrthographicFeatureGenerator.populate(token, crfToken.features);
 
 			// Context features
+			ContextFeatureGenerator.populate(sentenceTokens, tokenI, crfToken.features);
 		}
 
 		return sentenceCrfTokens;
