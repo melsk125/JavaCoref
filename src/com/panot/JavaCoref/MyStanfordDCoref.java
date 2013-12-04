@@ -130,6 +130,14 @@ public class MyStanfordDCoref {
 
 		int count = 0;
 
+		String tte_type = "";
+		CrfFormatter crfFormatter = null;
+
+		if (props.containsKey(MyConstants.TTE_TYPE) && props.containsKey(MyConstants.TTE_MODEL)) {
+			tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
+			crfFormatter = new CrfFormatter();
+		}
+
 		while (true) {
 			Document document = mentionExtractor.nextDoc();
 			if (document == null) break;
@@ -142,14 +150,11 @@ public class MyStanfordDCoref {
 			// 
 			// If TTE_TYPE == TTE_TYPE_USE then call CRFSuite for term info
 			
-			if (props.containsKey(MyConstants.TTE_TYPE) && props.containsKey(MyConstants.TTE_MODEL)) {
-				String tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
-
-				if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
-					// train
-				} else {
-					// use
-				}
+			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+				// train
+				crfFormatter.addDocument(document);
+			} else {
+				// use
 			}
 
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
@@ -266,6 +271,10 @@ public class MyStanfordDCoref {
 			// only first doc for debugging
 			//if (count >= 2)
 			//	break;
+		}
+
+		if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+			System.err.println(crfFormatter.toString());
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
