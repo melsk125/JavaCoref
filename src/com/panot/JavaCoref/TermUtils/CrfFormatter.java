@@ -36,6 +36,7 @@ public class CrfFormatter {
 		List<List<Mention>> orderedMentionsBySentence = doc.getOrderedMentions();
 
 		for (int sentenceI = 0; sentenceI < sentences.size(); sentenceI++) {
+
 			CoreMap sentence = sentences.get(sentenceI);
 			List<Mention> orderedMentionsInSentence = orderedMentionsBySentence.get(sentenceI);
 
@@ -46,8 +47,8 @@ public class CrfFormatter {
 
 			// Set BIO Tag
 			for (Mention mention : orderedMentionsInSentence) {
-				sentenceCrfTokens.get(mention.startIndex - 1).bioTag = "B";
-				for (int tokenI = mention.startIndex ; tokenI < mention.endIndex ; tokenI++) {
+				sentenceCrfTokens.get(mention.startIndex).bioTag = "B";
+				for (int tokenI = mention.startIndex + 1 ; tokenI < mention.endIndex ; tokenI++) {
 					sentenceCrfTokens.get(tokenI).bioTag = "I";
 				}
 			}
@@ -69,6 +70,8 @@ public class CrfFormatter {
 
 			// Context features
 			ContextFeatureGenerator.populate(sentenceTokens, tokenI, crfToken.features);
+
+			sentenceCrfTokens.add(crfToken);
 		}
 
 		return sentenceCrfTokens;
@@ -84,6 +87,8 @@ public class CrfFormatter {
 
 				for (Map.Entry<String, String> entry : crfToken.features.entrySet()) {
 					os.append(entry.getKey());
+					System.err.println(entry.getKey());
+					System.err.println(entry.getValue());
 					if (!entry.getValue().equals("")) {
 						os.append(":");
 						os.append(entry.getValue());

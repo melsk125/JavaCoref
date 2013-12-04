@@ -108,7 +108,7 @@ public class OrthographicFeatureGenerator {
 	}
 
 	public static String stem(CoreMap token) {
-		return token.get(CoreAnnotations.StemAnnotation.class);
+		return token.get(CoreAnnotations.LemmaAnnotation.class);
 	}
 
 	public static boolean isPairOfDigits(String word) {

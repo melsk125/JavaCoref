@@ -161,6 +161,20 @@ public class MyStanfordDCoref {
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
 			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
 
+			// If TTE_TYPE == TTE_TYPE_TRAIN then skip corefSystem.coref
+			// Generate CRF format for CRFSuite and run that get the result and write it into file
+			// 
+			// If TTE_TYPE == TTE_TYPE_USE then call CRFSuite for term info
+			
+			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+				// train
+				crfFormatter.addDocument(document);
+				continue;
+			} else {
+				// use
+			}
+
+
 			if (doScore) {
 				document.extractGoldCorefClusters();
 				myScoreModule.calculateScore(document);
