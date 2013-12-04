@@ -87,13 +87,11 @@ public class CrfFormatter {
 
 				for (Map.Entry<String, String> entry : crfToken.features.entrySet()) {
 					os.append(entry.getKey());
-					System.err.println(entry.getKey());
-					System.err.println(entry.getValue());
 					if (!entry.getValue().equals("")) {
 						os.append(":");
 						os.append(entry.getValue());
-						os.append("\t");
 					}
+					os.append("\t");
 				}
 
 				os.append("\n");
