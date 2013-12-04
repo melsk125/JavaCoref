@@ -153,6 +153,7 @@ public class MyStanfordDCoref {
 			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
 				// train
 				crfFormatter.addDocument(document);
+				continue;
 			} else {
 				// use
 			}
