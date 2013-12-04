@@ -32,14 +32,32 @@ public class CrfFormatter {
 	public void addDocument(Document doc) {
 		Annotation ann = doc.annotation;
 
-		for (CoreMap sentence : ann.get(CoreAnnotations.SentencesAnnotation.class)) {
+		List<CoreMap> sentences = ann.get(CoreAnnotations.SentencesAnnotation.class);
+		List<List<Mention>> orderedMentionsBySentence = doc.getOrderedMentions();
+
+		for (int sentenceI = 0; sentenceI < sentences.size(); sentenceI++) {
+			CoreMap sentence = sentences.get(sentenceI);
+			List<Mention> orderedMentionsInSentence = orderedMentionsBySentence.get(sentenceI);
+
+			// Populate features
 			List<CoreLabel> sentenceTokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
-			crfTokens.add(compileSentence(sentenceTokens));
+			List<CrfToken> sentenceCrfTokens = populateFeatures(sentenceTokens);
+			crfTokens.add(sentenceCrfTokens);
+
+			// Set BIO Tag
+			for (Mention mention : orderedMentionsInSentence) {
+				sentenceCrfTokens.get(mention.startIndex - 1).bioTag = "B";
+				for (int tokenI = mention.startIndex ; tokenI < mention.endIndex ; tokenI++) {
+					sentenceCrfTokens.get(tokenI).bioTag = "I";
+				}
+			}
 		}
 	}
 
-	private static List<CrfToken> compileSentence(List<CoreLabel> sentenceTokens) {
+	private static List<CrfToken> populateFeatures(List<CoreLabel> sentenceTokens) {
 		List<CrfToken> sentenceCrfTokens = new ArrayList<CrfToken>();
+
+		// Populate features
 
 		for (int tokenI = 0; tokenI < sentenceTokens.size(); tokenI++) {
 			CoreMap token = sentenceTokens.get(tokenI);
