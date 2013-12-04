@@ -15,9 +15,11 @@ import edu.stanford.nlp.util.CoreMap;
 public class CrfFormatter {
 	public static class CrfToken {
 		public Map<String, String> features;
+		public String bioTag;
 
 		public CrfToken() {
 			features = new HashMap<String, String>();
+			bioTag = "O";
 		}
 	}
 
@@ -55,6 +57,27 @@ public class CrfFormatter {
 	}
 
 	public String toString() {
-		return "";
+		StringBuilder os = new StringBuilder();
+
+		for (List<CrfToken> sentenceCrfTokens : crfTokens) {
+			for (CrfToken crfToken : sentenceCrfTokens) {
+				os.append(crfToken.bioTag);
+				os.append("\t");
+
+				for (Map.Entry<String, String> entry : crfToken.features.entrySet()) {
+					os.append(entry.getKey());
+					if (!entry.getValue().equals("")) {
+						os.append(":");
+						os.append(entry.getValue());
+						os.append("\t");
+					}
+				}
+
+				os.append("\n");
+			}
+			os.append("\n");
+		}
+
+		return os.toString();
 	}
 }
