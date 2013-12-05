@@ -19,7 +19,7 @@ public class CrfFormatter {
 
 		public CrfToken() {
 			features = new HashMap<String, String>();
-			bioTag = "O";
+			bioTag = "";
 		}
 	}
 
@@ -27,6 +27,25 @@ public class CrfFormatter {
 
 	public CrfFormatter() {
 		crfTokens = new ArrayList<List<CrfToken>>();
+	}
+
+	public void addDocument(Annotation ann) {
+		List<CoreMap> sentences = ann.get(CoreAnnotations.SentencesAnnotation.class);
+
+		for (int sentenceI = 0; sentenceI < sentences.size(); sentenceI++) {
+			CoreMap sentence = sentences.get(sentenceI);
+
+			// Populate features
+			List<CoreLabel> sentenceTokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
+			List<CrfToken> sentenceCrfTokens = populateFeatures(sentenceTokens);
+			crfTokens.add(sentenceCrfTokens);
+		}
+	}
+
+	public static String annotationToCrfString(Annotation ann) {
+		CrfFormatter crfFormatter = new CrfFormatter();
+		crfFormatter.addDocument(ann);
+		return crfFormatter.toString();
 	}
 
 	public void addDocument(Document doc) {

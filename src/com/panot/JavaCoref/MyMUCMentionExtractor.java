@@ -53,6 +53,10 @@ import edu.stanford.nlp.util.IntPair;
 
 import edu.stanford.nlp.dcoref.*;
 
+import com.panot.JavaCoref.TermUtils.TermAsMentionFinder;
+import com.panot.JavaCoref.TermUtils.CrfFormatter;
+import com.panot.JavaCoref.TermUtils.CrfsuiteCaller;
+
 /**
  * Extracts {@literal <COREF>} mentions from a file annotated in MUC format.
  *
@@ -65,6 +69,12 @@ public class MyMUCMentionExtractor extends MentionExtractor {
   private int currentOffset;
   private boolean useGoldMention;
   private String experimentType;
+  private Properties props;
+
+  private String tte_type = "";
+  private boolean use_term = false;
+
+  private TermAsMentionFinder termAsMentionFinder;
 
   public MyMUCMentionExtractor(Dictionaries dict, Properties props, Semantics semantics) throws Exception {
     super(dict, semantics);
@@ -87,6 +97,17 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     } else {
       experimentType = null;
     }
+
+    if (props.containsKey(MyConstants.TTE_TYPE) && tte_type.equals(MyConstants.TTE_TYPE_USE) && props.containsKey(MyConstants.TTE_MODEL)) {
+      System.err.println("MUC Extract Use term");
+      use_term = true;
+      tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
+      System.err.println(tte_type);
+
+      termAsMentionFinder = new TermAsMentionFinder();
+    }
+
+    this.props = props;
   }
 
   public MyMUCMentionExtractor(Dictionaries dict, Properties props, Semantics semantics,
@@ -300,6 +321,25 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       }
       allWords.set(i, annotatedSent);
       allTrees.add(allSentences.get(i).get(TreeCoreAnnotations.TreeAnnotation.class));
+    }
+
+    // term things
+    
+    List<List<Mention>> termMentions;
+
+    if (use_term) {
+      String dataCrf = CrfFormatter.annotationToCrfString(docAnno);
+      List<List<String>> tagResult;
+
+      try {
+        tagResult = CrfsuiteCaller.tag(dataCrf, props.getProperty(MyConstants.TTE_MODEL));
+      } catch (Exception e) {
+        System.err.println("Crfsuite tag failed");
+      }
+
+      termMentions = termAsMentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
+
+      maxID = termAsMentionFinder.getMaxID();
     }
 
     // extract predicted mentions

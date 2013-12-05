@@ -14,11 +14,19 @@ import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 
 public class TermAsMentionFinder implements CorefMentionFinder {
-	protected final List<List<String>> tags;
+	protected List<List<String>> tags;
 	protected int maxID = -1;
 
-	public TermAsMentionFinder(List<List<String>> tags) {
+	public TermAsMentionFinder() {
+
+	}
+
+	public void setTags(List<List<String>> tags) {
 		this.tags = tags;
+	}
+
+	public int getMaxID() {
+		return maxID;
 	}
 
 	@Override

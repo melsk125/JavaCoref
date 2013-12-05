@@ -36,6 +36,7 @@ import edu.stanford.nlp.util.StringUtils;
 
 import com.panot.JavaCoref.TermUtils.CrfFormatter;
 import com.panot.JavaCoref.TermUtils.CrfsuiteCaller;
+import com.panot.JavaCoref.TermUtils.TermAsMentionFinder;
 import com.panot.JavaCoref.TextUtils.TextReader;
 import com.panot.JavaCoref.TextUtils.TokenMatcher;
 
@@ -140,7 +141,9 @@ public class MyStanfordDCoref {
 			use_term = true;
 			tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
 			System.err.println(tte_type);
-			crfFormatter = new CrfFormatter();
+			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+				crfFormatter = new CrfFormatter();
+			}
 		}
 
 		while (true) {
@@ -155,20 +158,16 @@ public class MyStanfordDCoref {
 			// 
 			// If TTE_TYPE == TTE_TYPE_USE then call CRFSuite for term info
 			
-			if (use_term) {
+			if (use_term && tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+				// train
+
+				// only first doc for debugging
+				// if (count >= 2)
+				// 	break;
 
 				crfFormatter.addDocument(document);
 				System.err.println("formatter");
 
-				if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
-					// train
-
-					// only first doc for debugging
-					// if (count >= 2)
-					// 	break;
-
-					continue;
-				}
 				continue;
 			}
 
@@ -282,27 +281,32 @@ public class MyStanfordDCoref {
 					bufferedWriter_mention_dep.close();
 			}
 
+			// if (use_term && tte_type.equals(MyConstants.TTE_TYPE_USE)) {
+			// 	List<List<String>> tag_result;
+			// 	try {
+			// 		crfFormatter = new CrfFormatter();
+			// 		crfFormatter.addDocument(document.annotation);
+			// 		tag_result = CrfsuiteCaller.tag(crfFormatter.toString(), props.getProperty(MyConstants.TTE_MODEL));
+
+			// 		TermAsMentionFinder termAsMentionFinder = new TermAsMentionFinder(tag_result);
+			// 		termAsMentionFinder.extractPredictedMentions(document, )
+			// 	} catch (Exception e) {
+			// 		System.err.println("Crfsuite tag failed");
+			// 	}
+
+			// }
+
 			System.err.println("Finished!");
 		}
 
 		// Here is where crfsuite should be called
-		if (use_term) {
+		if (use_term && tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+			try {
 		
-			String modelFileName = props.getProperty(MyConstants.TTE_MODEL, "");
-
-			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
-				try {
-					CrfsuiteCaller.train(crfFormatter.toString(), modelFileName);
-				} catch (Exception e) {
-					System.err.println("Crfsuite train failed");
-				}
-			} else if (tte_type.equals(MyConstants.TTE_TYPE_USE)) {
-				List<List<String>> tag_result;
-				try {
-					tag_result = CrfsuiteCaller.tag(crfFormatter.toString(), modelFileName);
-				} catch (Exception e) {
-					System.err.println("Crfsuite tag failed");
-				}
+				String modelFileName = props.getProperty(MyConstants.TTE_MODEL, "");
+				CrfsuiteCaller.train(crfFormatter.toString(), modelFileName);
+			} catch (Exception e) {
+				System.err.println("Crfsuite train failed");
 			}
 
 		}
