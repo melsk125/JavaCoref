@@ -325,7 +325,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
 
     // term things
     
-    List<List<Mention>> termMentions;
+    List<List<Mention>> termMentions = new ArrayList<List<Mention>>();
 
     if (use_term) {
       String dataCrf = CrfFormatter.annotationToCrfString(docAnno);
@@ -353,7 +353,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       } else if (experimentType.equals(MyConstants.EXP_TYPE_03_INTERSECT)) {
         List<List<Mention>> usingMentions = intersectMentions(allPredictedMentions, allGoldMentions);
         allPredictedMentions = usingMentions;
-      } else if (experimentType.equals(MyConstants.EXP_TYPE_04_CHECK)) {
+      } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_CHECK)) {
         allPredictedMentions = termMentions;
       } else {
         System.err.println("Unknown experiment type. Using mention detector."); 
