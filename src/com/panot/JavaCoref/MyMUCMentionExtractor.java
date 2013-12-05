@@ -357,6 +357,9 @@ public class MyMUCMentionExtractor extends MentionExtractor {
         allPredictedMentions = usingMentions;
       } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_CHECK)) {
         allPredictedMentions = termMentions;
+      } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_SUPER)) {
+        List<List<Mention>> usingMentions = superstringMentions(termMentions, allPredictedMentions);
+        allPredictedMentions = usingMentions;
       } else {
         System.err.println(experimentType);
         System.err.println("Unknown experiment type. Using mention detector."); 
@@ -366,9 +369,40 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     }
 
 
-
     // add the relevant fields to mentions and order them for coref
     return arrange(docAnno, allWords, allTrees, allPredictedMentions, allGoldMentions, true);
+  }
+
+  public static List<List<Mention>> superstringMentions(List<List<Mention>> inside, List<List<Mention>> outside) {
+    List<List<Mention>> result = new ArrayList<List<Mention>>();
+    
+    int size = outside.size();
+
+    for (int sentI = 0; sentI < size; sentI ++) {
+      ArrayList<Mention> thisList = new ArrayList<Mention>();
+      ArrayList<Mention> insideList = new ArrayList<Mention>();
+
+      for (Mention m1 : inside.get(sentI)) {
+        insideList.add(m1);
+      }
+
+      for (Mention m2 : outside.get(sentI)) {
+        for (Mention m1 : insideList) {
+          if (isSubstringOf(m1, m2)) {
+            thisList.add(m2);
+            break;
+          }
+        }
+      }
+    }
+
+    return result;
+  }
+
+  public static boolean isSubstringOf(Mention m1, Mention m2) {
+    if (m1.startIndex >= m2.startIndex && m1.endIndex <= m2.endIndex)
+      return true;
+    return false;
   }
 
   public static List<List<Mention>> unionMentions(List<List<Mention>> set1, List<List<Mention>> set2) {
