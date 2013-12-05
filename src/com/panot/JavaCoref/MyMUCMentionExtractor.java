@@ -363,6 +363,9 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_OVERLAP)) {
         List<List<Mention>> usingMentions = overlapMentions(termMentions, allPredictedMentions);
         allPredictedMentions = usingMentions;
+      } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_UNION)) {
+        List<List<Mention>> usingMentions = unionMentions(termMentions, allPredictedMentions);
+        allPredictedMentions = usingMentions;
       } else {
         System.err.println(experimentType);
         System.err.println("Unknown experiment type. Using mention detector."); 
