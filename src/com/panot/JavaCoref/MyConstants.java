@@ -25,5 +25,5 @@ public class MyConstants {
 
 
 	public static final String TTE_TYPE_TRAIN = "train";
-	public static final String TTE_TYPE_USE   = "use";
+	public static final String TTE_TYPE_USE   = "tag";
 }

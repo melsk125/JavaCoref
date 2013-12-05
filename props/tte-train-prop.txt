@@ -1,0 +1,6 @@
+annotators = tokenize, ssplit, pos, lemma, ner, parse, dcoref
+
+dcoref.muc = /Users/Panot/Dropbox/research/remote/data/TTE_data/muc/train.muc
+
+mydcoref.tte.type = train
+mydcoref.tte.model = /Users/Panot/Dropbox/research/remote/data/TTE_data/tte.model

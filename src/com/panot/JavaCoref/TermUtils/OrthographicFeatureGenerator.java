@@ -247,16 +247,36 @@ public class OrthographicFeatureGenerator {
 		return false;
 	}
 
-	// public static boolean matchesDateRegularExpression(String word) {
+	private static final String dateRegularExpression = "^(19|20)\\d\\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$";
 
-	// }
+	public static boolean matchesDateRegularExpression(String word) {
+		return word.matches(dateRegularExpression);
+	}
 
-	// public static String pattern(String word) {
+	public static String pattern(String word) {
+		StringBuilder os = new StringBuilder();
+		for (char ch : word.toCharArray()) {
+			if (Character.isLowerCase(ch))
+				os.append("a");
+			else if (Character.isUpperCase(ch))
+				os.append("A");
+			else if (Character.isDigit(ch))
+				os.append("0");
+			else
+				os.append(ch);
+		}
 
-	// }
+		return os.toString();
+	}
 
-	// public static String collapsedPattern(String word) {
+	public static String collapsedPattern(String word) {
+		StringBuilder os = new StringBuilder();
+		for (char ch : pattern(word).toCharArray()) {
+			if (os.length() == 0 || os.charAt(os.length() - 1) != ch)
+				os.append(ch);
+		}
 
-	// }
+		return os.toString();
+	}
 }
 

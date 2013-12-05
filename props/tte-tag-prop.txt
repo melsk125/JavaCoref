@@ -1,0 +1,6 @@
+annotators = tokenize, ssplit, pos, lemma, ner, parse, dcoref
+
+dcoref.muc = /Users/Panot/Dropbox/research/remote/data/TTE_data/muc/dev.muc
+
+mydcoref.tte.type = tag
+mydcoref.tte.model = /Users/Panot/Dropbox/research/remote/data/TTE_data/tte.model

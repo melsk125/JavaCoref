@@ -35,6 +35,7 @@ import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 
 import com.panot.JavaCoref.TermUtils.CrfFormatter;
+import com.panot.JavaCoref.TermUtils.CrfsuiteCaller;
 import com.panot.JavaCoref.TextUtils.TextReader;
 import com.panot.JavaCoref.TextUtils.TokenMatcher;
 
@@ -132,9 +133,13 @@ public class MyStanfordDCoref {
 
 		String tte_type = "";
 		CrfFormatter crfFormatter = null;
+		boolean use_term = false;
 
 		if (props.containsKey(MyConstants.TTE_TYPE) && props.containsKey(MyConstants.TTE_MODEL)) {
+			System.err.println("Use term");
+			use_term = true;
 			tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
+			System.err.println(tte_type);
 			crfFormatter = new CrfFormatter();
 		}
 
@@ -150,29 +155,25 @@ public class MyStanfordDCoref {
 			// 
 			// If TTE_TYPE == TTE_TYPE_USE then call CRFSuite for term info
 			
-			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
-				// train
+			if (use_term) {
+
 				crfFormatter.addDocument(document);
+				System.err.println("formatter");
+
+				if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+					// train
+
+					// only first doc for debugging
+					// if (count >= 2)
+					// 	break;
+
+					continue;
+				}
 				continue;
-			} else {
-				// use
 			}
 
 			Map<Integer, CorefChain> result = corefSystem.coref(document);
 			document.annotation.set(CorefCoreAnnotations.CorefChainAnnotation.class, result);
-
-			// If TTE_TYPE == TTE_TYPE_TRAIN then skip corefSystem.coref
-			// Generate CRF format for CRFSuite and run that get the result and write it into file
-			// 
-			// If TTE_TYPE == TTE_TYPE_USE then call CRFSuite for term info
-			
-			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
-				// train
-				crfFormatter.addDocument(document);
-				continue;
-			} else if tte_type.equals(MyConstants.TTE_TYPE_USE) {
-				// use
-			}
 
 
 			if (doScore) {
@@ -282,17 +283,28 @@ public class MyStanfordDCoref {
 			}
 
 			System.err.println("Finished!");
-
-			// only first doc for debugging
-			//if (count >= 2)
-			//	break;
 		}
 
 		// Here is where crfsuite should be called
-		if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
-			System.err.println(crfFormatter.toString());
-		} else if tte_type.equals(MyConstants.TTE_TYPE_USE) {
-			
+		if (use_term) {
+		
+			String modelFileName = props.getProperty(MyConstants.TTE_MODEL, "");
+
+			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
+				try {
+					CrfsuiteCaller.train(crfFormatter.toString(), modelFileName);
+				} catch (Exception e) {
+					System.err.println("Crfsuite train failed");
+				}
+			} else if (tte_type.equals(MyConstants.TTE_TYPE_USE)) {
+				List<List<String>> tag_result;
+				try {
+					tag_result = CrfsuiteCaller.tag(crfFormatter.toString(), modelFileName);
+				} catch (Exception e) {
+					System.err.println("Crfsuite tag failed");
+				}
+			}
+
 		}
 
 		System.err.println("Resolved all: " + count + " doc(s)");
