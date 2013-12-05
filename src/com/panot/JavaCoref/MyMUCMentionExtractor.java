@@ -360,6 +360,9 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_SUPER)) {
         List<List<Mention>> usingMentions = superstringMentions(termMentions, allPredictedMentions);
         allPredictedMentions = usingMentions;
+      } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_OVERLAP)) {
+        List<List<Mention>> usingMentions = overlapMentions(termMentions, allPredictedMentions);
+        allPredictedMentions = usingMentions;
       } else {
         System.err.println(experimentType);
         System.err.println("Unknown experiment type. Using mention detector."); 
@@ -394,6 +397,36 @@ public class MyMUCMentionExtractor extends MentionExtractor {
           }
         }
       }
+
+      result.add(thisList);
+    }
+
+    return result;
+  }
+
+  public static List<List<Mention>> overlapMentions(List<List<Mention>> inside, List<List<Mention>> outside) {
+    List<List<Mention>> result = new ArrayList<List<Mention>>();
+    
+    int size = outside.size();
+
+    for (int sentI = 0; sentI < size; sentI ++) {
+      ArrayList<Mention> thisList = new ArrayList<Mention>();
+      ArrayList<Mention> insideList = new ArrayList<Mention>();
+
+      for (Mention m1 : inside.get(sentI)) {
+        insideList.add(m1);
+      }
+
+      for (Mention m2 : outside.get(sentI)) {
+        for (Mention m1 : insideList) {
+          if (overlap(m1, m2)) {
+            thisList.add(m2);
+            break;
+          }
+        }
+      }
+
+      result.add(thisList);
     }
 
     return result;
@@ -401,6 +434,14 @@ public class MyMUCMentionExtractor extends MentionExtractor {
 
   public static boolean isSubstringOf(Mention m1, Mention m2) {
     if (m1.startIndex >= m2.startIndex && m1.endIndex <= m2.endIndex)
+      return true;
+    return false;
+  }
+
+  public static boolean overlap(Mention m1, Mention m2) {
+    if (m1.startIndex <= m2.startIndex && m2.startIndex < m1.endIndex)
+      return true;
+    if (m1.startIndex < m2.endIndex && m2.endIndex <= m1.endIndex)
       return true;
     return false;
   }
