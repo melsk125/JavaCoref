@@ -343,7 +343,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     }
 
     // extract predicted mentions
-    
+
     allPredictedMentions = mentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
 
     if (experimentType != null) {
@@ -353,6 +353,8 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       } else if (experimentType.equals(MyConstants.EXP_TYPE_03_INTERSECT)) {
         List<List<Mention>> usingMentions = intersectMentions(allPredictedMentions, allGoldMentions);
         allPredictedMentions = usingMentions;
+      } else if (experimentType.equals(MyConstants.EXP_TYPE_04_CHECK)) {
+        allPredictedMentions = termMentions;
       } else {
         System.err.println("Unknown experiment type. Using mention detector."); 
       }
