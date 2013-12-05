@@ -50,6 +50,8 @@ public class MyScoreModule {
 		String sf1 = nf.format(f1*100);
 
 		StringBuilder os = new StringBuilder();
+		os.append("P=" + scorer.precisionNumSum + "/" + scorer.precisionDenSum + "\n");
+		os.append("R=" + scorer.recallNumSum + "/" + scorer.recallDenSum + "\n");
 		os.append("P\tR\tF1\n");
 		os.append(sp + "\t" + sr + "\t" + sf1 + "\n");
 

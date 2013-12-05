@@ -98,10 +98,11 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       experimentType = null;
     }
 
+    tte_type = props.getProperty(MyConstants.TTE_TYPE);
+
     if (props.containsKey(MyConstants.TTE_TYPE) && tte_type.equals(MyConstants.TTE_TYPE_USE) && props.containsKey(MyConstants.TTE_MODEL)) {
       System.err.println("MUC Extract Use term");
       use_term = true;
-      tte_type = props.getProperty(MyConstants.TTE_TYPE, MyConstants.TTE_TYPE_TRAIN);
       System.err.println(tte_type);
 
       termAsMentionFinder = new TermAsMentionFinder();
@@ -329,7 +330,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
 
     if (use_term) {
       String dataCrf = CrfFormatter.annotationToCrfString(docAnno);
-      List<List<String>> tagResult;
+      List<List<String>> tagResult = new ArrayList<List<String>>();
 
       try {
         tagResult = CrfsuiteCaller.tag(dataCrf, props.getProperty(MyConstants.TTE_MODEL));
@@ -337,6 +338,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
         System.err.println("Crfsuite tag failed");
       }
 
+      termAsMentionFinder.setTags(tagResult);
       termMentions = termAsMentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
 
       maxID = termAsMentionFinder.getMaxID();
@@ -356,6 +358,7 @@ public class MyMUCMentionExtractor extends MentionExtractor {
       } else if (use_term && experimentType.equals(MyConstants.EXP_TYPE_04_CHECK)) {
         allPredictedMentions = termMentions;
       } else {
+        System.err.println(experimentType);
         System.err.println("Unknown experiment type. Using mention detector."); 
       }
     } else if(useGoldMention) {

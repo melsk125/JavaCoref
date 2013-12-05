@@ -47,7 +47,7 @@ public class TermAsMentionFinder implements CorefMentionFinder {
 			int beginIndex = -1;
 			List<String> sentTags = tags.get(sentI);
 			for (int tokenI = 0; tokenI < sentTags.size(); tokenI++) {
-				String tag = sentTags.get(tokenI);
+				String tag = sentTags.get(tokenI).trim();
 				if (tag.equals("B")) {
 					if (!prevTag.equals("O")) {
 						int mentionId = ++maxID;
@@ -68,6 +68,8 @@ public class TermAsMentionFinder implements CorefMentionFinder {
 						mentions.add(m);
 					}
 				}
+				prevTag = tag;
+				System.err.print(tag);
 			}
 
 			if (!prevTag.equals("O")) {
@@ -76,6 +78,7 @@ public class TermAsMentionFinder implements CorefMentionFinder {
 				Mention m = new Mention(mentionId, beginIndex, endIndex, dependency, new ArrayList<CoreLabel>(tokens.subList(beginIndex, endIndex)));
 				mentions.add(m);
 			}
+			System.err.println();
 		}
 
 		return termMentions;
