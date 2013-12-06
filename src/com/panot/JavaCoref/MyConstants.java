@@ -31,4 +31,7 @@ public class MyConstants {
 	public static final String EXP_TYPE_04_SUPER = "mydcoref.exp.04.super";
 	public static final String EXP_TYPE_04_OVERLAP = "mydcoref.exp.04.overlap";
 	public static final String EXP_TYPE_04_UNION = "mydcoref.exp.04.union";
+
+	public static final String EXP_TYPE_05_SUPER = "mydcoref.exp.05.super";
+	public static final String EXP_TYPE_05_OVERLAP = "mydcoref.exp.05.overlap";
 }
