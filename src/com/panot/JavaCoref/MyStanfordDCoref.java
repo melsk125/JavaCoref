@@ -146,6 +146,10 @@ public class MyStanfordDCoref {
 			}
 		}
 
+		// Initialize MentionStatCounter
+		
+		MentionStatCounter mentionStatCounter = new MentionStatCounter();
+
 		while (true) {
 			Document document = mentionExtractor.nextDoc();
 			if (document == null) break;
@@ -281,20 +285,14 @@ public class MyStanfordDCoref {
 					bufferedWriter_mention_dep.close();
 			}
 
-			// if (use_term && tte_type.equals(MyConstants.TTE_TYPE_USE)) {
-			// 	List<List<String>> tag_result;
-			// 	try {
-			// 		crfFormatter = new CrfFormatter();
-			// 		crfFormatter.addDocument(document.annotation);
-			// 		tag_result = CrfsuiteCaller.tag(crfFormatter.toString(), props.getProperty(MyConstants.TTE_MODEL));
+			// Update mentionStatCounter
+			mentionStatCounter.addDocument(document);
 
-			// 		TermAsMentionFinder termAsMentionFinder = new TermAsMentionFinder(tag_result);
-			// 		termAsMentionFinder.extractPredictedMentions(document, )
-			// 	} catch (Exception e) {
-			// 		System.err.println("Crfsuite tag failed");
-			// 	}
-
-			// }
+			// For this doc only
+			MentionStatCounter thisStatCounter = new MentionStatCounter();
+			thisStatCounter.addDocument(document);
+			System.err.println("Mention stat for this doc:");
+			System.err.println(MentionStatCounter.prettyPrint(thisStatCounter));
 
 			System.err.println("Finished!");
 		}
@@ -316,6 +314,9 @@ public class MyStanfordDCoref {
 		if (props.containsKey(MyConstants.EXP_TITLE_PROP)) {
 			System.err.println("Experiment: " + props.getProperty(MyConstants.EXP_TITLE_PROP));
 		}
+
+		System.err.println("Mention stat for collection:");
+		System.err.println(MentionStatCounter.prettyPrint(mentionStatCounter));		
 
 		if (doScore) {
 			System.err.println(myScoreModule.toString());
