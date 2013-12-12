@@ -302,7 +302,18 @@ public class MyStanfordDCoref {
 			try {
 		
 				String modelFileName = props.getProperty(MyConstants.TTE_MODEL, "");
+				String trainCrf = crfFormatter.toString();
 				CrfsuiteCaller.train(crfFormatter.toString(), modelFileName);
+
+				if (props.containsKey(MyConstants.TTE_SAVE_CRF_DATA)) {
+					String crfDataFilename = props.getProperty(MyConstants.TTE_SAVE_CRF_DATA);
+
+					File crfDataFile = new File(crfDataFilename);
+					BufferedWriter bw = new BufferedWriter(new FileWriter(crfDataFile));
+					bw.write(trainCrf);
+					bw.close();
+				}
+
 			} catch (Exception e) {
 				System.err.println("Crfsuite train failed");
 			}

@@ -26,6 +26,10 @@
 
 package com.panot.JavaCoref;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -334,6 +338,16 @@ public class MyMUCMentionExtractor extends MentionExtractor {
 
       try {
         tagResult = CrfsuiteCaller.tag(dataCrf, props.getProperty(MyConstants.TTE_MODEL));
+
+        if (props.containsKey(MyConstants.TTE_SAVE_CRF_DATA)) {
+          String crfDataFilename = props.getProperty(MyConstants.TTE_SAVE_CRF_DATA);
+
+          File crfDataFile = new File(crfDataFilename);
+          BufferedWriter bw = new BufferedWriter(new FileWriter(crfDataFile));
+          bw.write(dataCrf);
+          bw.close();
+        }
+
       } catch (Exception e) {
         System.err.println("Crfsuite tag failed");
       }

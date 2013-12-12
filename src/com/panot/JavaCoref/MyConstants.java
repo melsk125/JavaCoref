@@ -23,6 +23,7 @@ public class MyConstants {
 	public static final String TTE_TYPE = "mydcoref.tte.type";
 	public static final String TTE_MODEL = "mydcoref.tte.model";
 
+	public static final String TTE_SAVE_CRF_DATA = "mydcoref.tte.save.crf";
 
 	public static final String TTE_TYPE_TRAIN = "train";
 	public static final String TTE_TYPE_USE   = "tag";
