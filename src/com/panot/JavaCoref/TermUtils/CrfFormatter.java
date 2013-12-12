@@ -19,7 +19,7 @@ public class CrfFormatter {
 
 		public CrfToken() {
 			features = new HashMap<String, String>();
-			bioTag = "";
+			bioTag = "O";
 		}
 	}
 
@@ -90,6 +90,15 @@ public class CrfFormatter {
 			// Context features
 			ContextFeatureGenerator.populate(sentenceTokens, tokenI, crfToken.features);
 
+			// Head and tail of the sentence
+			if (tokenI == 0) {
+				crfToken.features.put("--START--", "");
+			}
+
+			if (tokenI == sentenceTokens.size() - 1) {
+				crfToken.features.put("--END--", "");
+			}
+
 			sentenceCrfTokens.add(crfToken);
 		}
 
@@ -118,6 +127,6 @@ public class CrfFormatter {
 			os.append("\n");
 		}
 
-		return os.toString();
+		return os.toString().replaceAll(":", "\\:");
 	}
 }
