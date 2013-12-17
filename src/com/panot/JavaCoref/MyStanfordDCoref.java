@@ -307,7 +307,7 @@ public class MyStanfordDCoref {
 		
 				String modelFileName = props.getProperty(MyConstants.TTE_MODEL, "");
 				String trainCrf = "";
-				if (props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP) == MyConstants.TTE_FEATURE_NLTK) {
+				if (props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP).equals(MyConstants.TTE_FEATURE_NLTK)) {
 					trainCrf = nltkCrfFormatter.toString();
 				} else {
 					trainCrf = crfFormatter.toString();

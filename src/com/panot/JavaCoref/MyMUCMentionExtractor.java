@@ -335,7 +335,9 @@ public class MyMUCMentionExtractor extends MentionExtractor {
 
     if (use_term) {
       String dataCrf = "";
-      if (props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP) == MyConstants.TTE_FEATURE_NLTK) {
+      System.err.print("FEAT TYPE: ");
+      System.err.println(props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP));
+      if (props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP).equals(MyConstants.TTE_FEATURE_NLTK)) {
         dataCrf = NltkCrfFormatter.annotationToCrfString(docAnno);
       } else {
         dataCrf = CrfFormatter.annotationToCrfString(docAnno);

@@ -147,6 +147,7 @@ public class NltkCrfFormatter {
 		String features = "";
 		try {
 			features = pythonCaller(pythonInputString);
+			//System.err.println(features);
 		} catch (Exception e) {
 			System.err.println("ERROR CALLING PYTHON");
 			return "";
