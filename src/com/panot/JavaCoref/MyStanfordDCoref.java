@@ -36,6 +36,7 @@ import edu.stanford.nlp.util.StringUtils;
 
 import com.panot.JavaCoref.TermUtils.CrfFormatter;
 import com.panot.JavaCoref.TermUtils.CrfsuiteCaller;
+import com.panot.JavaCoref.TermUtils.NltkCrfFormatter;
 import com.panot.JavaCoref.TermUtils.TermAsMentionFinder;
 import com.panot.JavaCoref.TextUtils.TextReader;
 import com.panot.JavaCoref.TextUtils.TokenMatcher;
@@ -134,6 +135,7 @@ public class MyStanfordDCoref {
 
 		String tte_type = "";
 		CrfFormatter crfFormatter = null;
+		NltkCrfFormatter nltkCrfFormatter = null;
 		boolean use_term = false;
 
 		if (props.containsKey(MyConstants.TTE_TYPE) && props.containsKey(MyConstants.TTE_MODEL)) {
@@ -143,6 +145,7 @@ public class MyStanfordDCoref {
 			System.err.println(tte_type);
 			if (tte_type.equals(MyConstants.TTE_TYPE_TRAIN)) {
 				crfFormatter = new CrfFormatter();
+				nltkCrfFormatter = new NltkCrfFormatter();
 			}
 		}
 
@@ -170,6 +173,7 @@ public class MyStanfordDCoref {
 				// 	break;
 
 				crfFormatter.addDocument(document);
+				nltkCrfFormatter.addDocument(document);
 				System.err.println("formatter");
 
 				continue;
@@ -302,8 +306,13 @@ public class MyStanfordDCoref {
 			try {
 		
 				String modelFileName = props.getProperty(MyConstants.TTE_MODEL, "");
-				String trainCrf = crfFormatter.toString();
-				CrfsuiteCaller.train(crfFormatter.toString(), modelFileName);
+				String trainCrf = "";
+				if (props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP) == MyConstants.TTE_FEATURE_NLTK) {
+					trainCrf = nltkCrfFormatter.toString();
+				} else {
+					trainCrf = crfFormatter.toString();
+				}
+				CrfsuiteCaller.train(trainCrf, modelFileName);
 
 				if (props.containsKey(MyConstants.TTE_SAVE_CRF_DATA)) {
 					String crfDataFilename = props.getProperty(MyConstants.TTE_SAVE_CRF_DATA);

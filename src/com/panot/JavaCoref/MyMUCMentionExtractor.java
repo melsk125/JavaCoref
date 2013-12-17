@@ -60,6 +60,7 @@ import edu.stanford.nlp.dcoref.*;
 import com.panot.JavaCoref.TermUtils.TermAsMentionFinder;
 import com.panot.JavaCoref.TermUtils.CrfFormatter;
 import com.panot.JavaCoref.TermUtils.CrfsuiteCaller;
+import com.panot.JavaCoref.TermUtils.NltkCrfFormatter;
 
 /**
  * Extracts {@literal <COREF>} mentions from a file annotated in MUC format.
@@ -333,7 +334,12 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     List<List<Mention>> termMentions = new ArrayList<List<Mention>>();
 
     if (use_term) {
-      String dataCrf = CrfFormatter.annotationToCrfString(docAnno);
+      String dataCrf = "";
+      if (props.getProperty(MyConstants.TTE_FEATURE_GENERATOR, MyConstants.TTE_FEATURE_CORENLP) == MyConstants.TTE_FEATURE_NLTK) {
+        dataCrf = NltkCrfFormatter.annotationToCrfString(docAnno);
+      } else {
+        dataCrf = CrfFormatter.annotationToCrfString(docAnno);
+      }
       List<List<String>> tagResult = new ArrayList<List<String>>();
 
       try {
