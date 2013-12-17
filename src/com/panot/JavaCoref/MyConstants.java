@@ -32,6 +32,8 @@ public class MyConstants {
 	public static final String TTE_FEATURE_NLTK = "nltk";
 	public static final String TTE_FEATURE_CORENLP = "corenlp"; // This is default
 
+	public static final String TTE_KEEP_PRON = "mydcoref.tte.keep.pron";
+
 	public static final String EXP_TYPE_04_CHECK = "mydcoref.exp.04.check";
 	public static final String EXP_TYPE_04_SUPER = "mydcoref.exp.04.super";
 	public static final String EXP_TYPE_04_OVERLAP = "mydcoref.exp.04.overlap";

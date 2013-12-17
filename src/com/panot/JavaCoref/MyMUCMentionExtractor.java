@@ -370,6 +370,10 @@ public class MyMUCMentionExtractor extends MentionExtractor {
 
     allPredictedMentions = mentionFinder.extractPredictedMentions(docAnno, maxID, dictionaries);
 
+    if (use_term && props.containsKey(MyConstants.TTE_KEEP_PRON)) {
+      termMentions = injectPronoun(termMentions, allPredictedMentions);
+    }
+
     if (experimentType != null) {
       if (experimentType.equals(MyConstants.EXP_TYPE_03_UNION)) {
         List<List<Mention>> usingMentions = unionMentions(allPredictedMentions, allGoldMentions);
@@ -475,6 +479,40 @@ public class MyMUCMentionExtractor extends MentionExtractor {
     if (m1.startIndex < m2.endIndex && m2.endIndex <= m1.endIndex)
       return true;
     return false;
+  }
+
+  public boolean isPronominal(Mention m) {
+    if (m.headWord.get(CoreAnnotations.PartOfSpeechAnnotation.class).startsWith("PRP") || (m.originalSpan.size() == 1 && m.headWord.get(CoreAnnotations.NamedEntityTagAnnotation.class).equals("O") && (dictionaries.allPronouns.contains(m.headString) || dictionaries.relativePronouns.contains(m.headString) )))
+      return true;
+    return false;
+  }
+
+  public List<List<Mention>> injectPronoun(List<List<Mention>> target, List<List<Mention>> source) {
+    List<List<Mention>> result = new ArrayList<List<Mention>>();
+    int size = target.size();
+
+    for (int sentI = 0; sentI < size; sentI ++) {
+      ArrayList<Mention> thisList = new ArrayList<Mention>();
+      HashSet<IntPair> intPairSet = new HashSet<IntPair>();
+
+      for (Mention mt : target.get(sentI)) {
+        thisList.add(mt);
+        intPairSet.add(new IntPair(mt.startIndex, mt.endIndex));
+      }
+
+      for (Mention ms : source.get(sentI)) {
+        if (!isPronominal(ms)) continue;
+        IntPair thisPair = new IntPair(ms.startIndex, ms.endIndex);
+        if (!intPairSet.contains(thisPair)) {
+          intPairSet.add(thisPair);
+          thisList.add(ms);
+          System.err.println("INJECTED!");
+        }
+      }
+      result.add(thisList);
+    }
+    System.err.println("INJECT PRONOUN!");
+    return result;
   }
 
   public static List<List<Mention>> unionMentions(List<List<Mention>> set1, List<List<Mention>> set2) {
