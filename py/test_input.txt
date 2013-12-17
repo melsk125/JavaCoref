@@ -1,0 +1,16 @@
+O	This
+O	is
+O	a
+O	book
+O	.
+
+B	Computational
+I	complexity
+O	of
+O	the
+B	dynamic
+I	programming
+I	algorithm
+O	is
+O	polynomial
+O	.
